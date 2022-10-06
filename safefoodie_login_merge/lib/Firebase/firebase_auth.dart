@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:safefoodie_login_merge/firebase_options.dart';
 
 class FireAuth {
   // For registering a new user
@@ -65,5 +67,11 @@ class FireAuth {
     User? refreshedUser = auth.currentUser;
 
     return refreshedUser;
+  }
+
+  Future<void> initialize() async {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   }
 }
