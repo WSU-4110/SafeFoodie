@@ -3,14 +3,10 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
+import 'package:firebase_core/firebase_core.dart';
 // ...
 
-await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-);
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
 /// Example:
@@ -73,7 +69,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '932850866606',
     projectId: 'safe-5adff',
     storageBucket: 'safe-5adff.appspot.com',
-    iosClientId: '932850866606-8hc3g5o46pog1i2ejq7411f5v31942j1.apps.googleusercontent.com',
+    iosClientId:
+        '932850866606-8hc3g5o46pog1i2ejq7411f5v31942j1.apps.googleusercontent.com',
     iosBundleId: 'com.example.safefoodieLoginMerge',
   );
 
@@ -83,7 +80,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '932850866606',
     projectId: 'safe-5adff',
     storageBucket: 'safe-5adff.appspot.com',
-    iosClientId: '932850866606-8hc3g5o46pog1i2ejq7411f5v31942j1.apps.googleusercontent.com',
+    iosClientId:
+        '932850866606-8hc3g5o46pog1i2ejq7411f5v31942j1.apps.googleusercontent.com',
     iosBundleId: 'com.example.safefoodieLoginMerge',
   );
 }
