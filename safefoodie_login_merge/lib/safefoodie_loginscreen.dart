@@ -1,11 +1,18 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
-void main() {
+/*void main() {
   runApp(const MyApp());
+}*/
+
+class login extends StatefulWidget {
+  @override
+  MyApp createState() => MyApp();
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyApp extends State<login> {
+  //const MyApp({Key? key}) : super(key: key);
 
   static const String _title = 'SafeFoodie';
 
@@ -158,3 +165,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   }
 }
 //======================================
+
+
+
