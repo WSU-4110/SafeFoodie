@@ -1,18 +1,13 @@
 import 'dart:html';
-
+import 'signup.dart';
 import 'package:flutter/material.dart';
 
-/*void main() {
+void main() {
   runApp(const MyApp());
-}*/
-
-class login extends StatefulWidget {
-  @override
-  MyApp createState() => MyApp();
 }
 
-class MyApp extends State<login> {
-  //const MyApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   static const String _title = 'SafeFoodie';
 
@@ -154,7 +149,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         fontSize: 20),
                   ),
                   onPressed: () {
-                    //signup screen
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => SignupPage()));
                   },
                 )
               ],
