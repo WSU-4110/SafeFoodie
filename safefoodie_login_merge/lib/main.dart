@@ -146,6 +146,7 @@ class HomeScreen extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                         fontSize: 20),
                   ),
+
                   onPressed: () {
                     _TosignupScreen(context);
                   },
