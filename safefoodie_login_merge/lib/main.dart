@@ -229,30 +229,30 @@ class _SignupPageState extends State<SignupPage> {
             children: <Widget>[
               TextField(
                 controller: _emailController,
-                decoration: InputDecoration(
-                    labelText: 'EMAIL',
-                    labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                    )),
+                 decoration: const InputDecoration(
+                 enabledBorder: const OutlineInputBorder(
+                    borderSide:
+                       const BorderSide(color: Colors.white, width: 0.0),
+                  ),
+                  border: const OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.white),
+                  labelText: 'Email',
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
               TextField(
                 controller: _passwordController,
-                decoration: InputDecoration(
-                    labelText: 'PASSWORD',
-                    labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                    )),
+                decoration: const InputDecoration(
+                 enabledBorder: const OutlineInputBorder(
+                    borderSide:
+                       const BorderSide(color: Colors.white, width: 0.0),
+                  ),
+                  border: const OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.white),
+                  labelText: 'Password',
+                ),
                 obscureText: true,
               ),
               SizedBox(
