@@ -32,6 +32,8 @@ class FireAuth {
     } catch (e) {
       print(e);
     }
+    //sending user verification email
+    await user?.sendEmailVerification();
 
     return user;
   }
