@@ -104,6 +104,24 @@
       "languageVersion": "2.16"
     },
     {
+      "name": "firebase_database",
+      "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-9.1.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
+      "name": "firebase_database_platform_interface",
+      "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database_platform_interface-0.2.2+7",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
+      "name": "firebase_database_web",
+      "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database_web-0.2.1+9",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -254,7 +272,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-10-10T22:18:48.514983Z",
+  "generated": "2022-10-11T16:38:43.565317Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }
