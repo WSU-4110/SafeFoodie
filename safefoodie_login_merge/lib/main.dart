@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home Screen')),
+      appBar: AppBar(title: const Text('Login page')),
       body: Center(
         child: ListView(
           children: <Widget>[
@@ -115,7 +115,7 @@ class HomeScreen extends StatelessWidget {
 //Forgot password prompt
             TextButton(
               onPressed: () {
-//forgot password screen
+_ToresetScreen(context);
               },
               child: const Text(
                 'Forgot Password?',
@@ -159,24 +159,41 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-//======================================
+//======================================================================================
+//NAV FUNCTIONS
+//======================================================================================
 //Nav function for signup
   void _TosignupScreen(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignupPage()));
   }
+//Nav function for password reset page
+void _ToresetScreen(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResetPage()));
+  }  
 }
-//======================================
+//======================================================================================
+//======================================================================================
 //Firebase Authorization
  final FirebaseAuth _auth = FirebaseAuth.instance;
 
-//======================================
-class SignupPage extends StatefulWidget {
+//======================================================================================
+//PAGE CLASS INITIALIZATION
+//======================================================================================
+//Signup class
+class SignupPage extends StatefulWidget { //signup
   @override
   _SignupPageState createState() => _SignupPageState();
 }
 
-//======================================
-//email signup function
+//Reset Class
+class ResetPage extends StatefulWidget { //forgot pass
+  @override 
+  _ResetPageState createState() => _ResetPageState();
+}
+
+//======================================================================================
+//EMAIL SIGNUP FUNCTION
+//======================================================================================
 class _SignupPageState extends State<SignupPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -199,12 +216,15 @@ class _SignupPageState extends State<SignupPage> {
       });
     }
   }
-//======================================
-//Sign up page
+
+//======================================================================================
+//SIGNUP PAGE START
+//======================================================================================
   @override
   Widget build(BuildContext context) {
 
     return new Scaffold(
+      appBar: AppBar(title: const Text('Sign up')),
         body: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -212,15 +232,15 @@ class _SignupPageState extends State<SignupPage> {
           child: Stack(
             children: <Widget>[
               Container(
+                alignment: Alignment.center,
                 padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
-                child: Text("Sign Up",
+                child: Text("Sign up now!",
                     style:
-                        TextStyle(fontSize: 40, fontWeight: FontWeight.bold)),
+                        TextStyle(fontSize: 40)),
               )
             ],
           ),
         ),
-
 //======================================
 //Text field
         Container(
@@ -229,30 +249,30 @@ class _SignupPageState extends State<SignupPage> {
             children: <Widget>[
               TextField(
                 controller: _emailController,
-                decoration: InputDecoration(
-                    labelText: 'EMAIL',
-                    labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                    )),
+                 decoration: const InputDecoration(
+                 enabledBorder: const OutlineInputBorder(
+                    borderSide:
+                       const BorderSide(color: Colors.white, width: 0.0),
+                  ),
+                  border: const OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.white),
+                  labelText: 'Email',
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
               TextField(
                 controller: _passwordController,
-                decoration: InputDecoration(
-                    labelText: 'PASSWORD',
-                    labelStyle: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
-                    )),
+                decoration: const InputDecoration(
+                 enabledBorder: const OutlineInputBorder(
+                    borderSide:
+                       const BorderSide(color: Colors.white, width: 0.0),
+                  ),
+                  border: const OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.white),
+                  labelText: 'Password',
+                ),
                 obscureText: true,
               ),
               SizedBox(
@@ -261,7 +281,6 @@ class _SignupPageState extends State<SignupPage> {
               SizedBox(
                 height: 40,
               ),
-
 //======================================
 // sign up button
               Container(
@@ -287,7 +306,6 @@ class _SignupPageState extends State<SignupPage> {
               SizedBox(
                 height: 15,
               ),
-
 //======================================
 //back button
               Row(
@@ -313,4 +331,109 @@ class _SignupPageState extends State<SignupPage> {
     ));
   }
 }
+
+//======================================================================================
+//RESET PAGE START
+//======================================================================================
+
+class _ResetPageState extends State<ResetPage> {
+  @override
+  Widget build(BuildContext context) {
+
+    return new Scaffold(
+      appBar: AppBar(title: const Text('Account recovery')),
+        body: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Container(
+          alignment: Alignment.center,
+          child: Stack(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
+                child: Text("Password reset",
+                    style:
+                        TextStyle(fontSize: 40)),
+              )
+            ],
+          ),
+        ),
 //======================================
+//Text field
+        Container(
+          padding: EdgeInsets.only(top: 35, left: 20, right: 30),
+          child: Column(
+            children: <Widget>[
+              TextField(
+               // controller: _emailController,
+                 decoration: const InputDecoration(
+                 enabledBorder: const OutlineInputBorder(
+                    borderSide:
+                       const BorderSide(color: Colors.white, width: 0.0),
+                  ),
+                  border: const OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.white),
+                  labelText: 'Enter account email',
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              SizedBox(
+                height: 5.0,
+              ),
+//======================================
+// sign up button
+              Container(
+                height: 40,
+                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                child: Material(
+                  borderRadius: BorderRadius.circular(20),
+                  shadowColor: Colors.greenAccent,
+                  color: Colors.green,
+                  elevation: 7,
+                  child: GestureDetector(
+                      onTap: () async {
+                  //      _register();
+                      },
+                      child: Center(
+                          child: Text('SEND RESET EMAIL',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat')))),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+//======================================
+//back button
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('Go Back',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                            decoration: TextDecoration.underline)),
+                  )
+                ],
+              )
+            ],
+          ),
+        )
+      ],
+    ));
+  }
+}
+
+//======================================================================================
+//HOME PAGE START 
+//======================================================================================
+
