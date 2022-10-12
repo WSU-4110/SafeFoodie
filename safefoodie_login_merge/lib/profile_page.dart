@@ -1,7 +1,7 @@
-import 'package:firebase_auth/firebase_auth.dart';
+/* import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fire_trial/login_page.dart';
-import 'package:fire_trial/firebase_auth.dart';
+// import 'package:fire_trial/login_page.dart';
+// import 'package:fire_trial/firebase_auth.dart';
 
 class ProfilePage extends StatefulWidget {
   final User user;
@@ -124,3 +124,4 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 }
+*/

@@ -1,4 +1,3 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -45,129 +44,126 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Home Screen')),
       body: Center(
-        child: ListView(
-          children: <Widget>[
+          child: ListView(children: <Widget>[
 //======================================
 //title header
-            Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(10),
-                child: const Text(
-                  'SafeFoodie',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 30),
-                )),
+        Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            child: const Text(
+              'SafeFoodie',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 30),
+            )),
 
-            Icon(
-              Icons.bakery_dining_rounded,
-              color: Color.fromARGB(216, 230, 182, 53),
-            ),
+        Icon(
+          Icons.bakery_dining_rounded,
+          color: Color.fromARGB(216, 230, 182, 53),
+        ),
 
 //======================================
 //Sign in header
-            Container(
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(10),
-                child: const Text(
-                  'Sign in',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 20),
-                )),
+        Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            child: const Text(
+              'Sign in',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 20),
+            )),
 //======================================
 //interactive username and password bars
-            Container(
-              padding: const EdgeInsets.all(10),
-              child: TextField(
-               // controller: nameController,
-                decoration: const InputDecoration(
-                  enabledBorder: const OutlineInputBorder(
-                    borderSide:
-                        const BorderSide(color: Colors.white, width: 0.0),
-                  ),
-                  border: const OutlineInputBorder(),
-                  labelStyle: TextStyle(color: Colors.white),
-                  labelText: 'User Name',
-                ),
+        Container(
+          padding: const EdgeInsets.all(10),
+          child: TextField(
+            // controller: nameController,
+            decoration: const InputDecoration(
+              enabledBorder: const OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.white, width: 0.0),
               ),
+              border: const OutlineInputBorder(),
+              labelStyle: TextStyle(color: Colors.white),
+              labelText: 'User Name',
             ),
-            
-            Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-             child: TextField(
-               obscureText: true,
-                //controller: passwordController,
-                decoration: const InputDecoration(
-                 enabledBorder: const OutlineInputBorder(
-                    borderSide:
-                       const BorderSide(color: Colors.white, width: 0.0),
-                  ),
-                  border: const OutlineInputBorder(),
-                  labelStyle: TextStyle(color: Colors.white),
-                  labelText: 'Password',
-                ),
+          ),
+        ),
+
+        Container(
+          padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
+          child: TextField(
+            obscureText: true,
+            //controller: passwordController,
+            decoration: const InputDecoration(
+              enabledBorder: const OutlineInputBorder(
+                borderSide: const BorderSide(color: Colors.white, width: 0.0),
               ),
-            ),   
+              border: const OutlineInputBorder(),
+              labelStyle: TextStyle(color: Colors.white),
+              labelText: 'Password',
+            ),
+          ),
+        ),
 //======================================
 //Forgot password prompt
-            TextButton(
-              onPressed: () {
+        TextButton(
+          onPressed: () {
 //forgot password screen
-              },
-              child: const Text(
-                'Forgot Password?',
-              ),
-            ), 
+          },
+          child: const Text(
+            'Forgot Password?',
+          ),
+        ),
 //======================================
 //Login button
-            Container(
-                height: 50,
-                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: ElevatedButton(
-                  child: const Text('Login'),
-                  onPressed: () {
-                    //print(nameController.text);
-                    //print(passwordController.text);
-                  },
-                )), 
+        Container(
+            height: 50,
+            padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+            child: ElevatedButton(
+              child: const Text('Login'),
+              onPressed: () {
+                //print(nameController.text);
+                //print(passwordController.text);
+              },
+            )),
 //======================================
 //Sign up prompt
-            Row(
-              children: <Widget>[
-                const Text('No account?'),
-                TextButton(
-                  child: const Text(
-                    'Sign up now',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 20),
-                  ),
-                  onPressed: () {
-                    _TosignupScreen(context);
-                  },
-                )
-              ],
-              mainAxisAlignment: MainAxisAlignment.center,
-            ),                                     
-          ]
-        )
-      ),
+        Row(
+          children: <Widget>[
+            const Text('No account?'),
+            TextButton(
+              child: const Text(
+                'Sign up now',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20),
+              ),
+              onPressed: () {
+                _TosignupScreen(context);
+              },
+            )
+          ],
+          mainAxisAlignment: MainAxisAlignment.center,
+        ),
+      ])),
     );
   }
 
 //======================================
 //Nav function for signup
   void _TosignupScreen(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignupPage()));
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => SignupPage()));
   }
 }
+
 //======================================
 //Firebase Authorization
- final FirebaseAuth _auth = FirebaseAuth.instance;
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 //======================================
 class SignupPage extends StatefulWidget {
@@ -199,11 +195,11 @@ class _SignupPageState extends State<SignupPage> {
       });
     }
   }
+
 //======================================
 //Sign up page
   @override
   Widget build(BuildContext context) {
-
     return new Scaffold(
         body: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -229,10 +225,10 @@ class _SignupPageState extends State<SignupPage> {
             children: <Widget>[
               TextField(
                 controller: _emailController,
-                 decoration: const InputDecoration(
-                 enabledBorder: const OutlineInputBorder(
+                decoration: const InputDecoration(
+                  enabledBorder: const OutlineInputBorder(
                     borderSide:
-                       const BorderSide(color: Colors.white, width: 0.0),
+                        const BorderSide(color: Colors.white, width: 0.0),
                   ),
                   border: const OutlineInputBorder(),
                   labelStyle: TextStyle(color: Colors.white),
@@ -245,9 +241,9 @@ class _SignupPageState extends State<SignupPage> {
               TextField(
                 controller: _passwordController,
                 decoration: const InputDecoration(
-                 enabledBorder: const OutlineInputBorder(
+                  enabledBorder: const OutlineInputBorder(
                     borderSide:
-                       const BorderSide(color: Colors.white, width: 0.0),
+                        const BorderSide(color: Colors.white, width: 0.0),
                   ),
                   border: const OutlineInputBorder(),
                   labelStyle: TextStyle(color: Colors.white),
@@ -266,7 +262,7 @@ class _SignupPageState extends State<SignupPage> {
 // sign up button
               Container(
                 height: 40,
-                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
                 child: Material(
                   borderRadius: BorderRadius.circular(20),
                   shadowColor: Colors.greenAccent,
