@@ -125,6 +125,7 @@ class HomeScreen extends StatelessWidget {
             child: ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
+                _ToMainScreen(context);
                 //print(nameController.text);
                 //print(passwordController.text);
               },
@@ -167,6 +168,12 @@ class HomeScreen extends StatelessWidget {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => ResetPage()));
   }
+
+//Nav function for main page
+  void _ToMainScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => MainPage()));
+  }
 }
 
 //======================================================================================
@@ -189,6 +196,12 @@ class ResetPage extends StatefulWidget {
   //forgot pass
   @override
   _ResetPageState createState() => _ResetPageState();
+}
+
+//main page
+class MainPage extends StatefulWidget {
+  @override
+  _MainPageState createState() => _MainPageState();
 }
 
 //======================================================================================
@@ -429,5 +442,73 @@ class _ResetPageState extends State<ResetPage> {
 }
 
 //======================================================================================
-//HOME PAGE START 
+//HOME PAGE START
 //======================================================================================
+
+class _MainPageState extends State<MainPage> {
+//=======================================
+//Button Widgets
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+          child: ListView(children: <Widget>[
+//======================================
+//title header
+        Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            child: const Text(
+              'SafeFoodie',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 30),
+            )),
+
+        Icon(
+          Icons.bakery_dining_rounded,
+          color: Color.fromARGB(216, 230, 182, 53),
+        ),
+
+//======================================
+        Container(
+            child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            _buildButtonColumn(
+                Colors.white, Icons.search, 'Search Existing Lists'),
+            _buildButtonColumn(
+                Colors.white, Icons.add_circle, 'Create List/Add Item'),
+            _buildButtonColumn(Colors.white, Icons.settings, 'Settings'),
+            _buildButtonColumn(Colors.white, Icons.search, "button 4")
+          ],
+        ))
+
+//======================================
+      ])),
+    );
+  }
+}
+
+Column _buildButtonColumn(Color color, IconData icon, String label) {
+  return Column(
+    mainAxisSize: MainAxisSize.min,
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Icon(icon, color: color),
+      Container(
+        margin: const EdgeInsets.only(top: 8),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+            color: color,
+          ),
+        ),
+      ),
+    ],
+  );
+}

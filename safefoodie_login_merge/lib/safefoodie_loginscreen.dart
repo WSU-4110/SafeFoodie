@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    title: 'SafeFoodie',
-  ));
+  runApp(const MyApp());
 }
 
-class FirstRoute extends MyStatefulWidget {
-  const FirstRoute({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   static const String _title = 'SafeFoodie';
 
@@ -149,11 +147,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         fontSize: 20),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SecondRoute()),
-                    );
                     //signup screen
                   },
                 )
@@ -165,32 +158,3 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   }
 }
 //======================================
-
-class SecondRoute extends MyStatefulWidget {
-  const SecondRoute({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Second Route',
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.w500, fontSize: 20),
-        ),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text(
-            'Go back!',
-            style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.w500, fontSize: 20),
-          ),
-        ),
-      ),
-    );
-  }
-}
