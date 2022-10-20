@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:size_config/size_config.dart';
+import 'package:size_config/util/size_extention.dart';
 
 void main() => runApp(MyApp());
 
@@ -179,9 +181,10 @@ class HomeScreen extends StatelessWidget {
 
 //Nav function for create list/add item search page
 
-//Nav function for settings 
+//Nav function for settings
 
 }
+
 //======================================================================================
 //======================================================================================
 //Firebase Authorization
@@ -210,9 +213,9 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
-//Search lists page 
+//Search lists page
 
-//Add item/create page 
+//Add item/create page
 
 //settings page
 
@@ -485,33 +488,31 @@ class _MainPageState extends State<MainPage> {
         ),
 
 //======================================
-                          SizedBox(
-                    height: 200,
-                  ),
+        SizedBox(
+          height: 200,
+        ),
         Container(
             child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            IconButton(icon: const Icon(Icons.align_horizontal_left),
-            color: Colors.white, //view all lists
-            onPressed: () {
+            IconButton(
+                icon: const Icon(Icons.align_horizontal_left),
+                color: Colors.white, //view all lists
+                onPressed: () {
 //_ToViewListsScreen(context);
-            }
-            ),
-             IconButton(icon: const Icon(Icons.search),
-             color: Colors.white,  //search lists
-            onPressed: () {
-            }),
-             IconButton(icon: const Icon(Icons.add_circle),
-             color: Colors.white,  //Create list, add item
-            onPressed: () {
-
-            }),
-             IconButton(icon: const Icon(Icons.settings),
-             color: Colors.white,  //settings
-            onPressed: () {
-
-            }),
+                }),
+            IconButton(
+                icon: const Icon(Icons.search),
+                color: Colors.white, //search lists
+                onPressed: () {}),
+            IconButton(
+                icon: const Icon(Icons.add_circle),
+                color: Colors.white, //Create list, add item
+                onPressed: () {}),
+            IconButton(
+                icon: const Icon(Icons.settings),
+                color: Colors.white, //settings
+                onPressed: () {}),
           ],
         ))
 
@@ -620,7 +621,7 @@ class _ViewListsState extends State<ViewListsPage> {
 
 //======================================================================================
 //NAV FUNCTIONS
-//====================================================================================== 
+//======================================================================================
 //Nav function for view lists page
   void _ToViewListsScreen(BuildContext context) {
     Navigator.of(context)
@@ -635,4 +636,40 @@ class _ViewListsState extends State<ViewListsPage> {
 class ViewListsPage extends StatefulWidget {
   @override
   _ViewListsState createState() => _ViewListsState();
+}
+
+//======================================================================================
+//SCALABILITY ACROSS MULTIPLE DEVICES
+//======================================================================================
+Widget buildResponsiveWidget(BuildContext context) {
+  LayoutBuilder(
+    builder: (context, constraints) {
+      // initializing SizeConfig
+      // reference height and width of UI design from Adobe XD,Figma or any other tool
+      SizeConfig().init(
+          context: context,
+          safeAreaBox: constraints,
+          referenceHeight: 800,
+          referenceWidth: 360);
+      SizeConfig().init(
+          context: context,
+          safeAreaBox: constraints,
+          referenceHeight: 800,
+          referenceWidth: 360);
+      return Column(
+        children: [
+          Text(
+            "Font Size SizeConfigValue: ${20.sp}",
+            style: TextStyle(fontSize: 20.sp),
+          ),
+          SizeConfigPercentage.verticalSpacer(10),
+          Text("Width SizeConfigValue: ${20.w}"),
+          Text("Width SizeConfigPercentage: ${20.wp}"),
+          SizeConfigValue.verticalSpacer(10),
+          Text("Height SizeConfigValue: ${20.h}"),
+          Text("Height SizeConfigPercentage: ${20.hp}"),
+        ],
+      );
+    },
+  );
 }
