@@ -1,3 +1,5 @@
+import 'dart:html';
+import 'signup.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -147,7 +149,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         fontSize: 20),
                   ),
                   onPressed: () {
-                    //signup screen
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => SignupPage()));
                   },
                 )
               ],
@@ -157,4 +160,3 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ));
   }
 }
-//======================================
