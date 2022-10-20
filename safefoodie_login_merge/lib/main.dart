@@ -125,6 +125,7 @@ class HomeScreen extends StatelessWidget {
             child: ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
+
                 //print(nameController.text);
                 //print(passwordController.text);
               },
@@ -160,6 +161,7 @@ class HomeScreen extends StatelessWidget {
   void _TosignupScreen(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => SignupPage()));
+
   }
 
 //Nav function for password reset page
@@ -167,6 +169,19 @@ class HomeScreen extends StatelessWidget {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => ResetPage()));
   }
+
+//Nav function for main page
+  void _ToMainScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => MainPage()));
+  }
+
+//Nav function for search lists page
+
+//Nav function for create list/add item search page
+
+//Nav function for settings 
+
 }
 
 //======================================================================================
@@ -190,6 +205,7 @@ class ResetPage extends StatefulWidget {
   @override
   _ResetPageState createState() => _ResetPageState();
 }
+
 
 //======================================================================================
 //EMAIL SIGNUP FUNCTION
@@ -222,118 +238,24 @@ class _SignupPageState extends State<SignupPage> {
 //======================================================================================
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: AppBar(title: const Text('Sign up')),
+
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              child: Stack(
-                children: <Widget>[
-                  Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
-                    child: Text("Sign up now!", style: TextStyle(fontSize: 40)),
+
                   )
                 ],
               ),
             ),
-//======================================
-//Text field
-            Container(
-              padding: EdgeInsets.only(top: 35, left: 20, right: 30),
-              child: Column(
-                children: <Widget>[
-                  TextField(
-                    controller: _emailController,
-                    decoration: const InputDecoration(
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(color: Colors.white, width: 0.0),
-                      ),
-                      border: const OutlineInputBorder(),
-                      labelStyle: TextStyle(color: Colors.white),
-                      labelText: 'Email',
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  TextField(
-                    controller: _passwordController,
-                    decoration: const InputDecoration(
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(color: Colors.white, width: 0.0),
-                      ),
-                      border: const OutlineInputBorder(),
-                      labelStyle: TextStyle(color: Colors.white),
-                      labelText: 'Password',
-                    ),
-                    obscureText: true,
-                  ),
-                  SizedBox(
-                    height: 5.0,
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-//======================================
-// sign up button
-                  Container(
-                    height: 40,
-                    padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                    child: Material(
-                      borderRadius: BorderRadius.circular(20),
-                      shadowColor: Colors.greenAccent,
-                      color: Colors.green,
-                      elevation: 7,
-                      child: GestureDetector(
-                          onTap: () async {
-                            _register();
-                          },
-                          child: Center(
-                              child: Text('SIGNUP',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Montserrat')))),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-//======================================
-//back button
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      InkWell(
-                        onTap: () {
-                          Navigator.of(context).pop();
-                        },
-                        child: Text('Go Back',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: 'Montserrat',
-                                fontWeight: FontWeight.bold,
-                                decoration: TextDecoration.underline)),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            )
-          ],
-        ));
+
+
+
   }
 }
 
 //======================================================================================
-//RESET PAGE START
-//======================================================================================
 
-class _ResetPageState extends State<ResetPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -425,10 +347,8 @@ class _ResetPageState extends State<ResetPage> {
             )
           ],
         ));
+=
   }
 }
 
 //======================================================================================
-//HOME PAGE START 
-//======================================================================================
-
