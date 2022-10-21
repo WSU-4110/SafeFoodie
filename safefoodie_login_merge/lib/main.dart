@@ -179,12 +179,18 @@ class HomeScreen extends StatelessWidget {
 
 //Nav function for create list/add item search page
 
-//Nav function for settings 
+//Nav function for settings
 
 }
+
 //======================================================================================
 //======================================================================================
 //Firebase Authorization
+Future<FirebaseApp> _initializeFirebase() async {
+  FirebaseApp firebaseApp = await Firebase.initializeApp();
+  return firebaseApp;
+}
+
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
 //======================================================================================
@@ -210,9 +216,9 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
-//Search lists page 
+//Search lists page
 
-//Add item/create page 
+//Add item/create page
 
 //settings page
 
@@ -485,33 +491,31 @@ class _MainPageState extends State<MainPage> {
         ),
 
 //======================================
-                          SizedBox(
-                    height: 200,
-                  ),
+        SizedBox(
+          height: 200,
+        ),
         Container(
             child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            IconButton(icon: const Icon(Icons.align_horizontal_left),
-            color: Colors.white, //view all lists
-            onPressed: () {
+            IconButton(
+                icon: const Icon(Icons.align_horizontal_left),
+                color: Colors.white, //view all lists
+                onPressed: () {
 //_ToViewListsScreen(context);
-            }
-            ),
-             IconButton(icon: const Icon(Icons.search),
-             color: Colors.white,  //search lists
-            onPressed: () {
-            }),
-             IconButton(icon: const Icon(Icons.add_circle),
-             color: Colors.white,  //Create list, add item
-            onPressed: () {
-
-            }),
-             IconButton(icon: const Icon(Icons.settings),
-             color: Colors.white,  //settings
-            onPressed: () {
-
-            }),
+                }),
+            IconButton(
+                icon: const Icon(Icons.search),
+                color: Colors.white, //search lists
+                onPressed: () {}),
+            IconButton(
+                icon: const Icon(Icons.add_circle),
+                color: Colors.white, //Create list, add item
+                onPressed: () {}),
+            IconButton(
+                icon: const Icon(Icons.settings),
+                color: Colors.white, //settings
+                onPressed: () {}),
           ],
         ))
 
@@ -620,7 +624,7 @@ class _ViewListsState extends State<ViewListsPage> {
 
 //======================================================================================
 //NAV FUNCTIONS
-//====================================================================================== 
+//======================================================================================
 //Nav function for view lists page
   void _ToViewListsScreen(BuildContext context) {
     Navigator.of(context)
