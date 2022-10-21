@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:safefoodie_login_merge/firebase_options.dart';
+import 'package:safefoodie_login_merge/Firebase/firebase_options.dart';
 
 class FireAuth {
   // For registering a new user
@@ -25,12 +25,12 @@ class FireAuth {
       user = auth.currentUser;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
-        print('The password provided is too weak.');
+        debugPrint('The password provided is too weak.');
       } else if (e.code == 'email-already-in-use') {
-        print('The account already exists for that email.');
+        debugPrint('The account already exists for that email.');
       }
     } catch (e) {
-      print(e);
+      debugPrint(e);
     }
     //sending user verification email
     await user?.sendEmailVerification();
@@ -54,9 +54,9 @@ class FireAuth {
       user = userCredential.user;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        print('No user found for that email.');
+        debugPrint('No user found for that email.');
       } else if (e.code == 'wrong-password') {
-        print('Wrong password provided.');
+        debugPrint('Wrong password provided.');
       }
     }
 
@@ -89,24 +89,24 @@ class FireAuth {
 //This is for the method for listening for authetication changes
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
       if (user == null) {
-        print('User is signed out');
+        debugPrint('User is signed out');
       } else {
-        print('User is signed in');
+        debugPrint('User is signed in');
       }
     });
     FirebaseAuth.instance.idTokenChanges().listen((User? user) {
       if (user == null) {
-        print('User is signed out');
+        debugPrint('User is signed out');
       } else {
-        print('User is signed in');
+        debugPrint('User is signed in');
       }
     });
 
     FirebaseAuth.instance.userChanges().listen((User? user) {
       if (user == null) {
-        print('User is signed out');
+        debugPrint('User is signed out');
       } else {
-        print('User is signed in');
+        debugPrint('User is signed in');
       }
     });
     //Persistence initialization:

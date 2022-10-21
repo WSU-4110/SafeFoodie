@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:safefoodie_login_merge/Firebase/firebase_auth.dart';
-import 'package:safefoodie_login_merge/Firebase/authenticator.dart';
+import 'package:safefoodie_login_merge/Firebase/auth/firebase_auth.dart';
+import 'package:safefoodie_login_merge/Firebase/auth/authenticator.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 
