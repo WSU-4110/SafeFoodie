@@ -111,7 +111,11 @@ class HomeScreen extends StatelessWidget {
 //Forgot password prompt
         TextButton(
           onPressed: () {
+
             _ToresetScreen(context);
+=======
+//forgot password screen
+
           },
           child: const Text(
             'Forgot Password?',
@@ -125,6 +129,7 @@ class HomeScreen extends StatelessWidget {
             child: ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
+
 
                 //print(nameController.text);
                 //print(passwordController.text);
@@ -162,12 +167,15 @@ class HomeScreen extends StatelessWidget {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => SignupPage()));
 
+
   }
 
 //Nav function for password reset page
   void _ToresetScreen(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => ResetPage()));
+=======
+
   }
 
 //Nav function for main page
@@ -184,8 +192,6 @@ class HomeScreen extends StatelessWidget {
 
 }
 
-//======================================================================================
-//======================================================================================
 //Firebase Authorization
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -239,6 +245,13 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
 
+=======
+//======================================
+//Sign up page
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -277,6 +290,7 @@ class _SignupPageState extends State<SignupPage> {
             ),
 //======================================
 //Text field
+
             Container(
               padding: EdgeInsets.only(top: 35, left: 20, right: 30),
               child: Column(
@@ -298,9 +312,37 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   SizedBox(
                     height: 5.0,
+=======
+        Container(
+          padding: EdgeInsets.only(top: 35, left: 20, right: 30),
+          child: Column(
+            children: <Widget>[
+              TextField(
+                controller: _emailController,
+                decoration: const InputDecoration(
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide:
+                        const BorderSide(color: Colors.white, width: 0.0),
+                  ),
+                  border: const OutlineInputBorder(),
+                  labelStyle: TextStyle(color: Colors.white),
+                  labelText: 'Email',
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextField(
+                controller: _passwordController,
+                decoration: const InputDecoration(
+                  enabledBorder: const OutlineInputBorder(
+                    borderSide:
+                        const BorderSide(color: Colors.white, width: 0.0),
+
                   ),
 //======================================
 // sign up button
+
                   Container(
                     height: 40,
                     padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -324,6 +366,32 @@ class _SignupPageState extends State<SignupPage> {
                   SizedBox(
                     height: 15,
                   ),
+=======
+              Container(
+                height: 40,
+                padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                child: Material(
+                  borderRadius: BorderRadius.circular(20),
+                  shadowColor: Colors.greenAccent,
+                  color: Colors.green,
+                  elevation: 7,
+                  child: GestureDetector(
+                      onTap: () async {
+                        _register();
+                      },
+                      child: Center(
+                          child: Text('SIGNUP',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat')))),
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+
+
 //======================================
 //back button
                   Row(
