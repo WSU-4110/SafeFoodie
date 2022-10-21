@@ -1,7 +1,9 @@
 import 'package:safefoodie_login_merge/Firebase/auth/user.dart';
 
 abstract class Provider {
-  AuthUser? get currentUser;
+  AuthUser? get currentUser; //Either return an AuthUser object or return null
+
+//Call await on all methods that return the future value
 
   Future<void> initialized();
   Future<AuthUser> logIn({
