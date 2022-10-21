@@ -1,15 +1,15 @@
 import 'package:safefoodie_login_merge/Firebase/auth/user.dart';
 
 abstract class Provider {
-  User? get currentUser;
+  AuthUser? get currentUser;
 
   Future<void> initialized();
-  Future<User> logIn({
+  Future<AuthUser> logIn({
     required String email,
     required String password,
   });
 
-  Future<User> createUser({
+  Future<AuthUser> createUser({
     required String email,
     required String password,
   });

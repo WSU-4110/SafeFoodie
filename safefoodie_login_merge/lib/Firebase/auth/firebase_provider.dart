@@ -1,16 +1,15 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart'
+    show FirebaseAuth, FirebaseAuthException;
 import 'package:firebase_core/firebase_core.dart';
-import 'package:';
+//import 'package:';
 import 'package:safefoodie_login_merge/Firebase/auth/user.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/provider.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/auth_exceptions.dart';
 import 'package:safefoodie_login_merge/Firebase/firebase_options.dart';
 
-show FirebaseAuth, FirebaseAuthException;
-
 class FirebaseAuthProvider implements Provider {
   @override
-  Future<User> createUser({
+  Future<AuthUser> createUser({
     required String email,
     required String password,
   }) async {
@@ -41,17 +40,17 @@ class FirebaseAuthProvider implements Provider {
   }
 
   @override
-  User? get currentUser {
+  AuthUser? get currentUser {
     final user = FirebaseAuth.instance.currentUser;
     if (user != null) {
-      return User.fromFirebase(user);
+      return AuthUser.fromFirebase(user);
     } else {
       return null;
     }
   }
 
   @override
-  Future<User> logIn({
+  Future<AuthUser> logIn({
     required String email,
     required String password,
   }) async {

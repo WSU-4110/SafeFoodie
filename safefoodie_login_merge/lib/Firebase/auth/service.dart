@@ -9,17 +9,17 @@ class Service implements Provider {
   factory Service.firebase() => Service(FirebaseAuthProvider());
 
   @override
-  Future<User> createUser({
+  Future<AuthUser> createUser({
     required String email,
     required String password,
   }) =>
       provider.createUser(email: email, password: password);
 
   @override
-  User? get currentUser => provider.currentUser;
+  AuthUser? get currentUser => provider.currentUser;
 
   @override
-  Future<User> logIn({
+  Future<AuthUser> logIn({
     required String email,
     required String password,
   }) =>

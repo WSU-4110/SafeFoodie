@@ -1,14 +1,14 @@
 import 'dart:collection';
 
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart' show User;
 import 'package:flutter/foundation.dart';
 
 @immutable
-class User {
+class AuthUser {
   final String id;
   final String email;
   final bool isVerified;
-  const User({
+  const AuthUser({
     required this.id,
     required this.email,
     required this.isVerified,
@@ -17,6 +17,6 @@ class User {
   //factory constructor that is initialize the user
   //with the verification with firebase
 
-  factory User.fromFirebase(User user) =>
-      User(id: user.id, email: user.email, isVerified: user.isVerified);
+  factory AuthUser.fromFirebase(User user) => AuthUser(
+      id: user.uid, email: user.email!, isVerified: user.emailVerified);
 }
