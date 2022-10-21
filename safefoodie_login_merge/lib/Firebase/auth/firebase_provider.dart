@@ -6,7 +6,11 @@ import 'package:safefoodie_login_merge/Firebase/auth/user.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/provider.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/auth_exceptions.dart';
 
+//Methods from the FirebaseAuth
 class FirebaseAuthProvider implements Provider {
+  //Utilizing the default no arg constructors
+  //Directed Firebase to create user method so it returns a user
+  //And we want to return an auth user.
   @override
   Future<AuthUser> createUser({
     required String email,
@@ -23,6 +27,7 @@ class FirebaseAuthProvider implements Provider {
       } else {
         throw UserNotLoggedInAuthException();
       }
+      //Firebase authenticaiton exception by throwing the exceptions that we wrote
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-passowrd') {
         throw WeakPasswordAuthException();
@@ -48,6 +53,7 @@ class FirebaseAuthProvider implements Provider {
     }
   }
 
+//Directed firebase logIn return a user
   @override
   Future<AuthUser> logIn({
     required String email,
@@ -64,6 +70,7 @@ class FirebaseAuthProvider implements Provider {
       } else {
         throw UserNotLoggedInAuthException();
       }
+      //FirebaseAuth exception with our own defined exception
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user not found') {
         throw UserNotFoundAuthException();
