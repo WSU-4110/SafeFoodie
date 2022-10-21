@@ -113,7 +113,7 @@ class HomeScreen extends StatelessWidget {
           onPressed: () {
 
             _ToresetScreen(context);
-=======
+
 //forgot password screen
 
           },
@@ -174,14 +174,13 @@ class HomeScreen extends StatelessWidget {
   void _ToresetScreen(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => ResetPage()));
-=======
 
   }
 
 //Nav function for main page
   void _ToMainScreen(BuildContext context) {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MainPage()));
+        .push(MaterialPageRoute(builder: (context) => HomeScreen()));
   }
 
 //Nav function for search lists page
@@ -209,7 +208,7 @@ class SignupPage extends StatefulWidget {
 class ResetPage extends StatefulWidget {
   //forgot pass
   @override
-  _ResetPageState createState() => _ResetPageState();
+  ResetPage createState() => _ResetPageState();
 }
 
 
@@ -245,7 +244,6 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
 
-=======
 //======================================
 //Sign up page
   @override
@@ -260,7 +258,7 @@ class _SignupPageState extends State<SignupPage> {
                   )
                 ],
               ),
-            ),
+            );
 
 
 
@@ -312,7 +310,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   SizedBox(
                     height: 5.0,
-=======
+                  ),
         Container(
           padding: EdgeInsets.only(top: 35, left: 20, right: 30),
           child: Column(
@@ -338,8 +336,9 @@ class _SignupPageState extends State<SignupPage> {
                   enabledBorder: const OutlineInputBorder(
                     borderSide:
                         const BorderSide(color: Colors.white, width: 0.0),
-
                   ),
+                  ),
+              ),
 //======================================
 // sign up button
 
@@ -366,7 +365,6 @@ class _SignupPageState extends State<SignupPage> {
                   SizedBox(
                     height: 15,
                   ),
-=======
               Container(
                 height: 40,
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -412,10 +410,12 @@ class _SignupPageState extends State<SignupPage> {
                   )
                 ],
               ),
-            )
+            ),
           ],
-        ));
-=
+        ),
+        ),
+
+
   }
 }
 
