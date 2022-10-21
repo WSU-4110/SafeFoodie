@@ -312,6 +312,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   SizedBox(
                     height: 5.0,
+                  ),
 =======
         Container(
           padding: EdgeInsets.only(top: 35, left: 20, right: 30),
