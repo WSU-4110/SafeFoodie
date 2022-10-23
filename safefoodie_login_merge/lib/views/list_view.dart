@@ -4,10 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 //======================================================================================
-//RESET PAGE START
+//VIEW LISTS PAGE START
 //======================================================================================
-
-class _ResetPageState extends State<ResetPage> {
+class _ViewListsState extends State<ViewListsPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -100,11 +99,22 @@ class _ResetPageState extends State<ResetPage> {
           ],
         ));
   }
+
+//======================================================================================
+//NAV FUNCTIONS
+//======================================================================================
+//Nav function for view lists page
+  void _ToViewListsScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => ViewListsPage()));
+  }
 }
 
-//Reset Class
-class ResetPage extends StatefulWidget {
-  //forgot pass
+//======================================================================================
+//PAGE CLASS INITIALIZATION
+//======================================================================================
+//View lists page
+class ViewListsPage extends StatefulWidget {
   @override
-  _ResetPageState createState() => _ResetPageState();
+  _ViewListsState createState() => _ViewListsState();
 }

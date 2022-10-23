@@ -2,10 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:safefoodie_login_merge/views/reset_page.dart';
+import 'package:safefoodie_login_merge/views/forgot_pw.dart';
 import 'package:safefoodie_login_merge/views/login.dart';
-import 'package:safefoodie_login_merge/views/reset_page.dart';
 import 'package:safefoodie_login_merge/views/signup.dart';
+
+
 //======================================
 // Initialize homescreen features
 class HomeScreen extends StatelessWidget {
