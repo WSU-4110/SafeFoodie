@@ -2,10 +2,28 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:safefoodie_login_merge/main.dart';
 import 'package:safefoodie_login_merge/views/forgot_pw.dart';
 import 'package:safefoodie_login_merge/views/login.dart';
 import 'package:safefoodie_login_merge/views/signup.dart';
 
+  //Nav function for signup
+  void _TosignupScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => SignupPage()));
+  }
+
+//Nav function for password reset page
+  void _ToresetScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => ResetPage()));
+  }
+
+//Nav function for main page
+  void _ToMainScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => HomeScreen()));
+  }
 
 //======================================
 // Initialize homescreen features
@@ -125,20 +143,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  //Nav function for signup
-  void _TosignupScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => SignupPage()));
-  }
-
-//Nav function for password reset page
-  void _ToresetScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ResetPage()));
-  }
-
-//Nav function for main page
-  void _ToMainScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MainPage()));
-  }
