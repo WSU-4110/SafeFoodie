@@ -4,48 +4,25 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 //======================================================================================
-//EMAIL SIGNUP FUNCTION
+//RESET PAGE START
 //======================================================================================
-class _SignupPageState extends State<SignupPage> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  late bool _sucess;
-  late String _userEmail;
 
-  void _register() async {
-    final User? user = (await _auth.createUserWithEmailAndPassword(
-            email: _emailController.text, password: _passwordController.text))
-        .user;
-
-    if (user != null) {
-      setState(() {
-        _sucess = true;
-        _userEmail = user.email!;
-      });
-    } else {
-      setState(() {
-        _sucess = false;
-      });
-    }
-  }
-
-//======================================================================================
-//SIGNUP PAGE START
-//======================================================================================
+class _ResetPageState extends State<ResetPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: AppBar(title: const Text('Sign up')),
+        appBar: AppBar(title: const Text('Account recovery')),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
+              alignment: Alignment.center,
               child: Stack(
                 children: <Widget>[
                   Container(
-                    alignment: Alignment.center,
                     padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
-                    child: Text("Sign up now!", style: TextStyle(fontSize: 40)),
+                    child:
+                        Text("Password reset", style: TextStyle(fontSize: 40)),
                   )
                 ],
               ),
@@ -57,7 +34,7 @@ class _SignupPageState extends State<SignupPage> {
               child: Column(
                 children: <Widget>[
                   TextField(
-                    controller: _emailController,
+                    // controller: _emailController,
                     decoration: const InputDecoration(
                       enabledBorder: const OutlineInputBorder(
                         borderSide:
@@ -65,30 +42,14 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       border: const OutlineInputBorder(),
                       labelStyle: TextStyle(color: Colors.white),
-                      labelText: 'Email',
+                      labelText: 'Enter account email',
                     ),
                   ),
                   SizedBox(
                     height: 20,
                   ),
-                  TextField(
-                    controller: _passwordController,
-                    decoration: const InputDecoration(
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(color: Colors.white, width: 0.0),
-                      ),
-                      border: const OutlineInputBorder(),
-                      labelStyle: TextStyle(color: Colors.white),
-                      labelText: 'Password',
-                    ),
-                    obscureText: true,
-                  ),
                   SizedBox(
                     height: 5.0,
-                  ),
-                  SizedBox(
-                    height: 40,
                   ),
 //======================================
 // sign up button
@@ -102,10 +63,10 @@ class _SignupPageState extends State<SignupPage> {
                       elevation: 7,
                       child: GestureDetector(
                           onTap: () async {
-                            _register();
+                            //      _register();
                           },
                           child: Center(
-                              child: Text('SIGNUP',
+                              child: Text('SEND RESET EMAIL',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -141,12 +102,9 @@ class _SignupPageState extends State<SignupPage> {
   }
 }
 
-//Signup class
-class SignupPage extends StatefulWidget {
-  //signup
+//Reset Class
+class ResetPage extends StatefulWidget {
+  //forgot pass
   @override
-  _SignupPageState createState() => _SignupPageState();
+  _ResetPageState createState() => _ResetPageState();
 }
-
-//Firebase Authorization
-final FirebaseAuth _auth = FirebaseAuth.instance;
