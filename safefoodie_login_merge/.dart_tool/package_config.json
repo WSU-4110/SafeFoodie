@@ -14,6 +14,12 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "bloc",
+      "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/bloc-8.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "boolean_selector",
       "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
       "packageUri": "lib/",
@@ -58,6 +64,12 @@
     {
       "name": "cupertino_icons",
       "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "equatable",
+      "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/equatable-2.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -126,6 +138,12 @@
       "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_bloc",
+      "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-8.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "flutter_lints",
@@ -207,7 +225,7 @@
     },
     {
       "name": "provider",
-      "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.3",
+      "rootUri": "file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -272,7 +290,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-10-20T22:37:03.007651Z",
+  "generated": "2022-10-24T18:39:20.833334Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }
