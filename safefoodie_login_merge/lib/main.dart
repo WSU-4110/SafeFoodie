@@ -194,7 +194,7 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 //PAGE CLASS INITIALIZATION
 //======================================================================================
 //Signup class
-class SignupPage extends StatefulWidget {
+/*class SignupPage extends StatefulWidget {
   //signup
   @override
   _SignupPageState createState() => _SignupPageState();
@@ -211,7 +211,7 @@ class ResetPage extends StatefulWidget {
 class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
-}
+}*/
 
 //Search lists page
 
