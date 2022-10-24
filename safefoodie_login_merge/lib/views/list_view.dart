@@ -2,8 +2,62 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:safefoodie_login_merge/Firebase/cloud/cloud_note.dart';
 
-//======================================================================================
+typedef ListCallback = void Function(CloudNote);
+
+class ListView extends StatelessWidget {
+  final Iterable<CloudNote> lists;
+  final ListCallback onDeleteNote;
+  final ListCallback onTap;
+
+  const ListView({
+    Key? key,
+    required this.lists,
+    required this.onDeleteNote,
+    required this.onTap,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: lists.length,
+      itemBuilder: (context, index) {
+        final list = lists.elementAt(index);
+        return ListTile(
+          onTap: () {
+            onTap(list);
+          },
+          title: Text(
+            list.text,
+            maxLines: 1,
+            softWrap: true,
+            overflow: TextOverflow.ellipsis,
+          ),
+          trailing: IconButton(
+            onPressed: () async {
+              final shouldDelete = await showDeleteDialog(context);
+              if (shouldDelete) {
+                onDeleteNote(list);
+              }
+            },
+            icon: const Icon(Icons.delete),
+          ),
+        );
+      },
+    );
+  }
+}
+
+
+
+
+
+//Begining of the comment out due to view edits
+
+
+
+/* //======================================================================================
 //VIEW LISTS PAGE START
 //======================================================================================
 class _ViewListsState extends State<ViewListsPage> {
@@ -117,4 +171,4 @@ class _ViewListsState extends State<ViewListsPage> {
 class ViewListsPage extends StatefulWidget {
   @override
   _ViewListsState createState() => _ViewListsState();
-}
+} */
