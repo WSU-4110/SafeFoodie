@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:size_config/size_config.dart';
+import 'package:size_config/util/size_extention.dart';
 
 void main() => runApp(MyApp());
 
@@ -179,9 +181,10 @@ class HomeScreen extends StatelessWidget {
 
 //Nav function for create list/add item search page
 
-//Nav function for settings 
+//Nav function for settings
 
 }
+
 //======================================================================================
 //======================================================================================
 //Firebase Authorization
@@ -210,9 +213,9 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
-//Search lists page 
+//Search lists page
 
-//Add item/create page 
+//Add item/create page
 
 //settings page
 
@@ -485,33 +488,31 @@ class _MainPageState extends State<MainPage> {
         ),
 
 //======================================
-                          SizedBox(
-                    height: 200,
-                  ),
+        SizedBox(
+          height: 200,
+        ),
         Container(
             child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            IconButton(icon: const Icon(Icons.align_horizontal_left),
-            color: Colors.white, //view all lists
-            onPressed: () {
+            IconButton(
+                icon: const Icon(Icons.align_horizontal_left),
+                color: Colors.white, //view all lists
+                onPressed: () {
 //_ToViewListsScreen(context);
-            }
-            ),
-             IconButton(icon: const Icon(Icons.search),
-             color: Colors.white,  //search lists
-            onPressed: () {
-            }),
-             IconButton(icon: const Icon(Icons.add_circle),
-             color: Colors.white,  //Create list, add item
-            onPressed: () {
-
-            }),
-             IconButton(icon: const Icon(Icons.settings),
-             color: Colors.white,  //settings
-            onPressed: () {
-
-            }),
+                }),
+            IconButton(
+                icon: const Icon(Icons.search),
+                color: Colors.white, //search lists
+                onPressed: () {}),
+            IconButton(
+                icon: const Icon(Icons.add_circle),
+                color: Colors.white, //Create list, add item
+                onPressed: () {}),
+            IconButton(
+                icon: const Icon(Icons.settings),
+                color: Colors.white, //settings
+                onPressed: () {}),
           ],
         ))
 
@@ -620,7 +621,7 @@ class _ViewListsState extends State<ViewListsPage> {
 
 //======================================================================================
 //NAV FUNCTIONS
-//====================================================================================== 
+//======================================================================================
 //Nav function for view lists page
   void _ToViewListsScreen(BuildContext context) {
     Navigator.of(context)
@@ -635,4 +636,80 @@ class _ViewListsState extends State<ViewListsPage> {
 class ViewListsPage extends StatefulWidget {
   @override
   _ViewListsState createState() => _ViewListsState();
+}
+
+//======================================================================================
+//SCALABILITY ACROSS MULTIPLE DEVICES
+//======================================================================================
+class SizeConfig extends State<StatefulWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: LayoutBuilder(builder: (context, constraint) {
+        SizeConfig().init(
+            minFontSize: 30,
+            context: context,
+            safeAreaBox: constraint,
+            referenceHeight: 800,
+            referenceWidth: 360);
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // using .h and .w for responsive width and height
+              Image.asset(
+                "assets/image.png",
+                height: 200.h,
+                width: 200.w,
+                scale: 0.5,
+              ),
+              // using .sp for responsive font size
+              Text(
+                "Login",
+                style: TextStyle(fontSize: 22.sp),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      hintStyle: TextStyle(fontSize: 12.sp),
+                      constraints:
+                          BoxConstraints(maxWidth: 200.w, maxHeight: 30.h),
+                      hintText: "Enter Email"),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  style: TextStyle(fontSize: 12.sp),
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      hintStyle: TextStyle(
+                        fontSize: 12.sp,
+                      ),
+                      constraints:
+                          BoxConstraints(maxWidth: 200.w, maxHeight: 30.h),
+                      hintText: "Enter Password"),
+                ),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  print("Logged in successfully");
+                },
+                height: 20.h,
+                minWidth: 100.h,
+              )
+            ],
+          ),
+        );
+      }),
+    );
+  }
+
+  void init(
+      {required int minFontSize,
+      required BuildContext context,
+      required BoxConstraints safeAreaBox,
+      required int referenceHeight,
+      required int referenceWidth}) {}
 }
