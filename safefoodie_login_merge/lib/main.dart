@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -634,6 +636,77 @@ class _ViewListsState extends State<ViewListsPage> {
 //======================================================================================
 //View lists page
 class ViewListsPage extends StatefulWidget {
+  const ViewListsPage({super.key});
+
   @override
   _ViewListsState createState() => _ViewListsState();
+}
+
+//======================================================================================
+//SCALABILITY ACROSS MULTIPLE DEVICES
+//======================================================================================
+class SizeConfigState extends State<StatefulWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: LayoutBuilder(builder: (context, constraint) {
+        SizeConfig().init(
+            minFontSize: 30,
+            context: context,
+            safeAreaBox: constraint,
+            referenceHeight: 800,
+            referenceWidth: 360);
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // using .h and .w for responsive width and height
+              Image.asset(
+                "assets/image.png",
+                height: 200.h,
+                width: 200.w,
+                scale: 0.5,
+              ),
+              // using .sp for responsive font size
+              Text(
+                "Login",
+                style: TextStyle(fontSize: 22.sp),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      hintStyle: TextStyle(fontSize: 12.sp),
+                      constraints:
+                          BoxConstraints(maxWidth: 200.w, maxHeight: 30.h),
+                      hintText: "Enter Email"),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  style: TextStyle(fontSize: 12.sp),
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      hintStyle: TextStyle(
+                        fontSize: 12.sp,
+                      ),
+                      constraints:
+                          BoxConstraints(maxWidth: 200.w, maxHeight: 30.h),
+                      hintText: "Enter Password"),
+                ),
+              ),
+              MaterialButton(
+                onPressed: () {
+                  print("Logged in successfully");
+                },
+                height: 20.h,
+                minWidth: 100.h,
+              )
+            ],
+          ),
+        );
+      }),
+    );
+  }
 }
