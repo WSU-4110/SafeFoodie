@@ -83,7 +83,7 @@ class LoginScreen extends StatelessWidget {
 //Forgot password prompt
         TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, 'PasswordScreen');
+            Navigator.pushNamed(context, 'ResetPasswordScreen');
           },
           child: const Text(
             'Forgot Password?',

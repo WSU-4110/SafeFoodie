@@ -6,7 +6,7 @@ import 'LoginPage.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class PasswordScreen extends StatelessWidget {
+class ResetPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(

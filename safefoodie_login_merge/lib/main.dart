@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 // Must Import .Dart inorder to build the widgets
 import 'LoginPage.dart';
-import 'Password.dart';
+import 'Rest_Password_page.dart';
 import 'signup.dart';
 import 'Mainpage.dart';
 ///////////////////////////////////////////////////
@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
         'LoginScreen': (context) => LoginScreen(),
         // When navigating to the "SignupScreen" route, build the SignupScreen widget.
         'SignupScreen': (context) => SignupScreen(),
-        // When navigating to the "PasswordScreen" route, build the PasswordScreen widget.
-        'PasswordScreen': (context) => PasswordScreen(),
+        // When navigating to the "ResetPasswordScreen" route, build the ResetPasswordScreen widget.
+        'ResetPasswordScreen': (context) => ResetPasswordScreen(),
         // When navigating to the "Mainpage" route, build the Mainpage widget.
         'Mainpage': (context) => Mainpage(),
       },
