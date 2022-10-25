@@ -6,24 +6,22 @@ import 'LoginPage.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class SignupScreen extends StatelessWidget {
-//======================================================================================
-//SIGNUP PAGE START
-//======================================================================================
+class PasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: AppBar(title: const Text('Sign up!!!')),
+        appBar: AppBar(title: const Text('Account recovery')),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
+              alignment: Alignment.center,
               child: Stack(
                 children: <Widget>[
                   Container(
-                    alignment: Alignment.center,
                     padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
-                    child: Text("Sign up now!", style: TextStyle(fontSize: 40)),
+                    child:
+                        Text("Password reset", style: TextStyle(fontSize: 40)),
                   )
                 ],
               ),
@@ -35,6 +33,7 @@ class SignupScreen extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   TextField(
+                    // controller: _emailController,
                     decoration: const InputDecoration(
                       enabledBorder: const OutlineInputBorder(
                         borderSide:
@@ -42,29 +41,14 @@ class SignupScreen extends StatelessWidget {
                       ),
                       border: const OutlineInputBorder(),
                       labelStyle: TextStyle(color: Colors.white),
-                      labelText: 'Email',
+                      labelText: 'Enter account email',
                     ),
                   ),
                   SizedBox(
                     height: 20,
                   ),
-                  TextField(
-                    decoration: const InputDecoration(
-                      enabledBorder: const OutlineInputBorder(
-                        borderSide:
-                            const BorderSide(color: Colors.white, width: 0.0),
-                      ),
-                      border: const OutlineInputBorder(),
-                      labelStyle: TextStyle(color: Colors.white),
-                      labelText: 'Password',
-                    ),
-                    obscureText: true,
-                  ),
                   SizedBox(
                     height: 5.0,
-                  ),
-                  SizedBox(
-                    height: 40,
                   ),
 //======================================
 // sign up button
@@ -77,9 +61,11 @@ class SignupScreen extends StatelessWidget {
                       color: Colors.green,
                       elevation: 7,
                       child: GestureDetector(
-                          onTap: () async {},
+                          onTap: () async {
+                            //      _register();
+                          },
                           child: Center(
-                              child: Text('SIGNUP',
+                              child: Text('SEND RESET EMAIL',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
