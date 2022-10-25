@@ -6,10 +6,10 @@ import 'LoginPage.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class SignupScreen extends StatelessWidget {
 //======================================================================================
 //SIGNUP PAGE START
 //======================================================================================
+class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
