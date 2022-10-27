@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter/foundation.dart' show immutable;
 import 'package:safefoodie_login_merge/Firebase/auth/user.dart';
 import 'package:equatable/equatable.dart';
@@ -62,5 +62,5 @@ class StateLoggedOut extends State with EquatableMixin {
   }) : super(loading: loading, loadingText: loadingText);
 
   @override
-  List<Object> get props => [exception, loading];
+  List<Object?> get props => [exception, loading];
 }
