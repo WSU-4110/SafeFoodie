@@ -34,7 +34,7 @@ class StateResetPassword extends State {
   const StateResetPassword({
     required this.exception,
     required this.sentEmail,
-    required this.loading,
+    required bool loading,
   }) : super(loading: loading);
 }
 
