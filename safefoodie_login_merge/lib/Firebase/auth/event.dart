@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:flutter/foundation.dart' show immutable;
 
 @immutable

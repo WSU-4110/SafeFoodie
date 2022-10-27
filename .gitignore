@@ -1,1 +1,6 @@
 
+safefoodie_login_merge/android/local.properties
+*.properties
+*.sh
+*.xcconfig
+*.xcconfig
