@@ -2,10 +2,28 @@
   "configVersion": 2,
   "packages": [
     {
+      "name": "_fe_analyzer_shared",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/_fe_analyzer_shared-50.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "_flutterfire_internals",
       "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/_flutterfire_internals-1.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.16"
+    },
+    {
+      "name": "analyzer",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/analyzer-5.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "args",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/args-2.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "async",
@@ -62,8 +80,38 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "color",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/color-3.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "convert",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/convert-3.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "crypto",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "dart_style",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/dart_style-2.2.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "dartx",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/dartx-1.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -76,6 +124,12 @@
     {
       "name": "fake_async",
       "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "file",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/file-6.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -146,8 +200,26 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_gen",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_gen-5.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "flutter_gen_core",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_gen_core-5.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "flutter_localizations",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/packages/flutter_localizations",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
@@ -162,6 +234,12 @@
       "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "glob",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/glob-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
     },
     {
       "name": "http_parser",
@@ -180,6 +258,12 @@
       "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4",
       "packageUri": "lib/",
       "languageVersion": "2.16"
+    },
+    {
+      "name": "json_annotation",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/json_annotation-4.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
     },
     {
       "name": "lints",
@@ -206,8 +290,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "mime",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/mime-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "nested",
       "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "package_config",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/package_config-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -218,6 +314,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "petitparser",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-5.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "plugin_platform_interface",
       "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/plugin_platform_interface-2.1.3",
       "packageUri": "lib/",
@@ -226,6 +328,12 @@
     {
       "name": "provider",
       "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "pub_semver",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/pub_semver-2.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -272,6 +380,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "time",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/time-2.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "typed_data",
       "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.3.1",
       "packageUri": "lib/",
@@ -284,13 +398,31 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "watcher",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/watcher-1.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "xml",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/xml-6.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "yaml",
+      "rootUri": "file:///C:/Users/Savannah/Documents/Flutter/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-3.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "safefoodie_login_merge",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-10-28T03:38:20.427205Z",
+  "generated": "2022-10-28T05:43:37.619245Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }

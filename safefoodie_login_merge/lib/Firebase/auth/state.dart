@@ -4,22 +4,22 @@ import 'package:safefoodie_login_merge/Firebase/auth/user.dart';
 import 'package:equatable/equatable.dart';
 
 @immutable
-abstract class State {
+abstract class AuthState {
   final bool loading;
   final String? loadingText;
-  const State({
+  const AuthState({
     required this.loading,
     this.loadingText = 'Please wait',
   });
 }
 
 //state that something is not initialized
-class StateUninitialized extends State {
+class StateUninitialized extends AuthState {
   const StateUninitialized({required bool loading}) : super(loading: loading);
 }
 
 //Registration state
-class StateRegistering extends State {
+class StateRegistering extends AuthState {
   final Exception? exception;
   const StateRegistering({
     required this.exception,
@@ -28,7 +28,7 @@ class StateRegistering extends State {
 }
 
 //Reset Password state
-class StateResetPassword extends State {
+class StateResetPassword extends AuthState {
   final Exception? exception;
   final bool sentEmail;
   const StateResetPassword({
@@ -39,7 +39,7 @@ class StateResetPassword extends State {
 }
 
 //Logged in state
-class StateLoggedIn extends State {
+class StateLoggedIn extends AuthState {
   final AuthUser user;
   const StateLoggedIn({
     required this.user,
@@ -48,12 +48,12 @@ class StateLoggedIn extends State {
 }
 
 //email verification state
-class StateVerification extends State {
+class StateVerification extends AuthState {
   const StateVerification({required bool loading}) : super(loading: loading);
 }
 
 //Logged out state
-class StateLoggedOut extends State with EquatableMixin {
+class StateLoggedOut extends AuthState with EquatableMixin {
   final Exception? exception;
   const StateLoggedOut({
     required this.exception,
