@@ -42,8 +42,11 @@ dependencies:
   equatable: ^2.0.5
   bloc: ^8.1.0
   flutter_bloc: ^8.1.1
-  flutter_localizations: 
-    sdk: flutter 
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
   flutter_gen: ^5.0.3
 
 
@@ -51,6 +54,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  build_runner:
+  flutter_gen_runner:
+  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -66,7 +73,7 @@ module:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
