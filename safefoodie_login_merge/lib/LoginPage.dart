@@ -10,7 +10,12 @@ Future<FirebaseApp> _initializeFirebase() async {
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

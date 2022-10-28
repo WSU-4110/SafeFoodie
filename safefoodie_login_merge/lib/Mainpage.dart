@@ -6,10 +6,13 @@ import 'LoginPage.dart';
 
 //page after login
 
-class Mainpage extends StatelessWidget {
-//=======================================
-//Button Widgets
+class Mainpage extends StatefulWidget {
+  @override
+  State<Mainpage> createState() => _MainpageState();
+}
 
+class _MainpageState extends State<Mainpage> {
+//=======================================
   @override
   Widget build(BuildContext context) {
     return Scaffold(

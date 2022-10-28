@@ -9,7 +9,12 @@ final FirebaseAuth _auth = FirebaseAuth.instance;
 //======================================================================================
 //SIGNUP PAGE START
 //======================================================================================
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
