@@ -9,8 +9,7 @@ import 'package:safefoodie_login_merge/views/signup.dart';
 
 //Nav function for signup
 void _TosignupScreen(BuildContext context) {
-  Navigator.of(context)
-      .push(MaterialPageRoute(builder: (context) => SignupPage()));
+  Navigator.pushNamed(context, SignupPage);
 }
 
 //Nav function for password reset page

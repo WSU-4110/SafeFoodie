@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:safefoodie_login_merge/Firebase/auth/state.dart' as prefix;
+import 'package:safefoodie_login_merge/Firebase/auth/state.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/event.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/auth_bloc.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/auth_exceptions.dart';
@@ -36,7 +36,7 @@ class _RegisterViewState extends State<RegisterView> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthBloc, State>(
+    return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) async {
         if (state is StateRegistering) {
           if (state.exception is WeakPasswordAuthException) {
