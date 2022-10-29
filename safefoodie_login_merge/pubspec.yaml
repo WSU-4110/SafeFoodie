@@ -22,6 +22,7 @@ version: 1.0.0+1
 environment:
   sdk: '>=2.18.2 <3.0.0'
 
+
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
@@ -39,13 +40,24 @@ dependencies:
   provider: ^6.0.3
   firebase_database: ^9.1.7
   equatable: ^2.0.5
-  flutter_bloc: ^8.0.0
   bloc: ^8.1.0
+  flutter_bloc: ^8.1.1
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
+  flutter_gen: ^5.0.3
+
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  build_runner:
+  flutter_gen_runner:
+  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -56,10 +68,12 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+module:
+  androidX: true # Add this line.
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

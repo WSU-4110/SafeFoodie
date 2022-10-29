@@ -4,7 +4,7 @@ import 'package:safefoodie_login_merge/Firebase/auth/event.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AuthBloc extends Bloc<Event, State> {
+class AuthBloc extends Bloc<Event, AuthState> {
   AuthBloc(Provider provider) : super(const StateUninitialized(loading: true)) {
     on<EventRegister>((event, emit) {
       emit(const StateRegistering(exception: null, loading: false));
@@ -67,8 +67,7 @@ class AuthBloc extends Bloc<Event, State> {
         if (user == null) {
           emit(const StateLoggedOut(exception: null, loading: false));
         } else if (!user.isVerified) {
-          emit(StateLoggedIn(
-              user: user, loading: false)); //SP: took out const for testing
+          emit(StateLoggedIn(user: user, loading: false));
         }
       },
     );
