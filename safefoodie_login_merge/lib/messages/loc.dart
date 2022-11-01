@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' show BuildContext;
-import '' show AppLocalizations;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart'
+    show AppLocalizations;
 
 extension Localization on BuildContext {
   AppLocalizations get loc => AppLocalizations.of(this)!;
