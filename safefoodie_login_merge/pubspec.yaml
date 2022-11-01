@@ -42,6 +42,8 @@ dependencies:
   cloud_firestore: ^3.5.0
   provider: ^6.0.3
   size_config: ^1.0.2
+  http: ^0.13.5
+
 
 
 dev_dependencies:

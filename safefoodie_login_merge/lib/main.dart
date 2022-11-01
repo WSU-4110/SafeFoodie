@@ -4,6 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:safefoodie_login_merge/api_service.dart';
+import 'package:safefoodie_login_merge/modelClass.dart';
 import 'package:size_config/size_config.dart';
 import 'package:size_config/util/size_extention.dart';
 
@@ -643,7 +645,7 @@ class ViewListsPage extends StatefulWidget {
 }
 
 //======================================================================================
-//SCALABILITY ACROSS MULTIPLE DEVICES
+//SCALABILITY ACROSS MULTIPLE DEVICES (change parameters later when finished with front-end)
 //======================================================================================
 class SizeConfigState extends State<StatefulWidget> {
   @override
@@ -707,6 +709,49 @@ class SizeConfigState extends State<StatefulWidget> {
           ),
         );
       }),
+    );
+  }
+}
+
+//====================================================================
+//FOOD RECALL FDA API
+//====================================================================
+class FoodRecallAPI extends State<StatefulWidget> {
+  late Future<Result> futureResult;
+
+  @override
+  void initState() {
+    super.initState();
+    futureResult = fetchResult();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Fetch Recall Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Fetch Recall Example'),
+        ),
+        body: Center(
+          child: FutureBuilder<Result>(
+            future: futureResult,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(snapshot.data!.reasonForRecall);
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+
+              // By default, show a loading spinner.
+              return const CircularProgressIndicator();
+            },
+          ),
+        ),
+      ),
     );
   }
 }
