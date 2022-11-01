@@ -12,6 +12,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      localizationsDelegates: [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en', ''), // English, no country code
+        Locale('es', ''), // Spanish, no country code
+      ],
       theme: ThemeData(
         primarySwatch: Colors.green,
         scaffoldBackgroundColor:
