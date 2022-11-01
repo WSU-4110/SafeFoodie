@@ -8,6 +8,9 @@ import 'package:safefoodie_login_merge/Firebase/auth/event.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/auth_bloc.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/auth_exceptions.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:safefoodie_login_merge/loc.dart';
+import 'package:safefoodie_login_merge/messages/loc.dart';
+import 'package:safefoodie_login_merge/util/error.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);
