@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:safefoodie_login_merge/messages/generic_messages.dart';
+import 'package:safefoodie_login_merge/messages/loc.dart';
 
 Future<void> showErrorDialog(
   BuildContext context,
