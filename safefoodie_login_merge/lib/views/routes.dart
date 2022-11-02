@@ -5,29 +5,32 @@ import 'package:safefoodie_login_merge/views/list_view.dart';
 import 'package:safefoodie_login_merge/views/login.dart';
 import 'package:safefoodie_login_merge/views/signup.dart';
 import 'package:safefoodie_login_merge/views/homepage.dart';
-  class RouterNavigator {
-    static Route<dynamic> generateRoute(RouteSettings settings) {
-      switch (settings.name) {
-        case '/':
-          return MaterialPageRoute<MainPage>(builder: (context) => MainPage());
 
-        case loginRoute:
-          return MaterialPageRoute<>(builder: (context) => Login());
+class RouterNavigator {
+  static Route<dynamic> generateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case '/':
+        return MaterialPageRoute<MainPage>(builder: (context) => MainPage());
 
-        case registerRoute:
-          return MaterialPageRoute<RegisterView>(builder: (context) => RegisterView());
+      case loginRoute:
+        return MaterialPageRoute<LoginScreen>(
+            builder: (context) => LoginScreen());
 
-        case forgotPWRoute:
-          return MaterialPageRoute<ResetPage>(builder: (context) => ResetPage());
+      case registerRoute:
+        return MaterialPageRoute<RegisterView>(
+            builder: (context) => RegisterView());
 
-        case homepageRoute:
-          return MaterialPageRoute<MainPage>(builder: (context) => MainPage());
+      case forgotPWRoute:
+        return MaterialPageRoute<ResetPage>(builder: (context) => ResetPage());
 
-        case listRoute:
-          return MaterialPageRoute<ListsView>(builder: (context) => ListsView());
+      case homepageRoute:
+        return MaterialPageRoute<MainPage>(builder: (context) => MainPage());
 
-        default:
-          return MaterialPageRoute<MainPage>(builder: (context) => MainPage());
-      }
+      case listRoute:
+        return MaterialPageRoute<ListsView>(builder: (context) => ListsView());
+
+      default:
+        return MaterialPageRoute<MainPage>(builder: (context) => MainPage());
     }
   }
+}
