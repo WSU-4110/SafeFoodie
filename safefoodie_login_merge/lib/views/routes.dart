@@ -6,8 +6,8 @@ import 'package:safefoodie_login_merge/views/login.dart';
 import 'package:safefoodie_login_merge/views/signup.dart';
 import 'package:safefoodie_login_merge/views/homepage.dart';
 
-class RouterNavigator {
-  static Route<dynamic> generateRoute(RouteSettings settings) {
+class RouterNav {
+  Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute<MainPage>(builder: (context) => MainPage());

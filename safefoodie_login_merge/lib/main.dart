@@ -3,6 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:safefoodie_login_merge/views/route_names.dart';
+import 'package:safefoodie_login_merge/views/route_names.dart';
+import 'package:safefoodie_login_merge/views/routes.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,10 +16,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: homepageRoute,
+      //onGenerateRoute: Route.;
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       supportedLocales: [
-        const Locale('en', 'US'), // American English
-        const Locale('he', 'IL'), // Israeli Hebrew
+        const Locale('en', ' '), // American English
+        const Locale('es', ' '), // Spanish
       ],
       theme: ThemeData(
         primarySwatch: Colors.green,
@@ -165,7 +170,7 @@ class HomeScreen extends StatelessWidget {
 //======================================================================================
 //NAV FUNCTIONS
 //======================================================================================
-//Nav function for signup
+/*//Nav function for signup
   void _TosignupScreen(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => SignupPage()));
@@ -183,6 +188,7 @@ class HomeScreen extends StatelessWidget {
         .push(MaterialPageRoute(builder: (context) => MainPage()));
   }
 
+*/
 //Nav function for search lists page
 
 //Nav function for create list/add item search page
