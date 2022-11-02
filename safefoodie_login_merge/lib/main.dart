@@ -2,12 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 // Must Import .Dart inorder to build the widgets
 import 'LoginPage.dart';
 import 'Rest_Password_page.dart';
 import 'signup.dart';
 import 'Mainpage.dart';
+import 'GoogleMap.dart';
+
 ///////////////////////////////////////////////////
 
 void main() => runApp(MyApp());
@@ -40,6 +43,7 @@ class _MyAppState extends State<MyApp> {
         'ResetPasswordScreen': (context) => ResetPasswordScreen(),
         // When navigating to the "Mainpage" route, build the Mainpage widget.
         'Mainpage': (context) => Mainpage(),
+        'Map': (context) => MapSample(),
       },
     );
   }

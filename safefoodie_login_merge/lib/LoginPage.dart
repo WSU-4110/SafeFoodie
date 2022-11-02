@@ -121,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     fontSize: 20),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, 'SignupScreen');
+                Navigator.pushNamed(context, 'Map');
               },
             )
           ],
