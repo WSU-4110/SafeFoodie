@@ -15,76 +15,91 @@ class _MainpageState extends State<Mainpage> {
 //=======================================
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Home',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+        scaffoldBackgroundColor:
+            Color.fromARGB(166, 72, 168, 75), //color of background
+        textTheme: Typography().white, //sets default text to white
+      ),
+      home: MyStatefulWidget(),
+    );
+  }
+}
+
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({super.key});
+
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  int _selectedIndex = 0;
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'My lists',
+      style: optionStyle,
+    ),
+    Text(
+      'Search Lists',
+      style: optionStyle,
+    ),
+    Text(
+      'Filler',
+      style: optionStyle,
+    ),
+    Text(
+      'Settings',
+      style: optionStyle,
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: ListView(children: <Widget>[
-//======================================
-//title header
-        Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.all(10),
-            child: const Text(
-              'SafeFoodie',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 30),
-            )),
-
-        Icon(
-          Icons.bakery_dining_rounded,
-          color: Color.fromARGB(216, 230, 182, 53),
-        ),
-
-        // Temp Go back Botton
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            InkWell(
-              onTap: () {
-                Navigator.of(context).pop();
-              },
-              child: Text('Go Back',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.bold,
-                      decoration: TextDecoration.underline)),
-            )
-          ],
-        ),
-
-//======================================
-        SizedBox(
-          height: 200,
-        ),
-        Container(
-            child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-                icon: const Icon(Icons.align_horizontal_left),
-                color: Colors.white, //view all lists
-                onPressed: () {
-//_ToViewListsScreen(context);
-                }),
-            IconButton(
-                icon: const Icon(Icons.search),
-                color: Colors.white, //search lists
-                onPressed: () {}),
-            IconButton(
-                icon: const Icon(Icons.add_circle),
-                color: Colors.white, //Create list, add item
-                onPressed: () {}),
-            IconButton(
-                icon: const Icon(Icons.settings),
-                color: Colors.white, //settings
-                onPressed: () {}),
-          ],
-        ))
-
-//======================================
-      ])),
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          // Create List
+        },
+        label: const Text('Create New List'),
+        icon: Icon(Icons.add_circle),
+        backgroundColor: Colors.green,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed, // Fixed
+        backgroundColor: Colors.green, // <-- This works for fixed
+        selectedItemColor: Color.fromARGB(216, 230, 182, 53),
+        unselectedItemColor: Colors.brown,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.align_horizontal_left),
+            label: 'View Lists',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_outlined),
+            label: 'Account',
+          ),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
