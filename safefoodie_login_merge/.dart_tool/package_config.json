@@ -194,6 +194,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "settings_ui",
+      "rootUri": "file:///C:/Downloaded%20Utilities/flutter/.pub-cache/hosted/pub.dartlang.org/settings_ui-2.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///C:/Downloaded%20Utilities/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -254,7 +260,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-11-02T02:18:51.211753Z",
+  "generated": "2022-11-02T03:51:23.033901Z",
   "generator": "pub",
   "generatorVersion": "2.18.2"
 }

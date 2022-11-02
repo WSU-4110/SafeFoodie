@@ -2,20 +2,22 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:settings_ui/settings_ui.dart';
+
 import 'Mainpage.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class ListsPage extends StatefulWidget {
+class Settings extends StatefulWidget {
   @override
-  State<ListsPage> createState() => _ListsPageState();
+  State<Settings> createState() => _SettingsState();
 }
 
-class _ListsPageState extends State<ListsPage> {
+class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: AppBar(title: const Text('Lists')),
+        appBar: AppBar(title: const Text('Account')),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

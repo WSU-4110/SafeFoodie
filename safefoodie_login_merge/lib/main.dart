@@ -8,6 +8,9 @@ import 'LoginPage.dart';
 import 'Rest_Password_page.dart';
 import 'signup.dart';
 import 'Mainpage.dart';
+import 'lists.dart';
+import 'Search.dart';
+import 'Account.dart';
 ///////////////////////////////////////////////////
 void main() => runApp(MyApp());
 
@@ -39,6 +42,12 @@ class _MyAppState extends State<MyApp> {
         'ResetPasswordScreen': (context) => ResetPasswordScreen(),
         // When navigating to the "Mainpage" route, build the Mainpage widget.
         'Mainpage': (context) => Mainpage(),
+        // When navigating to the "Settings" route, build the Mainpage widget.
+        'Settings': (context) => Settings(),
+        // When navigating to the "Mainpage" route, build the Mainpage widget.
+        'SearchPage': (context) => SearchPage(),
+        // When navigating to the "Mainpage" route, build the Mainpage widget.
+        'ListsPage': (context) => ListsPage(),                        
       },
     );
   }
