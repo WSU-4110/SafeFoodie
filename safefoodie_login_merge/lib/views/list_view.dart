@@ -2,16 +2,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:safefoodie_login_merge/util/delete.dart';
 import 'package:safefoodie_login_merge/Firebase/cloud/cloud_note.dart';
 
 typedef ListCallback = void Function(CloudNote);
 
-class ListView extends StatelessWidget {
+class ListsView extends StatelessWidget {
   final Iterable<CloudNote> lists;
   final ListCallback onDeleteNote;
   final ListCallback onTap;
 
-  const ListView({
+  const ListsView({
     Key? key,
     required this.lists,
     required this.onDeleteNote,
@@ -20,7 +21,7 @@ class ListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListsView.builder(
       itemCount: lists.length,
       itemBuilder: (context, index) {
         final list = lists.elementAt(index);
