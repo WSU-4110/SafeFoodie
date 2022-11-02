@@ -49,10 +49,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       style: optionStyle,
     ),
     Text(
-      'Filler',
-      style: optionStyle,
-    ),
-    Text(
       'Settings',
       style: optionStyle,
     ),
@@ -70,6 +66,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
+      
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           // Create List
