@@ -4,13 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // Must Import .Dart inorder to build the widgets
-import 'LoginPage.dart';
-import 'Rest_Password_page.dart';
-import 'signup.dart';
-import 'Mainpage.dart';
-import 'lists.dart';
-import 'Search.dart';
-import 'Account.dart';
+import 'Screens/UserSignup/LoginPage.dart';
+import 'Screens/UserSignup/Rest_Password_page.dart';
+import 'Screens/UserSignup/signup.dart';
+import 'Screens/Mainpage.dart';
+import 'Screens/lists.dart';
+import 'Screens/Search.dart';
+import 'Screens/Account.dart';
 ///////////////////////////////////////////////////
 void main() => runApp(MyApp());
 
