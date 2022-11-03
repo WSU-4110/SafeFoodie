@@ -20,8 +20,6 @@
     "login_error_cannot_find_user": "Cannot find a user with the entered email!",
     "login_error_wrong_credentials": "Wrong email or password",
     "login_error_auth_error": "Authentication error",
-
-    "login_view_prompt": "Login",
     
     "login_view_forgot_password": "Forgot Password",
     "login_view_not_registered_yet": "Not registered yet? Register here!",

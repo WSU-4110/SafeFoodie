@@ -114,6 +114,14 @@ dartx
 2.12
 file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/dartx-1.1.0/
 file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/dartx-1.1.0/lib/
+dependencies
+2.0
+file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/dependencies-0.1.5/
+file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/dependencies-0.1.5/lib/
+disposables
+2.0
+file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/disposables-0.1.2/
+file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/disposables-0.1.2/lib/
 equatable
 2.12
 file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/equatable-2.0.5/
@@ -170,10 +178,6 @@ flutter_bloc
 2.12
 file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-8.1.1/
 file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-8.1.1/lib/
-flutter_gen
-2.14
-file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_gen-5.0.3/
-file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_gen-5.0.3/lib/
 flutter_gen_core
 2.14
 file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_gen_core-5.0.3/
@@ -282,6 +286,10 @@ pubspec_parse
 2.14
 file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-1.2.1/
 file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-1.2.1/lib/
+quiver
+2.0
+file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.5/
+file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.5/lib/
 shelf
 2.17
 file:///Users/aakashmukhi/Documents/Aakash%20Mukhi/Wayne%20State%20/Fall%202022/Software%20Engineering/SafeFoodie/flutter/.pub-cache/hosted/pub.dartlang.org/shelf-1.4.0/

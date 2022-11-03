@@ -127,7 +127,7 @@ class HomeScreen extends StatelessWidget {
   //Nav function for signup
   void _TosignupScreen(BuildContext context) {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => SignupPage()));
+        .push(MaterialPageRoute(builder: (context) => RegisterView()));
   }
 
 //Nav function for password reset page

@@ -1,11 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:safefoodie_login_merge/views/signup.dart';
-import 'package:safefoodie_login_merge/views/login.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:safefoodie_login_merge/views/forgot_pw.dart';
-import 'package:safefoodie_login_merge/views/homepage.dart';
+import 'package:safefoodie_login_merge/views/route_names.dart';
+import 'package:safefoodie_login_merge/views/route_names.dart';
+import 'package:safefoodie_login_merge/views/routes.dart';
+import 'package:safefoodie_login_merge/views/signup.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,6 +18,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: homepageRoute,
+      //onGenerateRoute: Route.;
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      supportedLocales: [
+        const Locale('en', ' '), // American English
+        const Locale('es', ' '), // Spanish
+      ],
       theme: ThemeData(
         primarySwatch: Colors.green,
         scaffoldBackgroundColor:
@@ -117,7 +126,7 @@ class HomeScreen extends StatelessWidget {
 //Forgot password prompt
         TextButton(
           onPressed: () {
-            _ToresetScreen(context);
+            Navigator.pushNamed(context, loginRoute);
           },
           child: const Text(
             'Forgot Password?',
@@ -131,7 +140,7 @@ class HomeScreen extends StatelessWidget {
             child: ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
-                _ToMainScreen(context);
+                Navigator.pushNamed(context, homepageRoute);
                 //print(nameController.text);
                 //print(passwordController.text);
               },
@@ -150,7 +159,7 @@ class HomeScreen extends StatelessWidget {
                     fontSize: 20),
               ),
               onPressed: () {
-                _TosignupScreen(context);
+                Navigator.pushNamed(context, registerRoute);
               },
             )
           ],
@@ -163,7 +172,7 @@ class HomeScreen extends StatelessWidget {
 //======================================================================================
 //NAV FUNCTIONS
 //======================================================================================
-//Nav function for signup
+/*//Nav function for signup
   void _TosignupScreen(BuildContext context) {
     Navigator.of(context)
         .push(MaterialPageRoute(builder: (context) => SignupPage()));
@@ -181,6 +190,7 @@ class HomeScreen extends StatelessWidget {
         .push(MaterialPageRoute(builder: (context) => MainPage()));
   }
 
+*/
 //Nav function for search lists page
 
 //Nav function for create list/add item search page
@@ -226,7 +236,7 @@ class MainPage extends StatefulWidget {
 //======================================================================================
 //EMAIL SIGNUP FUNCTION
 //======================================================================================
-class _SignupPageState extends State<SignupPage> {
+class _SignupPageState extends State<RegisterView> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   late bool _sucess;
@@ -464,7 +474,7 @@ class _ResetPageState extends State<ResetPage> {
 //HOME PAGE START
 //======================================================================================
 
-class _MainPageState extends State<MainPage> {
+class _MainPageState extends State<HomeScreen> {
 //=======================================
 //Button Widgets
 

@@ -7,26 +7,19 @@ import 'package:safefoodie_login_merge/views/forgot_pw.dart';
 import 'package:safefoodie_login_merge/views/login.dart';
 import 'package:safefoodie_login_merge/views/signup.dart';
 
-//Nav function for signup
-void _TosignupScreen(BuildContext context) {
-  Navigator.pushNamed(context, SignupPage);
+Future<FirebaseApp> _initializeFirebase() async {
+  FirebaseApp firebaseApp = await Firebase.initializeApp();
+  return firebaseApp;
 }
 
-//Nav function for password reset page
-void _ToresetScreen(BuildContext context) {
-  Navigator.of(context)
-      .push(MaterialPageRoute(builder: (context) => ResetPage()));
+final FirebaseAuth _auth = FirebaseAuth.instance;
+
+class LoginScreen extends StatefulWidget {
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-//Nav function for main page
-void _ToMainScreen(BuildContext context) {
-  Navigator.of(context)
-      .push(MaterialPageRoute(builder: (context) => HomeScreen()));
-}
-
-//======================================
-// Initialize homescreen features
-class HomeScreen extends StatelessWidget {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,7 +92,7 @@ class HomeScreen extends StatelessWidget {
 //Forgot password prompt
         TextButton(
           onPressed: () {
-            _ToresetScreen(context);
+            Navigator.pushNamed(context, 'ResetPasswordScreen');
           },
           child: const Text(
             'Forgot Password?',
@@ -113,7 +106,7 @@ class HomeScreen extends StatelessWidget {
             child: ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
-                _ToMainScreen(context);
+                Navigator.pushNamed(context, 'Mainpage');
                 //print(nameController.text);
                 //print(passwordController.text);
               },
@@ -132,7 +125,7 @@ class HomeScreen extends StatelessWidget {
                     fontSize: 20),
               ),
               onPressed: () {
-                _TosignupScreen(context);
+                Navigator.pushNamed(context, 'SignupScreen');
               },
             )
           ],
@@ -142,3 +135,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+//======================================================================================
+
