@@ -124,7 +124,8 @@ class HomeScreen extends StatelessWidget {
 //Forgot password prompt
         TextButton(
           onPressed: () {
-            _ToresetScreen(context);
+            Navigator.pushNamed(context, loginRoute);
+            ;
           },
           child: const Text(
             'Forgot Password?',
