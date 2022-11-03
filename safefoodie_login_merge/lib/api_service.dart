@@ -8,6 +8,9 @@ import 'constants.dart';
 Future<Result> fetchResult() async {
   final response =
       await http.get(Uri.parse('https://api.fda.gov/food/enforcement.json'));
+  var body = response.body;
+  Result results = Result.fromJson(jsonDecode(body));
+  print(results.toString());
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,

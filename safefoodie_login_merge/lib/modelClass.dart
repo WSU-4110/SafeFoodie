@@ -147,7 +147,7 @@ class Result {
         country: json["country"],
         city: json["city"],
         address1: json["address_1"],
-        reasonForRecall: json["reason_for_recall"],
+        reasonForRecall: json["reason_for_recall"] as String,
         address2: json["address_2"],
         productQuantity: json["product_quantity"],
         codeInfo: json["code_info"],

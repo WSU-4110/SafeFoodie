@@ -4,13 +4,23 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:safefoodie_login_merge/api_service.dart';
 import 'package:safefoodie_login_merge/modelClass.dart';
+import 'package:safefoodie_login_merge/safefoodie_loginscreen.dart';
 import 'package:size_config/size_config.dart';
 import 'package:size_config/util/size_extention.dart';
 
 void main() => runApp(MyApp());
 
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => FoodRecallAPI();
+}
+
+/*
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -712,11 +722,11 @@ class SizeConfigState extends State<StatefulWidget> {
     );
   }
 }
-
+*/
 //====================================================================
 //FOOD RECALL FDA API
 //====================================================================
-class FoodRecallAPI extends State<StatefulWidget> {
+class FoodRecallAPI extends State<MyApp> {
   late Future<Result> futureResult;
 
   @override
