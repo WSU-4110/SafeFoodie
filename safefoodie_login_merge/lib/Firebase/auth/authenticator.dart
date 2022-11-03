@@ -1,16 +1,18 @@
 class Validator {
+  //checks to see if name is empty
   static String? validateName({required String? name}) {
     if (name == null) {
       return null;
     }
 
     if (name.isEmpty) {
-      return 'Name can\'t be empty';
+      return 'Name cannot be empty';
     }
 
     return null;
   }
 
+//checks to see if email field is empty
   static String? validateEmail({required String? email}) {
     if (email == null) {
       return null;
@@ -20,7 +22,7 @@ class Validator {
         r"^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,253}[a-zA-Z0-9])?)*$");
 
     if (email.isEmpty) {
-      return 'Email can\'t be empty';
+      return 'Email cannot be empty';
     } else if (!emailRegExp.hasMatch(email)) {
       return 'Enter a correct email';
     }
@@ -28,13 +30,14 @@ class Validator {
     return null;
   }
 
+//checks to see if password field is empty
   static String? validatePassword({required String? password}) {
     if (password == null) {
       return null;
     }
 
     if (password.isEmpty) {
-      return 'Password can\'t be empty';
+      return 'Password cannot be empty';
     } else if (password.length < 6) {
       return 'Enter a password with length at least 6';
     }

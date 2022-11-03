@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:safefoodie_login_merge/firebase_options.dart';
+import 'package:safefoodie_login_merge/Firebase/firebase_options.dart';
 
 class FireAuth {
   // For registering a new user
