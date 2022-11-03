@@ -1,7 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:safefoodie_login_merge/views/route_names.dart';
+import 'package:safefoodie_login_merge/views/route_names.dart';
+import 'package:safefoodie_login_merge/views/routes.dart';
 
 // Must Import .Dart inorder to build the widgets
 import 'Screens/UserSignup/LoginPage.dart';
@@ -11,6 +15,7 @@ import 'Screens/Mainpage.dart';
 import 'Screens/lists.dart';
 import 'Screens/Search.dart';
 import 'Screens/Account.dart';
+
 ///////////////////////////////////////////////////
 void main() => runApp(MyApp());
 
@@ -24,6 +29,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: homepageRoute,
+      //onGenerateRoute: Route.;
+      localizationsDelegates: GlobalMaterialLocalizations.delegates,
+      supportedLocales: [
+        const Locale('en', ' '), // American English
+        const Locale('es', ' '), // Spanish
+      ],
       theme: ThemeData(
         primarySwatch: Colors.green,
         scaffoldBackgroundColor:
@@ -47,7 +59,7 @@ class _MyAppState extends State<MyApp> {
         // When navigating to the "Mainpage" route, build the Mainpage widget.
         'SearchPage': (context) => SearchPage(),
         // When navigating to the "Mainpage" route, build the Mainpage widget.
-        'ListsPage': (context) => ListsPage(),                        
+        'ListsPage': (context) => ListsPage(),
       },
     );
   }
