@@ -44,6 +44,8 @@ dependencies:
   google_maps_flutter: ^2.2.1
   google_maps_flutter_web: ^0.4.0+3
   settings_ui: ^2.0.2
+  geolocator: ^9.0.2
+  google_maps_webservice: ^0.0.19
  
 
 dev_dependencies:
