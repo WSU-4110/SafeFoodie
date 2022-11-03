@@ -125,7 +125,6 @@ class HomeScreen extends StatelessWidget {
         TextButton(
           onPressed: () {
             Navigator.pushNamed(context, loginRoute);
-            ;
           },
           child: const Text(
             'Forgot Password?',
@@ -139,7 +138,7 @@ class HomeScreen extends StatelessWidget {
             child: ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
-                _ToMainScreen(context);
+                Navigator.pushNamed(context, homepageRoute); 
                 //print(nameController.text);
                 //print(passwordController.text);
               },
@@ -158,7 +157,7 @@ class HomeScreen extends StatelessWidget {
                     fontSize: 20),
               ),
               onPressed: () {
-                _TosignupScreen(context);
+                Navigator.pushNamed(context, registerRoute);
               },
             )
           ],
@@ -235,7 +234,7 @@ class MainPage extends StatefulWidget {
 //======================================================================================
 //EMAIL SIGNUP FUNCTION
 //======================================================================================
-class _SignupPageState extends State<SignupPage> {
+class _SignupPageState extends State<Sign> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   late bool _sucess;
@@ -374,7 +373,7 @@ class _SignupPageState extends State<SignupPage> {
 //RESET PAGE START
 //======================================================================================
 
-class _ResetPageState extends State<ResetPage> {
+class _ResetPageState extends State<> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
