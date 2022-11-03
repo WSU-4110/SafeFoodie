@@ -4,6 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:safefoodie_login_merge/views/signup.dart';
 import 'package:safefoodie_login_merge/views/login.dart';
+import 'package:safefoodie_login_merge/views/forgot_pw.dart';
+import 'package:safefoodie_login_merge/views/homepage.dart';
 
 void main() => runApp(MyApp());
 
