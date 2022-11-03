@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'UserSignup/LoginPage.dart';
 
 //page after login
-
+//=======================================
+//Routing
 class Mainpage extends StatefulWidget {
   @override
   State<Mainpage> createState() => _MainpageState();
@@ -35,6 +36,7 @@ class MyStatefulWidget extends StatefulWidget {
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
+//Current index class isnt the way the final should. Must edit.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
@@ -66,7 +68,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      
+
+//Floating Action Button for creating new lists
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           // Create List
@@ -80,6 +83,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         backgroundColor: Colors.green, // <-- This works for fixed
         selectedItemColor: Color.fromARGB(216, 230, 182, 53),
         unselectedItemColor: Colors.brown,
+
+//Bottom nav bar for navigating pages
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.align_horizontal_left),
