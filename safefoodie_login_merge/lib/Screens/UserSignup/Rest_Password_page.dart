@@ -2,69 +2,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:safefoodie_login_merge/util/delete.dart';
-import 'package:safefoodie_login_merge/Firebase/cloud/cloud_note.dart';
-import 'package:safefoodie_login_merge/messages/generic_messages.dart';
-import 'package:safefoodie_login_merge/messages/error_messages.dart';
-import 'package:safefoodie_login_merge/util/delete.dart';
+import 'LoginPage.dart';
 
-typedef ListCallback = void Function(CloudNote);
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class ListsView extends StatelessWidget {
-  final Iterable<CloudNote> lists;
-  final ListCallback onDeleteNote;
-  final ListCallback onTap;
-
-  const ListsView({
-    Key? key,
-    required this.lists,
-    required this.onDeleteNote,
-    required this.onTap,
-  }) : super(key: key);
-
+class ResetPasswordScreen extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return ListsView.builder(
-      itemCount: lists.length,
-      itemBuilder: (context, index) {
-        final list = lists.elementAt(index);
-        return ListTile(
-          onTap: () {
-            onTap(list);
-          },
-          title: Text(
-            list.text,
-            maxLines: 1,
-            softWrap: true,
-            overflow: TextOverflow.ellipsis,
-          ),
-          trailing: IconButton(
-            onPressed: () async {
-              final shouldDelete = await showDeleteDialog(context);
-              if (shouldDelete) {
-                onDeleteNote(list);
-              }
-            },
-            icon: const Icon(Icons.delete),
-          ),
-        );
-      },
-    );
-  }
+  State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
 }
 
-
-
-
-
-//Begining of the comment out due to view edits
-
-
-
-/* //======================================================================================
-//VIEW LISTS PAGE START
-//======================================================================================
-class _ViewListsState extends State<ViewListsPage> {
+class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -157,22 +104,4 @@ class _ViewListsState extends State<ViewListsPage> {
           ],
         ));
   }
-
-//======================================================================================
-//NAV FUNCTIONS
-//======================================================================================
-//Nav function for view lists page
-  void _ToViewListsScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ViewListsPage()));
-  }
 }
-
-//======================================================================================
-//PAGE CLASS INITIALIZATION
-//======================================================================================
-//View lists page
-class ViewListsPage extends StatefulWidget {
-  @override
-  _ViewListsState createState() => _ViewListsState();
-} */

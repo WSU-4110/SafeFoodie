@@ -2,13 +2,20 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:safefoodie_login_merge/views/forgot_pw.dart';
-import 'package:safefoodie_login_merge/views/login.dart';
-import 'package:safefoodie_login_merge/views/signup.dart';
 
-//======================================
-// Initialize homescreen features
-class HomeScreen extends StatelessWidget {
+Future<FirebaseApp> _initializeFirebase() async {
+  FirebaseApp firebaseApp = await Firebase.initializeApp();
+  return firebaseApp;
+}
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
+
+class LoginScreen extends StatefulWidget {
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +88,7 @@ class HomeScreen extends StatelessWidget {
 //Forgot password prompt
         TextButton(
           onPressed: () {
-            _ToresetScreen(context);
+            Navigator.pushNamed(context, 'ResetPasswordScreen');
           },
           child: const Text(
             'Forgot Password?',
@@ -95,7 +102,7 @@ class HomeScreen extends StatelessWidget {
             child: ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
-                _ToMainScreen(context);
+                Navigator.pushNamed(context, 'Mainpage');
                 //print(nameController.text);
                 //print(passwordController.text);
               },
@@ -114,7 +121,7 @@ class HomeScreen extends StatelessWidget {
                     fontSize: 20),
               ),
               onPressed: () {
-                _TosignupScreen(context);
+                Navigator.pushNamed(context, 'SignupScreen');
               },
             )
           ],
@@ -123,109 +130,7 @@ class HomeScreen extends StatelessWidget {
       ])),
     );
   }
-
-  //Nav function for signup
-  void _TosignupScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => RegisterView()));
-  }
-
-//Nav function for password reset page
-  void _ToresetScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ResetPage()));
-  }
-
-//Nav function for main page
-  void _ToMainScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MainPage()));
-  }
 }
-
-//======================================================================================
-//======================================================================================
-//Firebase Authorization
-final FirebaseAuth _auth = FirebaseAuth.instance;
-
-//======================================================================================
-//PAGE CLASS INITIALIZATION
 //======================================================================================
 
-//main page
-class MainPage extends StatefulWidget {
-  @override
-  _MainPageState createState() => _MainPageState();
-}
 
-//Search lists page
-
-//Add item/create page
-
-//settings page
-
-//======================================================================================
-//HOME PAGE START
-//======================================================================================
-
-class _MainPageState extends State<MainPage> {
-//=======================================
-//Button Widgets
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-          child: ListView(children: <Widget>[
-//======================================
-//title header
-        Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.all(10),
-            child: const Text(
-              'SafeFoodie',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 30),
-            )),
-
-        Icon(
-          Icons.bakery_dining_rounded,
-          color: Color.fromARGB(216, 230, 182, 53),
-        ),
-
-//======================================
-        SizedBox(
-          height: 200,
-        ),
-        Container(
-            child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-                icon: const Icon(Icons.align_horizontal_left),
-                color: Colors.white, //view all lists
-                onPressed: () {
-//_ToViewListsScreen(context);
-                }),
-            IconButton(
-                icon: const Icon(Icons.search),
-                color: Colors.white, //search lists
-                onPressed: () {}),
-            IconButton(
-                icon: const Icon(Icons.add_circle),
-                color: Colors.white, //Create list, add item
-                onPressed: () {}),
-            IconButton(
-                icon: const Icon(Icons.settings),
-                color: Colors.white, //settings
-                onPressed: () {}),
-          ],
-        ))
-
-//======================================
-      ])),
-    );
-  }
-}

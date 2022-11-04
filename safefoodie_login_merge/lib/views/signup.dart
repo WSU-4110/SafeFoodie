@@ -8,9 +8,8 @@ import 'package:safefoodie_login_merge/Firebase/auth/event.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/auth_bloc.dart';
 import 'package:safefoodie_login_merge/Firebase/auth/auth_exceptions.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:safefoodie_login_merge/loc.dart';
-import 'package:safefoodie_login_merge/messages/loc.dart';
 import 'package:safefoodie_login_merge/util/error.dart';
+import 'package:safefoodie_login_merge/messages/loc.dart';
 import 'package:safefoodie_login_merge/messages/error_messages.dart';
 
 class RegisterView extends StatefulWidget {
@@ -77,7 +76,7 @@ class _RegisterViewState extends State<RegisterView> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  context.loc.register_view_prompt,
+                  context.loc.register,
                 ),
                 TextField(
                   controller: _email,

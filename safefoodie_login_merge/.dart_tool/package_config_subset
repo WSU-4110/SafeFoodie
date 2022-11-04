@@ -118,6 +118,14 @@ dartx
 2.12
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/dartx-1.1.0/
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/dartx-1.1.0/lib/
+dependencies
+2.0
+file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/dependencies-0.1.5/
+file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/dependencies-0.1.5/lib/
+disposables
+2.0
+file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/disposables-0.1.2/
+file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/disposables-0.1.2/lib/
 equatable
 2.12
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/equatable-2.0.5/
@@ -208,8 +216,8 @@ file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/http_multi_server-3.2.1/lib/
 http_parser
 2.12
-file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.1/
-file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.1/lib/
+file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.2/
+file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.2/lib/
 intl
 2.12
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/
@@ -286,6 +294,10 @@ pubspec_parse
 2.14
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-1.2.1/
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-1.2.1/lib/
+quiver
+2.0
+file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.5/
+file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.5/lib/
 shelf
 2.17
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/shelf-1.4.0/

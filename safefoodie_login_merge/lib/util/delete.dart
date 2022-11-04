@@ -7,7 +7,7 @@ Future<bool> showDeleteDialog(BuildContext context) {
   return showGenericDialog(
     context: context,
     title: context.loc.delete,
-    content: context.loc.delete_note_prompt,
+    content: context.loc.delete_list_prompt,
     optionsBuilder: () => {
       context.loc.cancel: false,
       context.loc.yes: true,

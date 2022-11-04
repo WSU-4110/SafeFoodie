@@ -2,84 +2,33 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:safefoodie_login_merge/util/delete.dart';
-import 'package:safefoodie_login_merge/Firebase/cloud/cloud_note.dart';
-import 'package:safefoodie_login_merge/messages/generic_messages.dart';
-import 'package:safefoodie_login_merge/messages/error_messages.dart';
-import 'package:safefoodie_login_merge/util/delete.dart';
+import 'LoginPage.dart';
 
-typedef ListCallback = void Function(CloudNote);
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class ListsView extends StatelessWidget {
-  final Iterable<CloudNote> lists;
-  final ListCallback onDeleteNote;
-  final ListCallback onTap;
-
-  const ListsView({
-    Key? key,
-    required this.lists,
-    required this.onDeleteNote,
-    required this.onTap,
-  }) : super(key: key);
-
+//======================================================================================
+//SIGNUP PAGE START
+//======================================================================================
+class SignupScreen extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return ListsView.builder(
-      itemCount: lists.length,
-      itemBuilder: (context, index) {
-        final list = lists.elementAt(index);
-        return ListTile(
-          onTap: () {
-            onTap(list);
-          },
-          title: Text(
-            list.text,
-            maxLines: 1,
-            softWrap: true,
-            overflow: TextOverflow.ellipsis,
-          ),
-          trailing: IconButton(
-            onPressed: () async {
-              final shouldDelete = await showDeleteDialog(context);
-              if (shouldDelete) {
-                onDeleteNote(list);
-              }
-            },
-            icon: const Icon(Icons.delete),
-          ),
-        );
-      },
-    );
-  }
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-
-
-
-
-//Begining of the comment out due to view edits
-
-
-
-/* //======================================================================================
-//VIEW LISTS PAGE START
-//======================================================================================
-class _ViewListsState extends State<ViewListsPage> {
+class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: AppBar(title: const Text('Account recovery')),
+        appBar: AppBar(title: const Text('Sign up!!!')),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Container(
-              alignment: Alignment.center,
               child: Stack(
                 children: <Widget>[
                   Container(
+                    alignment: Alignment.center,
                     padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
-                    child:
-                        Text("Password reset", style: TextStyle(fontSize: 40)),
+                    child: Text("Sign up now!", style: TextStyle(fontSize: 40)),
                   )
                 ],
               ),
@@ -91,7 +40,6 @@ class _ViewListsState extends State<ViewListsPage> {
               child: Column(
                 children: <Widget>[
                   TextField(
-                    // controller: _emailController,
                     decoration: const InputDecoration(
                       enabledBorder: const OutlineInputBorder(
                         borderSide:
@@ -99,14 +47,29 @@ class _ViewListsState extends State<ViewListsPage> {
                       ),
                       border: const OutlineInputBorder(),
                       labelStyle: TextStyle(color: Colors.white),
-                      labelText: 'Enter account email',
+                      labelText: 'Email',
                     ),
                   ),
                   SizedBox(
                     height: 20,
                   ),
+                  TextField(
+                    decoration: const InputDecoration(
+                      enabledBorder: const OutlineInputBorder(
+                        borderSide:
+                            const BorderSide(color: Colors.white, width: 0.0),
+                      ),
+                      border: const OutlineInputBorder(),
+                      labelStyle: TextStyle(color: Colors.white),
+                      labelText: 'Password',
+                    ),
+                    obscureText: true,
+                  ),
                   SizedBox(
                     height: 5.0,
+                  ),
+                  SizedBox(
+                    height: 40,
                   ),
 //======================================
 // sign up button
@@ -119,11 +82,9 @@ class _ViewListsState extends State<ViewListsPage> {
                       color: Colors.green,
                       elevation: 7,
                       child: GestureDetector(
-                          onTap: () async {
-                            //      _register();
-                          },
+                          onTap: () async {},
                           child: Center(
-                              child: Text('SEND RESET EMAIL',
+                              child: Text('SIGNUP',
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -157,22 +118,4 @@ class _ViewListsState extends State<ViewListsPage> {
           ],
         ));
   }
-
-//======================================================================================
-//NAV FUNCTIONS
-//======================================================================================
-//Nav function for view lists page
-  void _ToViewListsScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ViewListsPage()));
-  }
 }
-
-//======================================================================================
-//PAGE CLASS INITIALIZATION
-//======================================================================================
-//View lists page
-class ViewListsPage extends StatefulWidget {
-  @override
-  _ViewListsState createState() => _ViewListsState();
-} */
