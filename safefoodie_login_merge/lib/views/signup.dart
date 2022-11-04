@@ -1,4 +1,4 @@
-import 'dart:html';
+//import 'dart:html';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -11,6 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:safefoodie_login_merge/loc.dart';
 import 'package:safefoodie_login_merge/messages/loc.dart';
 import 'package:safefoodie_login_merge/util/error.dart';
+import 'package:safefoodie_login_merge/messages/error_messages.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);
