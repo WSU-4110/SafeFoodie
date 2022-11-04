@@ -48,6 +48,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0 
+  settings_ui: ^2.0.2
 
 # The following section is specific to Flutter.
 flutter:

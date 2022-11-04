@@ -182,10 +182,6 @@ flutter_bloc
 2.12
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-8.1.1/
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-8.1.1/lib/
-flutter_gen
-2.14
-file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_gen-5.0.3/
-file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_gen-5.0.3/lib/
 flutter_gen_core
 2.14
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_gen_core-5.0.3/
@@ -298,6 +294,10 @@ quiver
 2.0
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.5/
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.5/lib/
+settings_ui
+2.12
+file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/settings_ui-2.0.2/
+file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/settings_ui-2.0.2/lib/
 shelf
 2.17
 file:///C:/Users/akmuk/Documents/Projects/flutter/.pub-cache/hosted/pub.dartlang.org/shelf-1.4.0/
