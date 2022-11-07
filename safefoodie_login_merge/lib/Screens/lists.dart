@@ -26,7 +26,7 @@ class _ListsPageState extends State<ListsPage> {
                   Container(
                     padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
                     child:
-                        Text("Password reset", style: TextStyle(fontSize: 40)),
+                        Text("Lists", style: TextStyle(fontSize: 40)),
                   )
                 ],
               ),

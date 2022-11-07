@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
         // When navigating to the "Mainpage" route, build the Mainpage widget.
         'Mainpage': (context) => Mainpage(),
         // When navigating to the "Settings" route, build the Mainpage widget.
-        'Settings': (context) => Settings(),
+        'Account': (context) => Account(),
         // When navigating to the "Mainpage" route, build the Mainpage widget.
         'SearchPage': (context) => SearchPage(),
         // When navigating to the "Mainpage" route, build the Mainpage widget.

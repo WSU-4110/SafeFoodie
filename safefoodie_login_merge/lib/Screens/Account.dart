@@ -8,12 +8,12 @@ import 'Mainpage.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-class Settings extends StatefulWidget {
+class Account extends StatefulWidget {
   @override
-  State<Settings> createState() => _SettingsState();
+  State<Account> createState() => _AccountState();
 }
 
-class _SettingsState extends State<Settings> {
+class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -28,7 +28,7 @@ class _SettingsState extends State<Settings> {
                   Container(
                     padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
                     child:
-                        Text("Password reset", style: TextStyle(fontSize: 40)),
+                        Text("Account", style: TextStyle(fontSize: 40)),
                   )
                 ],
               ),

@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'UserSignup/LoginPage.dart';
 
+
 //page after login
 //=======================================
 //Routing
@@ -36,72 +37,71 @@ class MyStatefulWidget extends StatefulWidget {
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
 }
 
-//Current index class isnt the way the final should. Must edit.
+//=================================================================
+//Page Start
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'My lists',
-      style: optionStyle,
-    ),
-    Text(
-      'Search Lists',
-      style: optionStyle,
-    ),
-    Text(
-      'Settings',
-      style: optionStyle,
-    ),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+   return Scaffold(
+  body: Center(
+    child: Text(
+      'Main page', //filler text for now
+    ),
+  ),
+//Center action button
+  floatingActionButton: FloatingActionButton(
+    onPressed: () {},
+    child: Icon(Icons.add_circle),
+    backgroundColor: Colors.green, //sets button color
+  ),
+  floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //inidcates pronounced button position
+  //Bottom Navbar
+  bottomNavigationBar: BottomAppBar(
+    shape: CircularNotchedRectangle(), //navbar reactiveness to center button
+    notchMargin: 5, //number of elements on bar
+    child: Row(
+      //children inside bottom appbar
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+      //View lists button
+        IconButton(
+          icon: Icon(
+            Icons.align_horizontal_left, color: Colors.green
+          ),
+          onPressed: () {
 
-//Floating Action Button for creating new lists
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Create List
-        },
-        label: const Text('Create New List'),
-        icon: Icon(Icons.add_circle),
-        backgroundColor: Colors.green,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed, // Fixed
-        backgroundColor: Colors.green, // <-- This works for fixed
-        selectedItemColor: Color.fromARGB(216, 230, 182, 53),
-        unselectedItemColor: Colors.brown,
+          },
+        ),
+       //Search item button 
+        IconButton(
+          icon: Icon(
+            Icons.search, color: Colors.green
+          ),
+          onPressed: () {
 
-//Bottom nav bar for navigating pages
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.align_horizontal_left),
-            label: 'View Lists',
+          },
+        ),
+       //Route back to home page 
+        IconButton(
+          icon: Icon(
+            Icons.home, color: Colors.green
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
+          onPressed: () {
+
+          },
+        ),
+       //Account page button 
+        IconButton(
+          icon: Icon(
+            Icons.account_circle_outlined, color: Colors.green
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_outlined),
-            label: 'Account',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-      ),
-    );
-  }
-}
+          onPressed: () {
+
+          },
+        ),
+      ],
+    ),
+  ),
+);
+}}
