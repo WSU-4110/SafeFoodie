@@ -5,6 +5,7 @@ import 'package:safefoodie_login_merge/views/list_view.dart';
 import 'package:safefoodie_login_merge/views/login.dart';
 import 'package:safefoodie_login_merge/views/signup.dart';
 import 'package:safefoodie_login_merge/views/homepage.dart';
+import 'package:safefoodie_login_merge/Firebase/cloud/cloud_note.dart';
 
 class RouterNav {
   Route<dynamic>? generateRoute(RouteSettings settings) {
@@ -26,9 +27,11 @@ class RouterNav {
       case homepageRoute:
         return MaterialPageRoute<MainPage>(builder: (context) => MainPage());
 
-      case listRoute:
-        return MaterialPageRoute<ListsView>(builder: (context) => ListsView());
-
+      /*case listRoute:
+        return MaterialPageRoute<ListsView>(builder: (context) => ListsView(lists: ,
+              onDeleteNote: ListsView.onTap,
+              onTap: ListsView.getInterpratation()));
+*/
       default:
         return MaterialPageRoute<MainPage>(builder: (context) => MainPage());
     }

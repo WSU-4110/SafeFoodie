@@ -7,15 +7,6 @@ import 'package:safefoodie_login_merge/views/route_names.dart';
 import 'package:safefoodie_login_merge/views/route_names.dart';
 import 'package:safefoodie_login_merge/views/routes.dart';
 
-// Must Import .Dart inorder to build the widgets
-import 'Screens/UserSignup/LoginPage.dart';
-import 'Screens/UserSignup/Rest_Password_page.dart';
-import 'Screens/UserSignup/signup.dart';
-import 'Screens/Mainpage.dart';
-import 'Screens/lists.dart';
-import 'Screens/Search.dart';
-import 'Screens/Account.dart';
-
 ///////////////////////////////////////////////////
 void main() => runApp(MyApp());
 
@@ -43,24 +34,6 @@ class _MyAppState extends State<MyApp> {
         textTheme: Typography().white, //sets default text to white
       ),
       // Inital First Page so that LoginPage would load first
-      initialRoute: 'LoginScreen',
-      home: LoginScreen(),
-      routes: {
-        // When navigating to the "homeScreen" route, build the HomeScreen widget.
-        'LoginScreen': (context) => LoginScreen(),
-        // When navigating to the "SignupScreen" route, build the SignupScreen widget.
-        'SignupScreen': (context) => SignupScreen(),
-        // When navigating to the "ResetPasswordScreen" route, build the ResetPasswordScreen widget.
-        'ResetPasswordScreen': (context) => ResetPasswordScreen(),
-        // When navigating to the "Mainpage" route, build the Mainpage widget.
-        'Mainpage': (context) => Mainpage(),
-        // When navigating to the "Settings" route, build the Mainpage widget.
-        'Settings': (context) => Settings(),
-        // When navigating to the "Mainpage" route, build the Mainpage widget.
-        'SearchPage': (context) => SearchPage(),
-        // When navigating to the "Mainpage" route, build the Mainpage widget.
-        'ListsPage': (context) => ListsPage(),
-      },
     );
   }
 }

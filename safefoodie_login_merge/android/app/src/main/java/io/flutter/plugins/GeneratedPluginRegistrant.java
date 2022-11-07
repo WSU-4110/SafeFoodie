@@ -1,5 +1,5 @@
 package io.flutter.plugins;
-+import io.flutter.embedding.android.FlutterActivity;
+import io.flutter.embedding.android.FlutterActivity;
 import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 import io.flutter.Log;
