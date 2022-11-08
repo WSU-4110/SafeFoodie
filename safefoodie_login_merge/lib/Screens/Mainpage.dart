@@ -47,19 +47,22 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           'Main page', //filler text for now
         ),
       ),
-//Center action button
+//Center action button, part of navbar
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          //Nav function goes here once page is created by teammate
+        },
         child: Icon(Icons.add),
         backgroundColor: Colors.green, //sets button color
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation
           .centerDocked, //inidcates pronounced button position
-      //Bottom Navbar
+      //Bottom Navbar, this is our main component.
       bottomNavigationBar: BottomAppBar(
         shape:
             CircularNotchedRectangle(), //navbar reactiveness to center button
         notchMargin: 5, //number of elements on bar
+        //The buttons are all of our Decorators
         child: Row(
           //children inside bottom appbar
           mainAxisSize: MainAxisSize.max,
@@ -68,22 +71,30 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             //View lists button
             IconButton(
               icon: Icon(Icons.align_horizontal_left, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                //Nav function goes here once page is created by teammate
+              },
             ),
             //Search item button
             IconButton(
               icon: Icon(Icons.search, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                //Nav function goes here once page is created by teammate
+              },
             ),
             //Route back to home page
             IconButton(
               icon: Icon(Icons.home, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                //Nav function goes here once page is created by teammate
+              },
             ),
             //Account page button
             IconButton(
               icon: Icon(Icons.account_circle_outlined, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                //Nav function goes here once page is created by teammate
+              },
             ),
           ],
         ),
