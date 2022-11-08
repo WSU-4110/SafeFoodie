@@ -4,7 +4,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'UserSignup/LoginPage.dart';
 
-
 //page after login
 //=======================================
 //Routing
@@ -42,66 +41,53 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
-  body: Center(
-    child: Text(
-      'Main page', //filler text for now
-    ),
-  ),
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Main page', //filler text for now
+        ),
+      ),
 //Center action button
-  floatingActionButton: FloatingActionButton(
-    onPressed: () {},
-    child: Icon(Icons.add_circle),
-    backgroundColor: Colors.green, //sets button color
-  ),
-  floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //inidcates pronounced button position
-  //Bottom Navbar
-  bottomNavigationBar: BottomAppBar(
-    shape: CircularNotchedRectangle(), //navbar reactiveness to center button
-    notchMargin: 5, //number of elements on bar
-    child: Row(
-      //children inside bottom appbar
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-      //View lists button
-        IconButton(
-          icon: Icon(
-            Icons.align_horizontal_left, color: Colors.green
-          ),
-          onPressed: () {
-
-          },
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.green, //sets button color
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation
+          .centerDocked, //inidcates pronounced button position
+      //Bottom Navbar
+      bottomNavigationBar: BottomAppBar(
+        shape:
+            CircularNotchedRectangle(), //navbar reactiveness to center button
+        notchMargin: 5, //number of elements on bar
+        child: Row(
+          //children inside bottom appbar
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            //View lists button
+            IconButton(
+              icon: Icon(Icons.align_horizontal_left, color: Colors.green),
+              onPressed: () {},
+            ),
+            //Search item button
+            IconButton(
+              icon: Icon(Icons.search, color: Colors.green),
+              onPressed: () {},
+            ),
+            //Route back to home page
+            IconButton(
+              icon: Icon(Icons.home, color: Colors.green),
+              onPressed: () {},
+            ),
+            //Account page button
+            IconButton(
+              icon: Icon(Icons.account_circle_outlined, color: Colors.green),
+              onPressed: () {},
+            ),
+          ],
         ),
-       //Search item button 
-        IconButton(
-          icon: Icon(
-            Icons.search, color: Colors.green
-          ),
-          onPressed: () {
-
-          },
-        ),
-       //Route back to home page 
-        IconButton(
-          icon: Icon(
-            Icons.home, color: Colors.green
-          ),
-          onPressed: () {
-
-          },
-        ),
-       //Account page button 
-        IconButton(
-          icon: Icon(
-            Icons.account_circle_outlined, color: Colors.green
-          ),
-          onPressed: () {
-
-          },
-        ),
-      ],
-    ),
-  ),
-);
-}}
+      ),
+    );
+  }
+}
