@@ -19,11 +19,13 @@ class MapSample extends StatefulWidget {
 class MapSampleState extends State<MapSample> {
   late GoogleMapController googleMapController;
 
+  // Set Default Location
   static const CameraPosition initialCameraPosition = CameraPosition(
       target: LatLng(42.359527246137446, -83.06862759590926), zoom: 14);
 
   Set<Marker> markers = {};
 
+// Button for getting User current location
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +53,7 @@ class MapSampleState extends State<MapSample> {
 
           markers.clear();
 
+          // Marker For User current location
           markers.add(Marker(
               markerId: const MarkerId('currentLocation'),
               position: LatLng(position.latitude, position.longitude)));
@@ -63,6 +66,7 @@ class MapSampleState extends State<MapSample> {
     );
   }
 
+// API calls to get request permisson the location of the user
   Future<Position> _determinePosition() async {
     bool serviceEnabled;
     LocationPermission permission;
