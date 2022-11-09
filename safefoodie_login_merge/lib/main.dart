@@ -730,12 +730,16 @@ class FoodRecallAPI extends State<MyApp> {
   late Future<Result> futureResult;
 
   @override
+  //initializes the state to run app
+  //gets the result
   void initState() {
     super.initState();
     futureResult = fetchResult();
   }
 
   @override
+  //overrided here
+  //builds the widget material
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Fetch Recall Example',
