@@ -76,7 +76,7 @@ class _Home extends State<Home> {
        //Route back to home page 
         IconButton(
           icon: Icon(
-            Icons.home, color: Colors.green
+            Icons.location_pin, color: Colors.green
           ),
           onPressed: () {
 
