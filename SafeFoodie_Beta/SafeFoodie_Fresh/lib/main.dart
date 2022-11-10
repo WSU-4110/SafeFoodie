@@ -20,16 +20,19 @@ class MyApp extends StatelessWidget {
       initialData: null,
       child: MaterialApp(
         theme: ThemeData(
+          primarySwatch: Colors.green,
+           scaffoldBackgroundColor:
+            Color.fromARGB(166, 72, 168, 75), //color of background
           brightness: Brightness.light,
-          primaryColor: Color.fromARGB(255, 71, 231, 7),
+          primaryColor: Color.fromARGB(166, 72, 168, 75),
           buttonTheme: ButtonThemeData(
-            buttonColor: Color.fromARGB(255, 71, 231, 7),
+            buttonColor: Color.fromARGB(166, 72, 168, 75),
             textTheme: ButtonTextTheme.primary,
             colorScheme:
                 Theme.of(context).colorScheme.copyWith(secondary: Colors.white),
           ),
           fontFamily: 'Typography',
-          textTheme: const TextTheme(
+          textTheme: const TextTheme(  
             headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
             headline6: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic),
             bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),

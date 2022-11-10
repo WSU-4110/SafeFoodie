@@ -16,16 +16,21 @@ class Login extends StatefulWidget {
 class _Login extends State<Login> {
   bool _obscureText = true;
 
+//======================================
+//Auth classes
   final _email = TextEditingController();
   final _password = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final AuthService _auth = new AuthService();
-
+//======================================
+//Start of page
   @override
   Widget build(BuildContext context) {
     final emailField = TextFormField(
         controller: _email,
         autofocus: false,
+//======================================
+//Error throw for incompatible email
         validator: (value) {
           if (value != null) {
             if (value.contains('@') && value.endsWith('.com')) {
@@ -34,12 +39,18 @@ class _Login extends State<Login> {
             return 'Enter a Valid Email Address';
           }
         },
+//======================================
+//Email prompt area
         decoration: InputDecoration(
-            contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-            hintText: "Email",
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))));
-
+            contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          enabledBorder: const OutlineInputBorder(
+                borderSide: const BorderSide(color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
+              ),
+              border: const OutlineInputBorder(),
+            labelStyle: TextStyle(color: Colors.white),
+              labelText: 'Email',
+            ));
+//Parameters for funct
     final passwordField = TextFormField(
         obscureText: _obscureText,
         controller: _password,
@@ -54,32 +65,50 @@ class _Login extends State<Login> {
           // Return null if the entered password is valid
           return null;
         },
+//======================================
+//Password type in area
         decoration: InputDecoration(
-            contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-            hintText: "Password",
+          contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          enabledBorder: const OutlineInputBorder(
+                borderSide: const BorderSide(color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
+              ),
+              border: const OutlineInputBorder(),
+            labelStyle: TextStyle(color: Colors.white),
+              labelText: 'Password',
             suffixIcon: IconButton(
               icon:
-                  Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
+                  Icon(_obscureText ? Icons.visibility : Icons.visibility_off, 
+                  color: Color.fromARGB(216, 230, 182, 53),),
               onPressed: () {
-                setState(() {
+                setState(() { //Allows for password view
                   _obscureText = !_obscureText;
                 });
               },
             ),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(32.0),
-            )));
-
-    final txtbutton = TextButton(
+           ));
+//======================================
+//Signup button
+    final signup = TextButton(
         onPressed: () {
           widget.toggleView!();
         },
-        child: const Text('New? Register here'));
-
-    final loginAnonymousButon = Material(
+        child: const Text('No account? Sign up now',
+        style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20),));
+//======================================
+//Forgot pw button
+    final forgotpw = TextButton(
+        onPressed: () {
+        },
+        child: const Text('Forgot Password?'));
+//======================================
+//Temp bypass button
+    final tempbypass = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Theme.of(context).primaryColor,
+      color: Colors.green,
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -98,20 +127,21 @@ class _Login extends State<Login> {
           }
         },
         child: Text(
-          "Log in Anonymously",
+          "Temp bypass button",
           style: TextStyle(color: Theme.of(context).primaryColorLight),
           textAlign: TextAlign.center,
         ),
       ),
     );
-
+//======================================
+//Login button
     final loginEmailPasswordButon = Material(
       elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
+      borderRadius: BorderRadius.all(Radius.circular(30)),
       color: Theme.of(context).primaryColor,
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
         onPressed: () async {
           if (_formKey.currentState!.validate()) {
             dynamic result = await _auth.signInEmailPassword(
@@ -130,7 +160,7 @@ class _Login extends State<Login> {
         },
         child: Text(
           "Log in",
-          style: TextStyle(color: Theme.of(context).primaryColorLight),
+          style: TextStyle(color: Colors.white),
           textAlign: TextAlign.center,
         ),
       ),
@@ -140,7 +170,7 @@ class _Login extends State<Login> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Login page'),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.green,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -153,15 +183,48 @@ class _Login extends State<Login> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  loginAnonymousButon,
-                  const SizedBox(height: 45.0),
+//======================================
+//title header
+                   Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            child: const Text(
+              'SafeFoodie',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 30),
+            )),
+                          Icon(
+          Icons.bakery_dining_rounded,
+          color: Color.fromARGB(216, 230, 182, 53),
+        ),
+//======================================
+//MAIN BODY
+//======================================
+//Sign in header
+        Container(
+            alignment: Alignment.center,
+            padding: const EdgeInsets.all(10),
+            child: const Text(
+              'Sign in',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 20),
+            )),
+//Function calls  
                   emailField,
                   const SizedBox(height: 25.0),
                   passwordField,
-                  txtbutton,
-                  const SizedBox(height: 35.0),
+                  forgotpw,
+                  const SizedBox(height: 5.0),
                   loginEmailPasswordButon,
+                  const SizedBox(height: 5.0),
+                  signup,
                   const SizedBox(height: 15.0),
+                  tempbypass,
+                  const SizedBox(height: 45.0),
                 ],
               ),
             ),
