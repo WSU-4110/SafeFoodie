@@ -43,7 +43,9 @@ class _AccountState extends State<Account> {
 // each block is a section of settings
 // General settings
           SettingsSection(
-            title: Text('General'),
+            title: Text('General',
+            style: TextStyle(color: Colors.green,fontWeight: FontWeight.bold,
+            fontFamily: 'Montserrat',decoration: TextDecoration.underline)),
             tiles: [
               SettingsTile(
                 title: Text('Language',style: TextStyle(color: Colors.green)),
@@ -90,7 +92,9 @@ class _AccountState extends State<Account> {
           ),
 //Account settings
           SettingsSection(
-            title: Text('Account'),
+            title: Text('Account',
+             style: TextStyle(color: Colors.green,fontWeight: FontWeight.bold,
+            fontFamily: 'Montserrat',decoration: TextDecoration.underline)),
             tiles: [
               SettingsTile(
                 title: Text('Security',style: TextStyle(color: Colors.green)),
