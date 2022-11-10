@@ -18,7 +18,7 @@ class _Home extends State<Home> {
     final SignOut = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Theme.of(context).primaryColor,
+      color: Colors.green,
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
