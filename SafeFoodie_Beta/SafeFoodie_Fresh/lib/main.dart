@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+import 'package:safefoodie_fresh/screens/account.dart';
 
 import 'services/auth.dart';
 import 'models/FirebaseUser.dart';
@@ -19,28 +20,33 @@ class MyApp extends StatelessWidget {
       value: AuthService().user,
       initialData: null,
       child: MaterialApp(
-        theme: ThemeData(
-          primarySwatch: Colors.green,
-           scaffoldBackgroundColor:
-            Color.fromARGB(166, 72, 168, 75), //color of background
-          brightness: Brightness.light,
-          primaryColor: Color.fromARGB(166, 72, 168, 75),
-          buttonTheme: ButtonThemeData(
-            buttonColor: Color.fromARGB(166, 72, 168, 75),
-            textTheme: ButtonTextTheme.primary,
-            colorScheme:
-                Theme.of(context).colorScheme.copyWith(secondary: Colors.white),
+          theme: ThemeData(
+            primarySwatch: Colors.green,
+            scaffoldBackgroundColor:
+                Color.fromARGB(166, 72, 168, 75), //color of background
+            brightness: Brightness.light,
+            primaryColor: Color.fromARGB(166, 72, 168, 75),
+            buttonTheme: ButtonThemeData(
+              buttonColor: Color.fromARGB(166, 72, 168, 75),
+              textTheme: ButtonTextTheme.primary,
+              colorScheme: Theme.of(context)
+                  .colorScheme
+                  .copyWith(secondary: Colors.white),
+            ),
+            fontFamily: 'Typography',
+            textTheme: const TextTheme(
+              headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+              headline6: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic),
+              bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+            ),
+            // colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.cyan[600]),
           ),
-          fontFamily: 'Typography',
-          textTheme: const TextTheme(  
-            headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-            headline6: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic),
-            bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
-          ),
-          // colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.cyan[600]),
-        ),
-        home: Wrapper(),
-      ),
+          //Initial route for Settings
+          initialRoute: 'Home',
+          home: Wrapper(),
+          routes: {
+            'Account': (context) => Account(),
+          }),
     );
   }
 }
