@@ -1,5 +1,6 @@
 import 'package:safefoodie_fresh/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:safefoodie_fresh/screens/account.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _Home extends State<Home> {
   @override
   Widget build(BuildContext context) {
 //=========================================
-//Sign out function   
+//Sign out function
     final SignOut = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
@@ -40,60 +41,49 @@ class _Home extends State<Home> {
       ),
       body: Center(child: SignOut),
 //Center action button
-  floatingActionButton: FloatingActionButton(
-    onPressed: () {},
-    child: Icon(Icons.add),
-    backgroundColor: Colors.green, //sets button color
-  ),
-  floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //inidcates pronounced button position
-  //Bottom Navbar
-  bottomNavigationBar: BottomAppBar(
-    shape: CircularNotchedRectangle(), //navbar reactiveness to center button
-    notchMargin: 5, //number of elements on bar
-    child: Row(
-      //children inside bottom appbar
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: <Widget>[
-      //View lists button
-        IconButton(
-          icon: Icon(
-            Icons.align_horizontal_left, color: Colors.green
-          ),
-          onPressed: () {
-
-          },
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Colors.green, //sets button color
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation
+          .centerDocked, //inidcates pronounced button position
+      //Bottom Navbar
+      bottomNavigationBar: BottomAppBar(
+        shape:
+            CircularNotchedRectangle(), //navbar reactiveness to center button
+        notchMargin: 5, //number of elements on bar
+        child: Row(
+          //children inside bottom appbar
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            //View lists button
+            IconButton(
+              icon: Icon(Icons.align_horizontal_left, color: Colors.green),
+              onPressed: () {},
+            ),
+            //Search item button
+            IconButton(
+              icon: Icon(Icons.search, color: Colors.green),
+              onPressed: () {},
+            ),
+            //Route back to home page
+            IconButton(
+              icon: Icon(Icons.home, color: Colors.green),
+              onPressed: () {},
+            ),
+            //Account page button
+            IconButton(
+              icon: Icon(Icons.account_circle_outlined, color: Colors.green),
+              onPressed: () {
+                //Settings navigator
+                Navigator.pushNamed(context, 'Account');
+              },
+            ),
+          ],
         ),
-       //Search item button 
-        IconButton(
-          icon: Icon(
-            Icons.search, color: Colors.green
-          ),
-          onPressed: () {
-
-          },
-        ),
-       //Route back to home page 
-        IconButton(
-          icon: Icon(
-            Icons.home, color: Colors.green
-          ),
-          onPressed: () {
-
-          },
-        ),
-       //Account page button 
-        IconButton(
-          icon: Icon(
-            Icons.account_circle_outlined, color: Colors.green
-          ),
-          onPressed: () {
-
-          },
-        ),
-      ],
-    ),
-  ),      
+      ),
     );
   }
 }
