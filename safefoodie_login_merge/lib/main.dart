@@ -11,6 +11,14 @@ import 'package:size_config/util/size_extention.dart';
 
 void main() => runApp(MyApp());
 
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => FoodRecallAPI();
+}
+
+/*
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,6 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
         scaffoldBackgroundColor:
+            // ignore: prefer_const_constructors
             Color.fromARGB(166, 72, 168, 75), //color of background
         textTheme: Typography().white, //sets default text to white
       ),
@@ -712,11 +721,12 @@ class SizeConfigState extends State<StatefulWidget> {
     );
   }
 }
-
+*/
 //====================================================================
 //FOOD RECALL FDA API
 //====================================================================
-class FoodRecallAPI extends State<StatefulWidget> {
+
+class FoodRecallAPI extends State<MyApp> {
   late Future<Result> futureResult;
 
   @override
