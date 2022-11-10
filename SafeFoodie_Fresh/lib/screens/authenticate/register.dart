@@ -39,16 +39,15 @@ class _Register extends State<Register> {
           }
         },
 //email bubble
-        decoration: InputDecoration(
-          contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+         decoration: InputDecoration(
+            contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           enabledBorder: const OutlineInputBorder(
-            borderSide: const BorderSide(
-                color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
-          ),
-          border: const OutlineInputBorder(),
-          labelStyle: TextStyle(color: Colors.white),
-          labelText: 'Email',
-        ));
+                borderSide: const BorderSide(color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
+              ),
+              border: const OutlineInputBorder(),
+            labelStyle: TextStyle(color: Colors.white),
+              labelText: 'Email',
+            ));
 //=========================================
 //Password function
     final passwordField = TextFormField(
@@ -67,28 +66,25 @@ class _Register extends State<Register> {
           return null;
         },
 //Password bubble
-        decoration: InputDecoration(
+         decoration: InputDecoration(
           contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           enabledBorder: const OutlineInputBorder(
-            borderSide: const BorderSide(
-                color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
-          ),
-          border: const OutlineInputBorder(),
-          labelStyle: TextStyle(color: Colors.white),
-          labelText: 'Password',
-          suffixIcon: IconButton(
-            icon: Icon(
-              _obscureText ? Icons.visibility : Icons.visibility_off,
-              color: Color.fromARGB(216, 230, 182, 53),
+                borderSide: const BorderSide(color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
+              ),
+              border: const OutlineInputBorder(),
+            labelStyle: TextStyle(color: Colors.white),
+              labelText: 'Password',
+            suffixIcon: IconButton(
+              icon:
+                  Icon(_obscureText ? Icons.visibility : Icons.visibility_off, 
+                  color: Color.fromARGB(216, 230, 182, 53),),
+              onPressed: () {
+                setState(() { //Allows for password view
+                  _obscureText = !_obscureText;
+                });
+              },
             ),
-            onPressed: () {
-              setState(() {
-                //Allows for password view
-                _obscureText = !_obscureText;
-              });
-            },
-          ),
-        ));
+           ));
 //=========================================
 // Back button
     final Goback = TextButton(
@@ -96,11 +92,11 @@ class _Register extends State<Register> {
           widget.toggleView!();
         },
         child: const Text('Go back',
-            style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Montserrat',
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.underline)));
+        style: TextStyle(
+             color: Colors.white,
+             fontFamily: 'Montserrat',
+             fontWeight: FontWeight.bold,
+             decoration: TextDecoration.underline)));
 //=========================================
 //Register button
     final registerButton = Material(
@@ -158,8 +154,7 @@ class _Register extends State<Register> {
                   Container(
                     alignment: Alignment.center,
                     padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
-                    child: Text("Sign up now!",
-                        style: TextStyle(fontSize: 40, color: Colors.white)),
+                    child: Text("Sign up now!", style: TextStyle(fontSize: 40, color: Colors.white)),
                   ),
 //Call all classes
                   const SizedBox(height: 45.0),

@@ -1,5 +1,6 @@
 import 'package:safefoodie_fresh/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:safefoodie_fresh/screens/account.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -18,7 +19,7 @@ class _Home extends State<Home> {
     final SignOut = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
-      color: Theme.of(context).primaryColor,
+      color: Colors.green,
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
@@ -69,13 +70,16 @@ class _Home extends State<Home> {
             ),
             //Route back to home page
             IconButton(
-              icon: Icon(Icons.home, color: Colors.green),
+              icon: Icon(Icons.location_pin, color: Colors.green),
               onPressed: () {},
             ),
             //Account page button
             IconButton(
               icon: Icon(Icons.account_circle_outlined, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                //Settings navigator
+                Navigator.pushNamed(context, 'Account');
+              },
             ),
           ],
         ),
