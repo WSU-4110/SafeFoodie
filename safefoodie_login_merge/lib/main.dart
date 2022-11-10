@@ -11,6 +11,8 @@ import 'Screens/Mainpage.dart';
 import 'Screens/lists.dart';
 import 'Screens/Search.dart';
 import 'Screens/Account.dart';
+import 'Screens/Settings.dart';
+
 ///////////////////////////////////////////////////
 void main() => runApp(MyApp());
 
@@ -47,7 +49,7 @@ class _MyAppState extends State<MyApp> {
         // When navigating to the "Mainpage" route, build the Mainpage widget.
         'SearchPage': (context) => SearchPage(),
         // When navigating to the "Mainpage" route, build the Mainpage widget.
-        'ListsPage': (context) => ListsPage(),                        
+        'ListsPage': (context) => ListsPage(),
       },
     );
   }
