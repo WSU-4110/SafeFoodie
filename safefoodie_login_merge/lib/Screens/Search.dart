@@ -26,7 +26,7 @@ class _SearchPageState extends State<SearchPage> {
                   Container(
                     padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
                     child:
-                        Text("Password reset", style: TextStyle(fontSize: 40)),
+                        Text("Search page", style: TextStyle(fontSize: 40)),
                   )
                 ],
               ),
