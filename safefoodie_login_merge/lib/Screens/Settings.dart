@@ -38,7 +38,7 @@ class _AccountState extends State<Account> {
             title: Text('General'),
             tiles: [
               SettingsTile(
-                title: Text('Language', style: TextStyle(color: Colors.green)),
+                title: Text('Language', style: TextStyle(color: Colors.grey)),
                 value: Text('English',
                     style: TextStyle(color: Color.fromARGB(216, 230, 182, 53))),
                 leading: Icon(Icons.language, color: Colors.green),
