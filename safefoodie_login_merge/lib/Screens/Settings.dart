@@ -41,8 +41,8 @@ class _AccountState extends State<Account> {
             tiles: [
               SettingsTile(
                 title: Text('Language'),
-                value: Text('English'),
                 leading: Icon(Icons.language),
+                trailing: Icon(Icons.arrow_forward_ios, color: Colors.grey),
                 onPressed: (BuildContext context) {
                   showDialog(
                       context: context,
