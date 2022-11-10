@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
             // colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.cyan[600]),
           ),
           //Initial route for Settings
-          initialRoute: 'Home',
+          initialRoute: 'Login',
           home: Wrapper(),
           routes: {
             'Account': (context) => Account(),
