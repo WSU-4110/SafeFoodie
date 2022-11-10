@@ -11,7 +11,7 @@ void main() {
         primarySwatch: Colors.green,
         scaffoldBackgroundColor:
             Color.fromARGB(166, 72, 168, 75), //color of background
-        textTheme: Typography().white, //sets default text to white
+        textTheme: Typography().black, //sets default text to black
       ),
       home: Account(),
     ),
@@ -46,7 +46,7 @@ class _AccountState extends State<Account> {
                 onPressed: (BuildContext context) {},
               ),
               SettingsTile.switchTile(
-                title: Text('Use System Theme'),
+                title: Text('Notifications'),
                 leading: Icon(Icons.phone_android),
                 initialValue: setSwitch,
                 onToggle: (value) {
@@ -59,7 +59,7 @@ class _AccountState extends State<Account> {
           ),
 
           SettingsSection(
-            title: Text('Section 2'),
+            title: Text('Account'),
             tiles: [
               SettingsTile(
                 title: Text('Security'),
@@ -76,6 +76,18 @@ class _AccountState extends State<Account> {
                     fingerIsSwitched = value2;
                   });
                 },
+              ),
+              SettingsTile(
+                title: Text('Email'),
+                value: Text('User Email Placeholder'),
+                leading: Icon(Icons.email),
+                onPressed: (BuildContext context) {},
+              ),
+              SettingsTile(
+                title: Text('Phone Number'),
+                value: Text('Users Phone Number'),
+                leading: Icon(Icons.phone),
+                onPressed: (BuildContext context) {},
               ),
             ],
           ),
