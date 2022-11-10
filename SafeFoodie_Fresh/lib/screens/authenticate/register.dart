@@ -14,17 +14,23 @@ class Register extends StatefulWidget {
 
 class _Register extends State<Register> {
   final AuthService _auth = new AuthService();
-
+//=========================================
+//Auth parameters
   bool _obscureText = true;
   final _email = TextEditingController();
   final _password = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  //=========================================
+  //Page begin
   @override
   Widget build(BuildContext context) {
+//=========================================
+//email function
     final emailField = TextFormField(
         controller: _email,
         autofocus: false,
         validator: (value) {
+//Parameters for valid entry
           if (value != null) {
             if (value.contains('@') && value.endsWith('.com')) {
               return null;
@@ -32,17 +38,25 @@ class _Register extends State<Register> {
             return 'Enter a Valid Email Address';
           }
         },
+//email bubble
         decoration: InputDecoration(
-            contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-            hintText: "Email",
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))));
-
+          contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          enabledBorder: const OutlineInputBorder(
+            borderSide: const BorderSide(
+                color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
+          ),
+          border: const OutlineInputBorder(),
+          labelStyle: TextStyle(color: Colors.white),
+          labelText: 'Email',
+        ));
+//=========================================
+//Password function
     final passwordField = TextFormField(
         obscureText: _obscureText,
         controller: _password,
         autofocus: false,
         validator: (value) {
+//Password parameters
           if (value == null || value.trim().isEmpty) {
             return 'This field is required';
           }
@@ -52,32 +66,49 @@ class _Register extends State<Register> {
           // Return null if the entered password is valid
           return null;
         },
+//Password bubble
         decoration: InputDecoration(
-            contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-            hintText: "Password",
-            suffixIcon: IconButton(
-              icon:
-                  Icon(_obscureText ? Icons.visibility : Icons.visibility_off),
-              onPressed: () {
-                setState(() {
-                  _obscureText = !_obscureText;
-                });
-              },
+          contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          enabledBorder: const OutlineInputBorder(
+            borderSide: const BorderSide(
+                color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
+          ),
+          border: const OutlineInputBorder(),
+          labelStyle: TextStyle(color: Colors.white),
+          labelText: 'Password',
+          suffixIcon: IconButton(
+            icon: Icon(
+              _obscureText ? Icons.visibility : Icons.visibility_off,
+              color: Color.fromARGB(216, 230, 182, 53),
             ),
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))));
-
-    final txtbutton = TextButton(
+            onPressed: () {
+              setState(() {
+                //Allows for password view
+                _obscureText = !_obscureText;
+              });
+            },
+          ),
+        ));
+//=========================================
+// Back button
+    final Goback = TextButton(
         onPressed: () {
           widget.toggleView!();
         },
-        child: const Text('Go to login'));
-
+        child: const Text('Go back',
+            style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'Montserrat',
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.underline)));
+//=========================================
+//Register button
     final registerButton = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
       color: Theme.of(context).primaryColor,
       child: MaterialButton(
+        color: Colors.green,
         minWidth: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () async {
@@ -97,18 +128,19 @@ class _Register extends State<Register> {
           }
         },
         child: Text(
-          "Register",
+          "Sign up",
           style: TextStyle(color: Theme.of(context).primaryColorLight),
           textAlign: TextAlign.center,
         ),
       ),
     );
-
+//=========================================
+//Physical page begin
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text('Registration'),
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.green,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -122,15 +154,23 @@ class _Register extends State<Register> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+// Page header
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
+                    child: Text("Sign up now!",
+                        style: TextStyle(fontSize: 40, color: Colors.white)),
+                  ),
+//Call all classes
                   const SizedBox(height: 45.0),
                   emailField,
                   const SizedBox(height: 25.0),
                   passwordField,
                   const SizedBox(height: 25.0),
-                  txtbutton,
-                  const SizedBox(height: 35.0),
                   registerButton,
                   const SizedBox(height: 15.0),
+                  Goback,
+                  const SizedBox(height: 35.0),
                 ],
               ),
             ),
