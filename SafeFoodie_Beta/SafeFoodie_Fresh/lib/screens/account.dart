@@ -32,6 +32,7 @@ class _AccountState extends State<Account> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Settings'),
+        backgroundColor: Colors.green
       ),
       body: SettingsList(
         sections: [
