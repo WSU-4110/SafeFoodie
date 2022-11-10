@@ -43,7 +43,30 @@ class _AccountState extends State<Account> {
                 title: Text('Language'),
                 value: Text('English'),
                 leading: Icon(Icons.language),
-                onPressed: (BuildContext context) {},
+                onPressed: (BuildContext context) {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          title: Text("Language"),
+                          content:
+                              Column(mainAxisSize: MainAxisSize.min, children: [
+                            Text("English"),
+                            Text("Spanish"),
+                            Text("French"),
+                            Text("Arabic"),
+                          ]),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text("Close"),
+                            )
+                          ],
+                        );
+                      });
+                },
               ),
               SettingsTile.switchTile(
                 title: Text('Notifications'),
