@@ -1,9 +1,1 @@
 
-safefoodie_login_merge/android/local.properties
-*.properties
-*.sh
-*.xcconfig
-*.xcconfig
-*.json
-safefoodie_login_merge/.dart_tool/package_config_subset
-*.properties
