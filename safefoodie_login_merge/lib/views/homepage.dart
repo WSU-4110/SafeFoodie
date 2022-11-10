@@ -82,7 +82,7 @@ class HomeScreen extends StatelessWidget {
 //Forgot password prompt
         TextButton(
           onPressed: () {
-            _ToresetScreen(context);
+            Navigator.pushNamed(context, forgotPWRoute);
           },
           child: const Text(
             'Forgot Password?',
@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
             child: ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
-                _ToMainScreen(context);
+                Navigator.pushNamed(context, homepageRoute);
                 //print(nameController.text);
                 //print(passwordController.text);
               },
@@ -115,7 +115,7 @@ class HomeScreen extends StatelessWidget {
                     fontSize: 20),
               ),
               onPressed: () {
-                _TosignupScreen(context);
+                Navigator.pushNamed(context, registerRoute);
               },
             )
           ],
@@ -125,23 +125,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  //Nav function for signup
-  void _TosignupScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => RegisterView()));
-  }
-
-//Nav function for password reset page
-  void _ToresetScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => ResetPage()));
-  }
-
-//Nav function for main page
-  void _ToMainScreen(BuildContext context) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => MainPage()));
-  }
 }
 
 //======================================================================================

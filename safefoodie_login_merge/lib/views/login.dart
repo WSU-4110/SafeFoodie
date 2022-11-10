@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:safefoodie_login_merge/main.dart';
 import 'package:safefoodie_login_merge/views/forgot_pw.dart';
 import 'package:safefoodie_login_merge/views/login.dart';
+import 'package:safefoodie_login_merge/views/route_names.dart';
 import 'package:safefoodie_login_merge/views/signup.dart';
 
 Future<FirebaseApp> _initializeFirebase() async {
@@ -92,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
 //Forgot password prompt
         TextButton(
           onPressed: () {
-            Navigator.pushNamed(context, 'ResetPasswordScreen');
+             Navigator.pushNamed(context, forgotPWRoute);
           },
           child: const Text(
             'Forgot Password?',
@@ -106,30 +107,20 @@ class _LoginScreenState extends State<LoginScreen> {
             child: ElevatedButton(
               child: const Text('Login'),
               onPressed: () {
-                Navigator.pushNamed(context, 'Mainpage');
+                Navigator.pushNamed(context, homepageRoute);
                 //print(nameController.text);
                 //print(passwordController.text);
               },
             )),
 //======================================
 //Sign up prompt
-        Row(
-          children: <Widget>[
-            const Text('No account?'),
-            TextButton(
-              child: const Text(
-                'Sign up now',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20),
-              ),
-              onPressed: () {
-                Navigator.pushNamed(context, 'SignupScreen');
-              },
-            )
-          ],
-          mainAxisAlignment: MainAxisAlignment.center,
+        TextButton(
+          onPressed: () {
+             Navigator.pushNamed(context, registerRoute);
+          },
+          child: const Text(
+            'Sign Up',
+          ),
         ),
       ])),
     );

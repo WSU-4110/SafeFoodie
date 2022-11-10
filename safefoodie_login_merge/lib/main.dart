@@ -4,10 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:safefoodie_login_merge/views/route_names.dart';
-import 'package:safefoodie_login_merge/views/route_names.dart';
 import 'package:safefoodie_login_merge/views/routes.dart';
+//import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-
+// Must Import .Dart inorder to build the widgets
+/*import 'LoginPage.dart';
+import 'Rest_Password_page.dart';
+import 'signup.dart';
+import 'Mainpage.dart';
+import 'GoogleMap.dart';
+import 'lists.dart';
+import 'Search.dart';
+import 'Account.dart';*/
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -20,13 +28,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: homepageRoute,
-      onGenerateRoute: routes.;
-      localizationsDelegates: GlobalMaterialLocalizations.delegates,
-      supportedLocales: [
-        const Locale('en', ' '), // American English
-        const Locale('es', ' '), // Spanish
-      ],
+      initialRoute: '/login',
+      onGenerateRoute: RouterNav.generateRoute,
+      
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
         primarySwatch: Colors.green,
         scaffoldBackgroundColor:

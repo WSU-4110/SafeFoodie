@@ -8,7 +8,7 @@ import 'package:safefoodie_login_merge/views/homepage.dart';
 import 'package:safefoodie_login_merge/Firebase/cloud/cloud_note.dart';
 
 class RouterNav {
-  Route<dynamic>? generateRoute(RouteSettings settings) {
+  static Route<dynamic>? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute<MainPage>(builder: (context) => MainPage());
@@ -19,7 +19,7 @@ class RouterNav {
 
       case registerRoute:
         return MaterialPageRoute<RegisterView>(
-            builder: (context) => RegisterView());
+            builder: (context) => const RegisterView());
 
       case forgotPWRoute:
         return MaterialPageRoute<ResetPage>(builder: (context) => ResetPage());
@@ -33,7 +33,11 @@ class RouterNav {
               onTap: ListsView.getInterpratation()));
 */
       default:
-        return MaterialPageRoute<MainPage>(builder: (context) => MainPage());
+        return MaterialPageRoute(
+            builder: (_) => Scaffold(
+                  body: Center(
+                      child: Text('No route defined for ${settings.name}')),
+                ));
     }
   }
 }
