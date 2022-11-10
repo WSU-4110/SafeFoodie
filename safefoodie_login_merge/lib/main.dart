@@ -7,7 +7,7 @@ import 'package:safefoodie_login_merge/views/route_names.dart';
 import 'package:safefoodie_login_merge/views/route_names.dart';
 import 'package:safefoodie_login_merge/views/routes.dart';
 
-///////////////////////////////////////////////////
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -21,7 +21,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter Demo',
       initialRoute: homepageRoute,
-      //onGenerateRoute: Route.;
+      onGenerateRoute: routes.;
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
       supportedLocales: [
         const Locale('en', ' '), // American English
