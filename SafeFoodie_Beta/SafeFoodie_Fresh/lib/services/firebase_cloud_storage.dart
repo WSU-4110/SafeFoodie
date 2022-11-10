@@ -6,7 +6,7 @@ import 'package:safefoodie_fresh/services/cloud_storage_exceptions.dart';
 class FirebaseCloudStorage {
   // Database member that is initialized via Firebase Cloud Firestore
   // collection method. The collection's name is passed as the argument.
-  final notes = FirebaseFirestore.instance.collection('notes');
+  final notes = FirebaseFirestore.instance.collection('userInfo');
 
   // Method to delete a specific note
   Future<void> deleteNote({required String documentId}) async {
