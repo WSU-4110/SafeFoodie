@@ -29,9 +29,7 @@ class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Settings'),
-      ),
+      appBar: AppBar(title: Text('Settings'), backgroundColor: Colors.green),
       body: SettingsList(
         sections: [
           // each block is a section of settings
