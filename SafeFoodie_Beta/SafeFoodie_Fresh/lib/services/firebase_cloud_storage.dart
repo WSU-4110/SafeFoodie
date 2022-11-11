@@ -94,6 +94,7 @@ class FirebaseCloudStorage {
   // Private factory constructor
   FirebaseCloudStorage._sharedInstance();
 
+  
   // Singleton constructor that calls to the _shared instance
   factory FirebaseCloudStorage() => _shared;
 }
