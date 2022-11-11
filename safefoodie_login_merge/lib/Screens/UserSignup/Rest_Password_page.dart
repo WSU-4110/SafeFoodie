@@ -4,13 +4,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'LoginPage.dart';
 
+//Firebase_auth instance
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
+//Reset Password State initiialization
 class ResetPasswordScreen extends StatefulWidget {
   @override
   State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
 }
 
+//Reset Password Format
 class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   @override
   Widget build(BuildContext context) {
