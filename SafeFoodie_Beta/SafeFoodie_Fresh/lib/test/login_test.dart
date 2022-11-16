@@ -12,11 +12,11 @@ void main() {
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.ac_unit),
+                icon: Icon(Icons.settings),
                 label: 'AC',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.access_alarm),
+                icon: Icon(Icons.location_pin),
                 label: 'Alarm',
               ),
             ],
@@ -40,11 +40,11 @@ void main() {
           bottomNavigationBar: BottomNavigationBar(
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.ac_unit),
+                icon: Icon(Icons.settings),
                 label: 'AC',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.access_alarm),
+                icon: Icon(Icons.location_pin),
                 label: 'Alarm',
               ),
             ],
@@ -94,11 +94,11 @@ void main() {
             unselectedItemColor: unselectedColor,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.ac_unit),
+                icon: Icon(Icons.settings),
                 label: 'AC',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.access_alarm),
+                icon: Icon(Icons.location_pin),
                 label: 'Alarm',
               ),
             ],
@@ -116,15 +116,15 @@ void main() {
             type: BottomNavigationBarType.shifting,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                icon: Icon(Icons.ac_unit),
+                icon: Icon(Icons.settings),
                 label: 'AC',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.access_alarm),
+                icon: Icon(Icons.location_pin),
                 label: 'Alarm',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.access_time),
+                icon: Icon(Icons.account_circle_outlined),
                 label: 'Time',
               ),
               BottomNavigationBarItem(
@@ -180,7 +180,7 @@ void main() {
             items: <BottomNavigationBarItem>[
               const BottomNavigationBarItem(
                 label: 'A',
-                icon: Icon(Icons.ac_unit),
+                icon: Icon(Icons.settings),
               ),
               BottomNavigationBarItem(
                 label: 'B',
@@ -216,11 +216,11 @@ void main() {
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 label: 'A',
-                icon: Icon(Icons.ac_unit),
+                icon: Icon(Icons.settings),
               ),
               BottomNavigationBarItem(
                 label: 'B',
-                icon: Icon(Icons.battery_alert),
+                icon: Icon(Icons.location_pin),
               ),
             ],
           ),
@@ -240,11 +240,11 @@ void main() {
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                 label: 'A',
-                icon: Icon(Icons.ac_unit),
+                icon: Icon(Icons.settings),
               ),
               BottomNavigationBarItem(
                 label: 'B',
-                icon: Icon(Icons.battery_alert),
+                icon: Icon(Icons.location_pin),
               ),
             ],
           ),
@@ -265,11 +265,11 @@ void main() {
               items: const <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
                   label: 'A',
-                  icon: Icon(Icons.ac_unit),
+                  icon: Icon(Icons.settings),
                 ),
                 BottomNavigationBarItem(
                   label: 'B',
-                  icon: Icon(Icons.battery_alert),
+                  icon: Icon(Icons.location_pin),
                 ),
               ],
             ),
