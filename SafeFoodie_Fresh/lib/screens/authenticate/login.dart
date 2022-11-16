@@ -42,14 +42,15 @@ class _Login extends State<Login> {
 //======================================
 //Email prompt area
         decoration: InputDecoration(
-            contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           enabledBorder: const OutlineInputBorder(
-                borderSide: const BorderSide(color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
-              ),
-              border: const OutlineInputBorder(),
-            labelStyle: TextStyle(color: Colors.white),
-              labelText: 'Email',
-            ));
+            borderSide: const BorderSide(
+                color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
+          ),
+          border: const OutlineInputBorder(),
+          labelStyle: TextStyle(color: Colors.white),
+          labelText: 'Email',
+        ));
 //Parameters for funct
     final passwordField = TextFormField(
         obscureText: _obscureText,
@@ -70,39 +71,40 @@ class _Login extends State<Login> {
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           enabledBorder: const OutlineInputBorder(
-                borderSide: const BorderSide(color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
-              ),
-              border: const OutlineInputBorder(),
-            labelStyle: TextStyle(color: Colors.white),
-              labelText: 'Password',
-            suffixIcon: IconButton(
-              icon:
-                  Icon(_obscureText ? Icons.visibility : Icons.visibility_off, 
-                  color: Color.fromARGB(216, 230, 182, 53),),
-              onPressed: () {
-                setState(() { //Allows for password view
-                  _obscureText = !_obscureText;
-                });
-              },
+            borderSide: const BorderSide(
+                color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
+          ),
+          border: const OutlineInputBorder(),
+          labelStyle: TextStyle(color: Colors.white),
+          labelText: 'Password',
+          suffixIcon: IconButton(
+            icon: Icon(
+              _obscureText ? Icons.visibility : Icons.visibility_off,
+              color: Color.fromARGB(216, 230, 182, 53),
             ),
-           ));
+            onPressed: () {
+              setState(() {
+                //Allows for password view
+                _obscureText = !_obscureText;
+              });
+            },
+          ),
+        ));
 //======================================
 //Signup button
     final signup = TextButton(
         onPressed: () {
           widget.toggleView!();
         },
-        child: const Text('No account? Sign up now',
-        style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 20),));
+        child: const Text(
+          'No account? Sign up now',
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.w500, fontSize: 20),
+        ));
 //======================================
 //Forgot pw button
-    final forgotpw = TextButton(
-        onPressed: () {
-        },
-        child: const Text('Forgot Password?'));
+    final forgotpw =
+        TextButton(onPressed: () {}, child: const Text('Forgot Password?'));
 //======================================
 //Temp bypass button
     final tempbypass = Material(
@@ -141,7 +143,7 @@ class _Login extends State<Login> {
       color: Theme.of(context).primaryColor,
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
-         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
         onPressed: () async {
           if (_formKey.currentState!.validate()) {
             dynamic result = await _auth.signInEmailPassword(
@@ -185,35 +187,35 @@ class _Login extends State<Login> {
                 children: <Widget>[
 //======================================
 //title header
-                   Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.all(10),
-            child: const Text(
-              'SafeFoodie',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 30),
-            )),
-                          Icon(
-          Icons.bakery_dining_rounded,
-          color: Color.fromARGB(216, 230, 182, 53),
-        ),
+                  Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(10),
+                      child: const Text(
+                        'SafeFoodie',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 30),
+                      )),
+                  Icon(
+                    Icons.bakery_dining_rounded,
+                    color: Color.fromARGB(216, 230, 182, 53),
+                  ),
 //======================================
 //MAIN BODY
 //======================================
 //Sign in header
-        Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.all(10),
-            child: const Text(
-              'Sign in',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 20),
-            )),
-//Function calls  
+                  Container(
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.all(10),
+                      child: const Text(
+                        'Sign in',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 20),
+                      )),
+//Function calls
                   emailField,
                   const SizedBox(height: 25.0),
                   passwordField,
