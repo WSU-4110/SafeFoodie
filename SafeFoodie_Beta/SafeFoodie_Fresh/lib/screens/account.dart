@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   runApp(
@@ -27,19 +26,28 @@ class _AccountState extends State<Account> {
   bool setSwitch = false;
   bool fingerIsSwitched = false;
 
+//=========================================
+//Account page start
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
           title: Text('Account managment'), backgroundColor: Colors.green),
+//Settings pads
       body: SettingsList(
         sections: [
-          // each block is a section of settings
+// each block is a section of settings
+// General settings
           SettingsSection(
-            title: Text('General'),
+            title: Text('General',
+                style: TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat',
+                    decoration: TextDecoration.underline)),
             tiles: [
               SettingsTile(
-                title: Text('Language', style: TextStyle(color: Colors.grey)),
+                title: Text('Language', style: TextStyle(color: Colors.green)),
                 value: Text('English',
                     style: TextStyle(color: Color.fromARGB(216, 230, 182, 53))),
                 leading: Icon(Icons.language, color: Colors.green),
@@ -83,9 +91,14 @@ class _AccountState extends State<Account> {
               ),
             ],
           ),
-
+//Account settings
           SettingsSection(
-            title: Text('Account'),
+            title: Text('Account',
+                style: TextStyle(
+                    color: Colors.green,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat',
+                    decoration: TextDecoration.underline)),
             tiles: [
               SettingsTile(
                 title: Text('Security', style: TextStyle(color: Colors.green)),
@@ -124,7 +137,8 @@ class _AccountState extends State<Account> {
           ),
         ],
       ),
-      //Center action button
+      //=========================================
+      //Bottom navbar
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.add),
