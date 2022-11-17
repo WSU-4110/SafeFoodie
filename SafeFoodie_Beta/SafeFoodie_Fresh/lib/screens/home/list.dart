@@ -75,7 +75,6 @@ class _ListPageState extends State<ListPage> {
         ]));
   }
 
-  @override
   Widget build2(BuildContext context) {
     Color getColor(Set<MaterialState> states) {
       const Set<MaterialState> InteractiveStates = <MaterialState>{
