@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:safefoodie_fresh/screens/account.dart';
+import 'package:safefoodie_fresh/screens/searchpage.dart';
 
 import 'services/auth.dart';
 import 'models/FirebaseUser.dart';
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
           home: Wrapper(),
           routes: {
             'Account': (context) => Account(),
+            'Search': (context) => Search(),
           }),
     );
   }
