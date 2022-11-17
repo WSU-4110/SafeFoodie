@@ -164,7 +164,9 @@ class _AccountState extends State<Account> {
             //Search item button
             IconButton(
               icon: Icon(Icons.search, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'Searchpage');
+              },
             ),
             //Route back to home page
             IconButton(
@@ -174,7 +176,9 @@ class _AccountState extends State<Account> {
             //Account page button
             IconButton(
               icon: Icon(Icons.account_circle_outlined, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'Account');
+              },
             ),
           ],
         ),
