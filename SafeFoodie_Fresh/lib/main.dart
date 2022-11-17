@@ -6,6 +6,7 @@ import 'package:safefoodie_fresh/screens/account.dart';
 import 'services/auth.dart';
 import 'models/FirebaseUser.dart';
 import 'screens/wrapper.dart';
+import 'package:safefoodie_fresh/screens/home/MapSample.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,6 +47,7 @@ class MyApp extends StatelessWidget {
           home: Wrapper(),
           routes: {
             'Account': (context) => Account(),
+            'MapSample': (context) => MapSample(),
           }),
     );
   }
