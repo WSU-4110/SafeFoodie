@@ -41,6 +41,10 @@ dependencies:
   flutter_lints: ^2.0.1
   provider: ^6.0.4
   settings_ui: ^2.0.2
+  google_maps_flutter: ^2.2.1
+  google_maps_flutter_web: ^0.4.0+3
+  location: ^4.4.0
+  geolocator: ^9.0.2
   
 dev_dependencies:
   flutter_test:

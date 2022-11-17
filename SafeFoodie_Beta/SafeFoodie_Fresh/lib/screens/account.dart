@@ -169,6 +169,7 @@ class _AccountState extends State<Account> {
             Icons.location_pin, color: Colors.green
           ),
           onPressed: () {
+             Navigator.pushNamed(context, 'MapSample');
 
           },
         ),

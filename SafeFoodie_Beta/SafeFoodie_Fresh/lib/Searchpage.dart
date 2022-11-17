@@ -93,7 +93,7 @@ class _GFGState extends State<GFG> {
             Icons.location_pin, color: Colors.green
           ),
           onPressed: () {
-
+ Navigator.pushNamed(context, 'MapSample');
           },
         ),
        //Account page button 
