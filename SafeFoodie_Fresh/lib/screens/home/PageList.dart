@@ -12,81 +12,42 @@ class PageList extends StatefulWidget {
 }
 
 class _PageList extends State<PageList> {
-  final List<String> food = <String>['apple'];
-  final List<int> date = <int>[2];
-  TextEditingController nameController = TextEditingController();
-  bool isChecked = false;
-
-  void addItemToList() {
-    setState(() {
-      food.insert(0, nameController.text);
-    });
-  }
-
+  List<String> litems = [];
+  final TextEditingController eCtrl = new TextEditingController();
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Grocery List'),
+  Widget build(BuildContext ctxt) {
+    return new Scaffold(
+        appBar: new AppBar(
+          title: new Text("Grocery List"),
         ),
-        body: Column(children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(20),
-            child: TextField(
-              controller: nameController,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Item',
-              ),
+        body: new Column(
+          children: <Widget>[
+            new TextField(
+              controller: eCtrl,
+              onSubmitted: (text) {
+                litems.add(text);
+                eCtrl.clear();
+                setState(() {});
+              },
             ),
-          ),
-          ElevatedButton(
-            child: Text('Add'),
-            onPressed: () {
-              addItemToList();
-            },
-          ),
-          Expanded(
-              child: ListView.builder(
-                  padding: const EdgeInsets.all(8),
-                  itemCount: food.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(
-                      height: 50,
-                      margin: EdgeInsets.all(2),
-                      child: Center(
-                          child: Text(
-                        '${food[index]} (${date[index]})',
-                        style: TextStyle(fontSize: 18),
-                      )),
-                    );
-                  }))
-        ]));
-  }
-
-  @override
-  Widget build2(BuildContext context) {
-    Color getColor(Set<MaterialState> states) {
-      const Set<MaterialState> InteractiveStates = <MaterialState>{
-        MaterialState.pressed,
-        MaterialState.hovered,
-        MaterialState.focused,
-      };
-      if (states.any(InteractiveStates.contains)) {
-        return Colors.blue;
-      }
-      return Colors.red;
-    }
-
-    return Checkbox(
-      checkColor: Colors.white,
-      fillColor: MaterialStateProperty.resolveWith(getColor),
-      value: isChecked,
-      onChanged: (bool? value) {
-        setState(() {
-          isChecked = value!;
-        });
-      },
-    );
+            ElevatedButton(
+              child: Text('Add'),
+              onPressed: () {
+                onSubmitted:
+                (text) {
+                  litems.add(text);
+                  eCtrl.clear();
+                  setState(() {});
+                };
+              },
+            ),
+            new Expanded(
+                child: new ListView.builder(
+                    itemCount: litems.length,
+                    itemBuilder: (BuildContext ctxt, int Index) {
+                      return new Text(litems[Index]);
+                    }))
+          ],
+        ));
   }
 }
