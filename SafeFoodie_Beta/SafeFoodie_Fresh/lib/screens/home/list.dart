@@ -16,16 +16,13 @@ void main() {
 }
 
 class ListPage extends StatefulWidget {
-  final Function? toggleView;
-  ListPage({this.toggleView});
+  const ListPage({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() {
-    return _ListPage();
-  }
+  State<ListPage> createState() => _ListPageState();
 }
 
-class _ListPage extends State<ListPage> {
+class _ListPageState extends State<ListPage> {
   final List<String> food = <String>[];
   final List<DateUtils> date = <DateUtils>[];
   TextEditingController nameController = TextEditingController();
@@ -35,71 +32,72 @@ class _ListPage extends State<ListPage> {
     setState(() {
       food.insert(0, nameController.text);
     });
+  }
 
-    @override
-    Widget build(BuildContext context) {
-      return Scaffold(
-          appBar: AppBar(
-            title: Text('Grocery List'),
-          ),
-          body: Column(children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: TextField(
-                controller: nameController,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Item',
-                ),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Grocery List'),
+        ),
+        body: Column(children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: TextField(
+              controller: nameController,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                labelText: 'Item',
               ),
             ),
-            RaisedButton(
-              child: Text('Add'),
-              onPressed: () {
-                addItemToList();
-              },
-            ),
-            Expanded(
-                child: ListView.builder(
-                    padding: const EdgeInsets.all(8),
-                    itemCount: food.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        height: 50,
-                        margin: EdgeInsets.all(2),
-                        child: Center(
-                            child: Text(
-                          '${food[index]} (${date[index]})',
-                          style: TextStyle(fontSize: 18),
-                        )),
-                      );
-                    }))
-          ]));
+          ),
+          ElevatedButton(
+            child: Text('Add'),
+            onPressed: () {
+              addItemToList();
+            },
+          ),
+          Expanded(
+              child: ListView.builder(
+                  padding: const EdgeInsets.all(8),
+                  itemCount: food.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      height: 50,
+                      margin: EdgeInsets.all(2),
+                      child: Center(
+                          child: Text(
+                        '${food[index]} (${date[index]})',
+                        style: TextStyle(fontSize: 18),
+                      )),
+                    );
+                  }))
+        ]));
+  }
 
-      Widget checkB(BuildContext context) {
-        Color getColor(Set<MaterialState> states) {
-          const Set<MaterialState> interactiveStates = <MaterialState>{
-            MaterialState.pressed,
-            MaterialState.hovered,
-            MaterialState.focused,
-          };
-          if (states.any(interactiveStates.contains)) {
-            return Colors.blue;
-          }
-          return Colors.red;
-        }
-
-        return Checkbox(
-          checkColor: Colors.white,
-          fillColor: MaterialStateProperty.resolveWith(getColor),
-          value: isChecked,
-          onChanged: (bool? value) {
-            setState(() {
-              isChecked = value!;
-            });
-          },
-        );
+  @override
+  Widget build2(BuildContext context) {
+    Color getColor(Set<MaterialState> states) {
+      const Set<MaterialState> InteractiveStates = <MaterialState>{
+        MaterialState.pressed,
+        MaterialState.hovered,
+        MaterialState.focused,
+      };
+      if (states.any(InteractiveStates.contains)) {
+        return Colors.blue;
       }
+      return Colors.red;
     }
+
+    return Checkbox(
+      checkColor: Colors.white,
+      fillColor: MaterialStateProperty.resolveWith(getColor),
+      value: isChecked,
+      onChanged: (bool? value) {
+        setState(() {
+          isChecked = value!;
+        });
+      },
+    );
   }
 }
