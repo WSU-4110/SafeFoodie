@@ -61,7 +61,9 @@ class _Home extends State<Home> {
             //View lists button
             IconButton(
               icon: Icon(Icons.align_horizontal_left, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'MapSample');
+              },
             ),
             //Search item button
             IconButton(

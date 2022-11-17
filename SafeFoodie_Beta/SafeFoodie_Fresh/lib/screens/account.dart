@@ -171,7 +171,9 @@ class _AccountState extends State<Account> {
             //Route back to home page
             IconButton(
               icon: Icon(Icons.location_pin, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'MapSample');
+              },
             ),
             //Account page button
             IconButton(
