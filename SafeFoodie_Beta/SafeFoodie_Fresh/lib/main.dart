@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
+import 'package:safefoodie_fresh/Searchpage.dart';
 import 'package:safefoodie_fresh/screens/account.dart';
 
 import 'services/auth.dart';
 import 'models/FirebaseUser.dart';
 import 'screens/wrapper.dart';
+import 'package:safefoodie_fresh/screens/home/MapSample.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -46,6 +48,8 @@ class MyApp extends StatelessWidget {
           home: Wrapper(),
           routes: {
             'Account': (context) => Account(),
+            'Searchpage': (context) => GFG(),
+            'MapSample': (context) => MapSample(),
           }),
     );
   }

@@ -160,7 +160,7 @@ class _AccountState extends State<Account> {
             Icons.search, color: Colors.green
           ),
           onPressed: () {
-
+            Navigator.pushNamed(context, 'Searchpage');
           },
         ),
        //Route back to home page 
@@ -169,6 +169,7 @@ class _AccountState extends State<Account> {
             Icons.location_pin, color: Colors.green
           ),
           onPressed: () {
+             Navigator.pushNamed(context, 'MapSample');
 
           },
         ),
@@ -178,7 +179,7 @@ class _AccountState extends State<Account> {
             Icons.account_circle_outlined, color: Colors.green
           ),
           onPressed: () {
-
+            Navigator.pushNamed(context, 'Account');
           },
         ),
       ],
