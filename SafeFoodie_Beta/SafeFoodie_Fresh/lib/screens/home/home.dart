@@ -2,6 +2,7 @@ import 'package:safefoodie_fresh/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:safefoodie_fresh/screens/account.dart';
 import 'package:safefoodie_fresh/screens/home/MapSample.dart';
+import 'package:safefoodie_fresh/screens/home/list.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -63,7 +64,7 @@ class _Home extends State<Home> {
             IconButton(
               icon: Icon(Icons.align_horizontal_left, color: Colors.green),
               onPressed: () {
-                Navigator.pushNamed(context, 'listPage');
+                Navigator.pushNamed(context, 'ListPage');
               },
             ),
             //Search item button
