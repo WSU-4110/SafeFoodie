@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
-import 'package:safefoodie_fresh/screens/Searchpage.dart';
 import 'package:safefoodie_fresh/screens/account.dart';
-import 'package:safefoodie_fresh/screens/home/MapSample.dart';
 
 import 'services/auth.dart';
 import 'models/FirebaseUser.dart';
 import 'screens/wrapper.dart';
+
+// For Routing
+import 'package:safefoodie_fresh/screens/home/MapSample.dart';
+import 'package:safefoodie_fresh/screens/home/Searchpage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

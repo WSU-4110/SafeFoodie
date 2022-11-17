@@ -1,6 +1,7 @@
 import 'package:safefoodie_fresh/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:safefoodie_fresh/screens/account.dart';
+import 'package:safefoodie_fresh/screens/home/MapSample.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -61,9 +62,7 @@ class _Home extends State<Home> {
             //View lists button
             IconButton(
               icon: Icon(Icons.align_horizontal_left, color: Colors.green),
-              onPressed: () {
-                Navigator.pushNamed(context, 'MapSample');
-              },
+              onPressed: () {},
             ),
             //Search item button
             IconButton(
@@ -75,7 +74,9 @@ class _Home extends State<Home> {
             //Route back to home page
             IconButton(
               icon: Icon(Icons.location_pin, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'MapSample');
+              },
             ),
             //Account page button
             IconButton(
