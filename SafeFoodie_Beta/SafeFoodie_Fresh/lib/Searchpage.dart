@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
  
 void main() {
-  runApp(const MyApp());
+  runApp(const Search());
 }
  
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Search extends StatelessWidget {
+  const Search({Key? key}) : super(key: key);
  
   // This is the root widget
   // of your application
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
 // This is the widget that will be shown
 // as the homepage of your application.
 class GFG extends StatefulWidget {
-  const GFG({Key? key}) : super(key: key);
+ // const GFG({Key? key}) : super(key: key);
  
   @override
   State<GFG> createState() => _GFGState();
@@ -52,11 +52,71 @@ class _GFGState extends State<GFG> {
           )
         ],
       ),
+
+//Bottom navbar
+  floatingActionButton: FloatingActionButton(
+    onPressed: () {},
+    child: Icon(Icons.add),
+    backgroundColor: Colors.green, //sets button color
+  ),
+  floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //inidcates pronounced button position
+  //Bottom Navbar
+  bottomNavigationBar: BottomAppBar(
+    shape: CircularNotchedRectangle(), //navbar reactiveness to center button
+    notchMargin: 5, //number of elements on bar
+    child: Row(
+      //children inside bottom appbar
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+      //View lists button
+        IconButton(
+          icon: Icon(
+            Icons.align_horizontal_left, color: Colors.green
+          ),
+          onPressed: () {
+
+          },
+        ),
+       //Search item button 
+        IconButton(
+          icon: Icon(
+            Icons.search, color: Colors.green
+          ),
+          onPressed: () {
+            Navigator.pushNamed(context, 'Searchpage');
+          },
+        ),
+       //Route back to home page 
+        IconButton(
+          icon: Icon(
+            Icons.location_pin, color: Colors.green
+          ),
+          onPressed: () {
+
+          },
+        ),
+       //Account page button 
+        IconButton(
+          icon: Icon(
+            Icons.account_circle_outlined, color: Colors.green
+          ),
+          onPressed: () {
+            Navigator.pushNamed(context, 'Account');
+          },
+        ),
+      ],
+    ),
+  ),
+
+
+
     );
   }
 }
 
 class CustomSearchDelegate extends SearchDelegate {
+
   // Demo list to show querying
   List<String> searchTerms = [
     "Apple",
@@ -135,3 +195,5 @@ class CustomSearchDelegate extends SearchDelegate {
     );
   }
 }
+
+

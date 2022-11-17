@@ -66,7 +66,10 @@ class _Home extends State<Home> {
             //Search item button
             IconButton(
               icon: Icon(Icons.search, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'Searchpage');
+
+              },
             ),
             //Route back to home page
             IconButton(
