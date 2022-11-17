@@ -6,7 +6,7 @@ import 'package:flutter/cupertino.dart';
 void main() {
   runApp(
     MaterialApp(
-      title: 'Account',
+      title: 'Home',
       theme: ThemeData(
         primarySwatch: Colors.green,
         scaffoldBackgroundColor:
