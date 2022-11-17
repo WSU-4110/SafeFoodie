@@ -17,24 +17,24 @@ void main() {
 }
 
 class ListPage extends StatefulWidget {
-  final Function? toggleView;
-  ListPage({this.toggleView});
+  const ListPage({Key? key}) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() {
-    return _ListPage();
-  }
+  State<ListPage> createState() => _ListPageState();
 }
 
-class _ListPage extends State<ListPage> {
-final List<String> food = <String>[];
-final List<DateUtils> date = <DateUtils>[];
+
+class _ListPageState extends State<ListPage> {
+  final List<String> food = <String>[];
+  final List<DateUtils> date = <DateUtils>[];
   TextEditingController nameController = TextEditingController();
 
   void addItemToList(){
     setState(() {
       food.insert(0,nameController.text);
     });
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ final List<DateUtils> date = <DateUtils>[];
               ),
             ),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Add'),
             onPressed: () {
               addItemToList();
@@ -81,5 +81,4 @@ final List<DateUtils> date = <DateUtils>[];
       )
     );
   }
-}
 }
