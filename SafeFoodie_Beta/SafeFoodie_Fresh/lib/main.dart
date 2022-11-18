@@ -8,12 +8,10 @@ import 'services/auth.dart';
 import 'models/FirebaseUser.dart';
 import 'screens/wrapper.dart';
 import 'package:safefoodie_fresh/screens/home/MapSample.dart';
-import 'package:native_notify/native_notify.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  NativeNotify.initialize(2144, 'dmFD2d8ddrxDD1kweYf2kq', null, null);
   runApp(MyApp());
 }
 
