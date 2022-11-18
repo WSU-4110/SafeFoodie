@@ -1,5 +1,6 @@
 import 'package:safefoodie_fresh/models/loginuser.dart';
 import 'package:safefoodie_fresh/services/auth.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
