@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 Future<void> main() async {
   // Always initialize Awesome Notifications
   await NotificationController.initializeLocalNotifications();
-  runApp(const MyApp());
+  runApp(const MaterialApp(home: MyApp()));
 }
 
 ///  *********************************************
@@ -309,7 +309,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MaterialApp(
+        home: Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
       ),
@@ -345,7 +346,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+    ));
   }
 }
 
