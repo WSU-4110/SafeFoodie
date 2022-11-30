@@ -1,9 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.safefoodie_fresh">
+
+  
    <application
         android:label="safefoodie_fresh"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+      <meta-data android:name="com.google.android.geo.API_KEY"
+     android:value="AIzaSyCsDhJbzYY3XIAvWlbquJRS3_B6iDidcXI"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -20,6 +26,7 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
+    
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

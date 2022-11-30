@@ -23,7 +23,7 @@ class AuthService {
       User? user = userCredential.user;
       return _firebaseUser(user);
     } catch (e) {
-     return FirebaseUser(code: e.toString(), uid: null);
+      return FirebaseUser(code: e.toString(), uid: null);
     }
   }
 
