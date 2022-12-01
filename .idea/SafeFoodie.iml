@@ -6,13 +6,32 @@
       <excludeFolder url="file://$MODULE_DIR$/safefoodie_login_merge/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/safefoodie_login_merge/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/safefoodie_login_merge/build" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Beta/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Beta/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Beta/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Beta/SafeFoodie_Fresh/build" />
-      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Beta/SafeFoodie_Fresh/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Beta/SafeFoodie_Fresh/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Beta/SafeFoodie_Fresh/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Fresh/build" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Fresh/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Fresh/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Beta/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Beta/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/build" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Beta/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/safefoodie_login_merge/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/build" />
+      <excludeFolder url="file://$MODULE_DIR$/safefoodie_login_merge/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/safefoodie_login_merge/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/safefoodie_login_merge/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/safefoodie_login_merge/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/safefoodie_login_merge/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/SafeFoodie_Fresh/windows/flutter/ephemeral/.plugin_symlinks/geolocator_windows/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Dart SDK" level="project" />
-    <orderEntry type="library" name="Dart Packages" level="project" />
   </component>
 </module>

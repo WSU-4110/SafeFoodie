@@ -66,17 +66,29 @@ class _ListPageState extends State<ListPage> {
                       height: 50,
                       margin: EdgeInsets.all(2),
                       child: Center(
-                          child: Text(
-                        '${food[index]} (${date[index]})',
-                        style: TextStyle(fontSize: 18),
-                      )),
+                        child: Text(
+                          '${food[index]} (${date[index]})',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
                     );
+                    //This is the checkbox implementation for the list
+                    return Checkbox(
+                      checkColor: Colors.white,
+                      //fillColor: Colors.blue,
+                      value: isChecked,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          isChecked = value!;
+                        });
+                      },
+                    ); //End of checkbox code
                   }))
         ]));
   }
 
   //Check Boxes
-  Widget build2(BuildContext context) {
+  /*Widget build2(BuildContext context) {
     Color getColor(Set<MaterialState> states) {
       const Set<MaterialState> InteractiveStates = <MaterialState>{
         MaterialState.pressed,
@@ -99,5 +111,5 @@ class _ListPageState extends State<ListPage> {
         });
       },
     );
-  }
+  }*/
 }
