@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:safefoodie_fresh/screens/account.dart';
 import 'package:safefoodie_fresh/screens/home/PageList.dart';
 import 'package:safefoodie_fresh/screens/home/CreateNew.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
+import 'package:safefoodie_fresh/screens/newlist.dart';
+import 'package:safefoodie_fresh/screens/add_to_list.dart';
 
 import 'services/auth.dart';
 import 'models/FirebaseUser.dart';
@@ -60,6 +60,8 @@ class MyApp extends StatelessWidget {
             'MapSample': (context) => MapSample(),
             'PageList': (context) => PageList(),
             'CreateNew': (context) => CreateNew(),
+            'NewList': (context) => NewList(),
+            'AddtoList': (context) => AddtoList(),
           }),
     );
   }
