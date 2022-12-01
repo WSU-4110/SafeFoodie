@@ -1,58 +1,29 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const PageList());
+  runApp(const CreateNew());
 }
 
-class PageList extends StatefulWidget {
-  const PageList({Key? key}) : super(key: key);
+class CreateNew extends StatefulWidget {
+  const CreateNew({Key? key}) : super(key: key);
 
   @override
-  State<PageList> createState() => _PageList();
+  State<CreateNew> createState() => _CreateNew();
 }
 
-class _PageList extends State<PageList> {
+class _CreateNew extends State<CreateNew> {
   List<String> litems = [];
   final TextEditingController eCtrl = new TextEditingController();
   @override
   Widget build(BuildContext ctxt) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text("Grocery List"),
-        ),
-        body: new Column(
-          children: <Widget>[
-            new TextField(
-              controller: eCtrl,
-              onSubmitted: (text) {
-                litems.add(text);
-                eCtrl.clear();
-                setState(() {});
-              },
-            ),
-            ElevatedButton(
-              child: Text('Add'),
-              onPressed: () {
-                onSubmitted:
-                (text) {
-                  litems.add(text);
-                  eCtrl.clear();
-                  setState(() {});
-                };
-              },
-            ),
-            new Expanded(
-                child: new ListView.builder(
-                    itemCount: litems.length,
-                    itemBuilder: (BuildContext ctxt, int Index) {
-                      return new Text(litems[Index]);
-                    }))
-          ],
+          title: new Text("Create new list"),
         ),
 //Center action button
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-                    Navigator.pushNamed(context, 'CreateNew');
+          Navigator.pushNamed(context, 'CreateNew');
         },
         child: Icon(Icons.add),
         backgroundColor: Colors.green, //sets button color

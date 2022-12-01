@@ -55,7 +55,9 @@ class _GFGState extends State<GFG> {
 
 //Bottom navbar
   floatingActionButton: FloatingActionButton(
-    onPressed: () {},
+    onPressed: () {
+                Navigator.pushNamed(context, 'CreateNew');
+    },
     child: Icon(Icons.add),
     backgroundColor: Colors.green, //sets button color
   ),
@@ -75,7 +77,7 @@ class _GFGState extends State<GFG> {
             Icons.align_horizontal_left, color: Colors.green
           ),
           onPressed: () {
-
+ Navigator.pushNamed(context, 'PageList');
           },
         ),
        //Search item button 
