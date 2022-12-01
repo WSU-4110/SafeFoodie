@@ -18,12 +18,6 @@ class Home extends StatefulWidget {
 class _Home extends State<Home> {
   final AuthService _auth = new AuthService();
 
-    static const pattern = [
-    StairedGridTile(0.5, 1),
-    StairedGridTile(0.5, 3 / 4),
-    StairedGridTile(1.0, 10 / 4),
-  ];
-
   @override
   Widget build(BuildContext context) {
 //=========================================
@@ -51,7 +45,7 @@ class _Home extends State<Home> {
         title: const Text('Welcome to SafeFoodie'),
         backgroundColor: Theme.of(context).primaryColor,
       ),
-      body: Gridview.custom(),
+       body: Center(child: SignOut),
 //Center action button
       floatingActionButton: FloatingActionButton(
         onPressed: () {
