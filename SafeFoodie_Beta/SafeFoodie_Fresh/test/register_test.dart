@@ -252,9 +252,7 @@ void main() {
     await testObscure.pumpWidget(testwidget);
 
     expect(_obscureText, true);
-    
   });
   });
 
-  
 }
