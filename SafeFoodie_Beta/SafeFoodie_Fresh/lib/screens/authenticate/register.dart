@@ -1,6 +1,5 @@
 import 'package:safefoodie_fresh/models/loginuser.dart';
 import 'package:safefoodie_fresh/services/auth.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -88,7 +87,7 @@ class _Register extends State<Register> {
            ));
 //=========================================
 // Back button
-    final Goback = TextButton(
+    final goBack = TextButton(
         onPressed: () {
           widget.toggleView!();
         },
@@ -165,7 +164,7 @@ class _Register extends State<Register> {
                   const SizedBox(height: 25.0),
                   registerButton,
                   const SizedBox(height: 15.0),
-                  Goback,
+                  goBack,
                   const SizedBox(height: 35.0),
                 ],
               ),
