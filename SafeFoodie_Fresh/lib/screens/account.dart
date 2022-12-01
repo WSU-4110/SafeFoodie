@@ -140,7 +140,9 @@ class _AccountState extends State<Account> {
       //=========================================
       //Bottom navbar
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+                    Navigator.pushNamed(context, 'CreateNew');
+        },
         child: Icon(Icons.add),
         backgroundColor: Colors.green, //sets button color
       ),
@@ -159,7 +161,9 @@ class _AccountState extends State<Account> {
             //View lists button
             IconButton(
               icon: Icon(Icons.align_horizontal_left, color: Colors.green),
-              onPressed: () {},
+              onPressed: () {
+                 Navigator.pushNamed(context, 'PageList');
+              },
             ),
             //Search item button
             IconButton(

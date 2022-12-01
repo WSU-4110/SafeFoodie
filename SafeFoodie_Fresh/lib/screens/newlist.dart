@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const PageList());
+  runApp(const NewList());
 }
 
-class PageList extends StatefulWidget {
-  const PageList({Key? key}) : super(key: key);
+class NewList extends StatefulWidget {
+  const NewList({Key? key}) : super(key: key);
 
   @override
-  State<PageList> createState() => _PageList();
+  State<NewList> createState() => _NewList();
 }
 
-class _PageList extends State<PageList> {
+class _NewList extends State<NewList> {
   List<String> litems = [];
   final TextEditingController eCtrl = new TextEditingController();
   @override
   Widget build(BuildContext ctxt) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text("Grocery List"),
+          title: new Text("Create new list"),
         ),
         body: new Column(
           children: <Widget>[
