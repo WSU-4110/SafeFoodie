@@ -16,7 +16,7 @@ class _CreateNew extends State<CreateNew> {
   Widget build(BuildContext ctxt) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Create new list"),
+          title: Text("Create Page"),
         ),
 body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 2.0),
@@ -24,12 +24,8 @@ body: Container(
           crossAxisCount: 2,
           padding: EdgeInsets.all(3.0),
           children: <Widget>[
-            makeDashboardItem("Ordbog", Icons.book),
-            makeDashboardItem("Alphabet", Icons.alarm),
-            makeDashboardItem("Alphabet", Icons.alarm),
-            makeDashboardItem("Alphabet", Icons.alarm),
-            makeDashboardItem("Alphabet", Icons.alarm),
-            makeDashboardItem("Alphabet", Icons.alarm)
+            makeDashboardItem1("Add to existing list", Icons.low_priority_sharp),
+            makeDashboardItem2("Create new list", Icons.library_add_sharp),
           ],
         ),
       ),
@@ -88,14 +84,16 @@ body: Container(
         );
   }
 
-    Card makeDashboardItem(String title, IconData icon) {
+    Card makeDashboardItem1(String title, IconData icon) {
     return Card(
         elevation: 1.0,
         margin: new EdgeInsets.all(8.0),
         child: Container(
-          decoration: BoxDecoration(color: Color.fromRGBO(220, 220, 220, 1.0)),
+          decoration: BoxDecoration(color: Colors.green),
           child: new InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, 'AddtoList');
+            },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisSize: MainAxisSize.min,
@@ -106,13 +104,47 @@ body: Container(
                     child: Icon(
                   icon,
                   size: 40.0,
-                  color: Colors.black,
+                  color: Color.fromARGB(216, 230, 182, 53),
                 )),
                 SizedBox(height: 20.0),
                 new Center(
                   child: new Text(title,
                       style:
-                          new TextStyle(fontSize: 18.0, color: Colors.black)),
+                          new TextStyle(fontSize: 18.0, color: Colors.white)),
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+
+      Card makeDashboardItem2(String title, IconData icon) {
+    return Card(
+        elevation: 1.0,
+        margin: new EdgeInsets.all(8.0),
+        child: Container(
+          decoration: BoxDecoration(color: Colors.green),
+          child: new InkWell(
+            onTap: () {
+                Navigator.pushNamed(context, 'NewList');
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              verticalDirection: VerticalDirection.down,
+              children: <Widget>[
+                SizedBox(height: 50.0),
+                Center(
+                    child: Icon(
+                  icon,
+                  size: 40.0,
+                  color: Color.fromARGB(216, 230, 182, 53),
+                )),
+                SizedBox(height: 20.0),
+                new Center(
+                  child: new Text(title,
+                      style:
+                          new TextStyle(fontSize: 18.0, color: Colors.white)),
                 )
               ],
             ),
