@@ -15,16 +15,17 @@ class _CreateNew extends State<CreateNew> {
   @override
   Widget build(BuildContext ctxt) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Create Page"),
-        ),
-body: Container(
+      appBar: AppBar(
+        title: Text("Create Page"),
+      ),
+      body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 2.0),
         child: GridView.count(
           crossAxisCount: 2,
           padding: EdgeInsets.all(3.0),
           children: <Widget>[
-            makeDashboardItem1("Add to existing list", Icons.low_priority_sharp),
+            makeDashboardItem1(
+                "Add to existing list", Icons.low_priority_sharp),
             makeDashboardItem2("Create new list", Icons.library_add_sharp),
           ],
         ),
@@ -80,11 +81,11 @@ body: Container(
             ),
           ],
         ),
-      ),        
-        );
+      ),
+    );
   }
 
-    Card makeDashboardItem1(String title, IconData icon) {
+  Card makeDashboardItem1(String title, IconData icon) {
     return Card(
         elevation: 1.0,
         margin: new EdgeInsets.all(8.0),
@@ -118,7 +119,7 @@ body: Container(
         ));
   }
 
-      Card makeDashboardItem2(String title, IconData icon) {
+  Card makeDashboardItem2(String title, IconData icon) {
     return Card(
         elevation: 1.0,
         margin: new EdgeInsets.all(8.0),
@@ -126,7 +127,8 @@ body: Container(
           decoration: BoxDecoration(color: Colors.green),
           child: new InkWell(
             onTap: () {
-                Navigator.pushNamed(context, 'NewList');
+              Navigator.pushNamed(context, 'NewList');
+              //Navigator.pushNamed(context, 'GList');
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,

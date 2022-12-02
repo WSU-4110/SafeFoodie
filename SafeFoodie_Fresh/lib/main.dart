@@ -6,8 +6,7 @@ import 'package:safefoodie_fresh/screens/home/PageList.dart';
 import 'package:safefoodie_fresh/screens/home/CreateNew.dart';
 import 'package:safefoodie_fresh/screens/newlist.dart';
 import 'package:safefoodie_fresh/screens/add_to_list.dart';
-
-
+import 'package:safefoodie_fresh/screens/list_creation.dart';
 
 import 'services/auth.dart';
 import 'models/FirebaseUser.dart';

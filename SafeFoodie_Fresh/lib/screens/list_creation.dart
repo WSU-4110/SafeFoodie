@@ -21,7 +21,7 @@ class ListItem extends StatelessWidget {
     if (!checked) return null;
 
     return TextStyle(
-      color: Colors.black54,
+      color: Colors.red,
       decoration: TextDecoration.lineThrough,
     );
   }
@@ -90,10 +90,10 @@ class _GListState extends State<GList> {
       barrierDismissible: false, // user must tap button!
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Add a new todo item'),
+          title: const Text('Add a new grocery item'),
           content: TextField(
             controller: _textFieldController,
-            decoration: const InputDecoration(hintText: 'Type your new todo'),
+            decoration: const InputDecoration(hintText: 'Type your new item'),
           ),
           actions: <Widget>[
             TextButton(

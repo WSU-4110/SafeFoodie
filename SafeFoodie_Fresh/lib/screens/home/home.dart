@@ -5,8 +5,7 @@ import 'package:safefoodie_fresh/screens/account.dart';
 import 'package:safefoodie_fresh/screens/home/MapSample.dart';
 import 'package:safefoodie_fresh/screens/home/PageList.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
-
+import 'package:safefoodie_fresh/screens/list_creation.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -45,11 +44,11 @@ class _Home extends State<Home> {
         title: const Text('Welcome to SafeFoodie'),
         backgroundColor: Theme.of(context).primaryColor,
       ),
-       body: Center(child: SignOut),
+      body: Center(child: SignOut),
 //Center action button
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-                    Navigator.pushNamed(context, 'CreateNew');
+          Navigator.pushNamed(context, 'CreateNew');
         },
         child: Icon(Icons.add),
         backgroundColor: Colors.green, //sets button color
