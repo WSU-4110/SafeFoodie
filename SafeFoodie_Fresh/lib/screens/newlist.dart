@@ -1,58 +1,58 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const PageList());
+  runApp(const NewList());
 }
 
-class PageList extends StatefulWidget {
-  const PageList({Key? key}) : super(key: key);
+class NewList extends StatefulWidget {
+  const NewList({Key? key}) : super(key: key);
 
   @override
-  State<PageList> createState() => _PageList();
+  State<NewList> createState() => _NewList();
 }
 
-class _PageList extends State<PageList> {
+class _NewList extends State<NewList> {
   List<String> litems = [];
   final TextEditingController eCtrl = new TextEditingController();
   @override
   Widget build(BuildContext ctxt) {
     return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("Grocery List"),
-        ),
-        body: new Column(
-          children: <Widget>[
-            new TextField(
-              controller: eCtrl,
-              onSubmitted: (text) {
+      appBar: new AppBar(
+        title: new Text("Create new list"),
+      ),
+      body: new Column(
+        children: <Widget>[
+          new TextField(
+            controller: eCtrl,
+            onSubmitted: (text) {
+              litems.add(text);
+              eCtrl.clear();
+              setState(() {});
+            },
+          ),
+          ElevatedButton(
+            child: Text('Add'),
+            onPressed: () {
+              onSubmitted:
+              (text) {
                 litems.add(text);
                 eCtrl.clear();
                 setState(() {});
-              },
-            ),
-            ElevatedButton(
-              child: Text('Add'),
-              onPressed: () {
-                onSubmitted:
-                (text) {
-                  litems.add(text);
-                  eCtrl.clear();
-                  setState(() {});
-                };
-              },
-            ),
-            new Expanded(
-                child: new ListView.builder(
-                    itemCount: litems.length,
-                    itemBuilder: (BuildContext ctxt, int Index) {
-                      return new Text(litems[Index]);
-                    }))
-          ],
-        ),
+              };
+            },
+          ),
+          new Expanded(
+              child: new ListView.builder(
+                  itemCount: litems.length,
+                  itemBuilder: (BuildContext ctxt, int Index) {
+                    return new Text(litems[Index]);
+                  }))
+        ],
+      ),
 //Center action button
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-                    Navigator.pushNamed(context, 'CreateNew');
+          Navigator.pushNamed(context, 'CreateNew');
         },
         child: Icon(Icons.add),
         backgroundColor: Colors.green, //sets button color
@@ -100,7 +100,7 @@ class _PageList extends State<PageList> {
             ),
           ],
         ),
-      ),        
-        );
+      ),
+    );
   }
 }
