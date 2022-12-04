@@ -8,6 +8,9 @@ For downloading and testing this software, you will need Android Studio with an 
 5. Exit
 
 Then, clone the repository and execute the following command in your terminal:
+
 flutter clean
+
 flutter pub get
+
 flutter run
