@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:developer';
 
 void main() {
   runApp(const AddtoList());
@@ -12,95 +14,70 @@ class AddtoList extends StatefulWidget {
 }
 
 class _AddtoList extends State<AddtoList> {
-  List<String> litems = [];
-  final TextEditingController eCtrl = new TextEditingController();
   @override
-  Widget build(BuildContext ctxt) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("Add to list"),
-        ),
-        body: new Column(
-          children: <Widget>[
-            new TextField(
-              controller: eCtrl,
-              onSubmitted: (text) {
-                litems.add(text);
-                eCtrl.clear();
-                setState(() {});
-              },
-            ),
-            ElevatedButton(
-              child: Text('Add'),
-              onPressed: () {
-                onSubmitted:
-                (text) {
-                  litems.add(text);
-                  eCtrl.clear();
-                  setState(() {});
-                };
-              },
-            ),
-            new Expanded(
-                child: new ListView.builder(
-                    itemCount: litems.length,
-                    itemBuilder: (BuildContext ctxt, int Index) {
-                      return new Text(litems[Index]);
-                    }))
-          ],
-        ),
-//Center action button
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-                    Navigator.pushNamed(context, 'CreateNew');
-        },
-        child: Icon(Icons.add),
-        backgroundColor: Colors.green, //sets button color
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation
-          .centerDocked, //inidcates pronounced button position
-      //Bottom Navbar
-      bottomNavigationBar: BottomAppBar(
-        shape:
-            CircularNotchedRectangle(), //navbar reactiveness to center button
-        notchMargin: 5, //number of elements on bar
-        child: Row(
-          //children inside bottom appbar
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            //View lists button
-            IconButton(
-              icon: Icon(Icons.align_horizontal_left, color: Colors.green),
-              onPressed: () {
-                Navigator.pushNamed(context, 'PageList');
-              },
-            ),
-            //Search item button
-            IconButton(
-              icon: Icon(Icons.search, color: Colors.green),
-              onPressed: () {
-                Navigator.pushNamed(context, 'Searchpage');
-              },
-            ),
-            //Route back to home page
-            IconButton(
-              icon: Icon(Icons.location_pin, color: Colors.green),
-              onPressed: () {
-                Navigator.pushNamed(context, 'MapSample');
-              },
-            ),
-            //Account page button
-            IconButton(
-              icon: Icon(Icons.account_circle_outlined, color: Colors.green),
-              onPressed: () {
-                //Settings navigator
-                Navigator.pushNamed(context, 'Account');
-              },
-            ),
-          ],
-        ),
-      ),        
-        );
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar:
+          AppBar(centerTitle: true, title: Text('test test firebase work!!')),
+      body: _buildBody(context),
+    );
   }
+
+  Widget _buildBody(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance.collection('list').snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) return LinearProgressIndicator();
+
+        return _buildList(context, snapshot.data!.docs);
+      },
+    );
+  }
+
+  Widget _buildList(BuildContext context, List<DocumentSnapshot> snapshot) {
+    return ListView(
+      padding: const EdgeInsets.only(top: 20.0),
+      children: snapshot.map((data) => _buildListItem(context, data)).toList(),
+    );
+  }
+
+  Widget _buildListItem(BuildContext context, DocumentSnapshot data) {
+    inspect(data);
+    final record = Record.fromSnapshot(data);
+
+    return Padding(
+      key: ValueKey(record.name),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.circular(5.0),
+        ),
+        child: ListTile(
+          title: Text(record.name),
+          trailing: Text(record.items.toString()),
+          //onTap: () => record.reference.updateData({'list': record.items+1})
+        ),
+      ),
+    );
+  }
+}
+
+class Record {
+  final String name;
+  final int items;
+  final DocumentReference? reference;
+
+  Record.fromMap(Map<String, dynamic> map, {this.reference})
+      : assert(map['name'] != null),
+        assert(map['items'] != null),
+        name = map['name'],
+        items = map['items'];
+
+  Record.fromSnapshot(DocumentSnapshot snapshot)
+      : this.fromMap(snapshot.data() as Map<String, dynamic>,
+            reference: snapshot.reference);
+
+  @override
+  String toString() => "Record<$name:$items>";
 }
