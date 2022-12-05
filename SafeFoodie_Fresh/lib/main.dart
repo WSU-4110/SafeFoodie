@@ -16,7 +16,6 @@ import 'screens/wrapper.dart';
 // For Routing
 import 'package:safefoodie_fresh/screens/home/MapSample.dart';
 import 'package:safefoodie_fresh/screens/home/Searchpage.dart';
-import 'package:safefoodie_fresh/screens/home/PageList.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
