@@ -43,6 +43,7 @@ class AuthService {
   }
 
 //register with email and password
+  // ignore: no_leading_underscores_for_local_identifiers
   Future registerEmailPassword(LoginUser _login) async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance

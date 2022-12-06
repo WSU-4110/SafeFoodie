@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
  
 void main() {
@@ -60,6 +62,7 @@ class _GFGState extends State<GFG> {
     onPressed: () {
                 Navigator.pushNamed(context, 'CreateNew');
     },
+    // ignore: sort_child_properties_last
     child: const Icon(Icons.add),
     backgroundColor: Colors.green, //sets button color
   ),
