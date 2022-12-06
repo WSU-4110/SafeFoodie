@@ -58,7 +58,7 @@ class _AddtoList extends State<AddtoList> {
             trailing: Text(record.items.toString()),
             //onTap: () => record.reference.updateData({'list': record.items+1})
             //updateData is listed as deprecated in the firebase Flutter library
-            onTap: () => record.reference?.update({'list': record.items + 1})),
+            onTap: () => record.reference!.update({'list': record.items + 1})),
       ),
     );
   }
