@@ -13,16 +13,16 @@ class PageList extends StatefulWidget {
 
 class _PageList extends State<PageList> {
   List<String> litems = [];
-  final TextEditingController eCtrl = new TextEditingController();
+  final TextEditingController eCtrl = TextEditingController();
   @override
   Widget build(BuildContext ctxt) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text("Grocery List"),
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("Grocery List"),
         ),
-        body: new Column(
+        body: Column(
           children: <Widget>[
-            new TextField(
+            TextField(
               controller: eCtrl,
               onSubmitted: (text) {
                 litems.add(text);
@@ -31,9 +31,9 @@ class _PageList extends State<PageList> {
               },
             ),
             ElevatedButton(
-              child: Text('Add'),
+              child: const Text('Add'),
               onPressed: () {
-                onSubmitted:
+               // onSubmitted:
                 (text) {
                   litems.add(text);
                   eCtrl.clear();
@@ -41,11 +41,12 @@ class _PageList extends State<PageList> {
                 };
               },
             ),
-            new Expanded(
-                child: new ListView.builder(
+            Expanded(
+                child: ListView.builder(
                     itemCount: litems.length,
+                    // ignore: non_constant_identifier_names
                     itemBuilder: (BuildContext ctxt, int Index) {
-                      return new Text(litems[Index]);
+                      return Text(litems[Index]);
                     }))
           ],
         ),
@@ -54,7 +55,8 @@ class _PageList extends State<PageList> {
         onPressed: () {
                     Navigator.pushNamed(context, 'CreateNew');
         },
-        child: Icon(Icons.add),
+        // ignore: sort_child_properties_last
+        child: const Icon(Icons.add),
         backgroundColor: Colors.green, //sets button color
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation
@@ -62,7 +64,7 @@ class _PageList extends State<PageList> {
       //Bottom Navbar
       bottomNavigationBar: BottomAppBar(
         shape:
-            CircularNotchedRectangle(), //navbar reactiveness to center button
+            const CircularNotchedRectangle(), //navbar reactiveness to center button
         notchMargin: 5, //number of elements on bar
         child: Row(
           //children inside bottom appbar
@@ -71,28 +73,28 @@ class _PageList extends State<PageList> {
           children: <Widget>[
             //View lists button
             IconButton(
-              icon: Icon(Icons.align_horizontal_left, color: Colors.green),
+              icon: const Icon(Icons.align_horizontal_left, color: Colors.green),
               onPressed: () {
                 Navigator.pushNamed(context, 'PageList');
               },
             ),
             //Search item button
             IconButton(
-              icon: Icon(Icons.search, color: Colors.green),
+              icon: const Icon(Icons.search, color: Colors.green),
               onPressed: () {
                 Navigator.pushNamed(context, 'Searchpage');
               },
             ),
             //Route back to home page
             IconButton(
-              icon: Icon(Icons.location_pin, color: Colors.green),
+              icon: const Icon(Icons.location_pin, color: Colors.green),
               onPressed: () {
                 Navigator.pushNamed(context, 'MapSample');
               },
             ),
             //Account page button
             IconButton(
-              icon: Icon(Icons.account_circle_outlined, color: Colors.green),
+              icon: const Icon(Icons.account_circle_outlined, color: Colors.green),
               onPressed: () {
                 //Settings navigator
                 Navigator.pushNamed(context, 'Account');

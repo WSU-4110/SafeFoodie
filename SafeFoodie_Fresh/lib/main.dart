@@ -56,10 +56,10 @@ class MyApp extends StatelessWidget {
           ),
           //Initial route for Settings
           initialRoute: 'Login',
-          home: Wrapper(),
+          home: const Wrapper(),
           routes: {
             'Account': (context) => const Account(),
-            'Searchpage': (context) => GFG(),
+            'Searchpage': (context) => const GFG(),
             'MapSample': (context) => const MapSample(),
             'PageList': (context) => const PageList(),
             'CreateNew': (context) => const CreateNew(),
