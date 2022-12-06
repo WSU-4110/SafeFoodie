@@ -1,6 +1,7 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
-import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(
@@ -8,16 +9,18 @@ void main() {
       title: 'Home',
       theme: ThemeData(
         primarySwatch: Colors.green,
-        scaffoldBackgroundColor: Color.fromARGB(166, 72, 168, 75),
-        primaryColor: Color.fromARGB(166, 72, 168, 75), //color of background
+        scaffoldBackgroundColor: const Color.fromARGB(166, 72, 168, 75),
+        primaryColor: const Color.fromARGB(166, 72, 168, 75), //color of background
         textTheme: Typography().black, //sets default text to black
       ),
-      home: Account(),
+      home: const Account(),
     ),
   );
 }
 
 class Account extends StatefulWidget {
+  const Account({super.key});
+
   @override
   State<Account> createState() => _AccountState();
 }
@@ -32,14 +35,14 @@ class _AccountState extends State<Account> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text('Account managment'), backgroundColor: Colors.green),
+          title: const Text('Account managment'), backgroundColor: Colors.green),
 //Settings pads
       body: SettingsList(
         sections: [
 // each block is a section of settings
 // General settings
           SettingsSection(
-            title: Text('General',
+            title: const Text('General',
                 style: TextStyle(
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
@@ -47,21 +50,22 @@ class _AccountState extends State<Account> {
                     decoration: TextDecoration.underline)),
             tiles: [
               SettingsTile(
-                title: Text('Language', style: TextStyle(color: Colors.green)),
-                value: Text('English',
+                title: const Text('Language', style: TextStyle(color: Colors.green)),
+                value: const Text('English',
                     style: TextStyle(color: Color.fromARGB(216, 230, 182, 53))),
-                leading: Icon(Icons.language, color: Colors.green),
-                trailing: Icon(Icons.arrow_forward_ios,
+                leading: const Icon(Icons.language, color: Colors.green),
+                trailing: const Icon(Icons.arrow_forward_ios,
                     color: Color.fromARGB(216, 230, 182, 53)),
                 onPressed: (BuildContext context) {
                   showDialog(
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text("Language"),
+                          title: const Text("Language"),
                           content:
+                              // ignore: prefer_const_literals_to_create_immutables
                               Column(mainAxisSize: MainAxisSize.min, children: [
-                            Text("English"),
+                            const Text("English"),
                             Text("Spanish"),
                             Text("French"),
                             Text("Arabic"),
@@ -143,6 +147,7 @@ class _AccountState extends State<Account> {
         onPressed: () {
                     Navigator.pushNamed(context, 'CreateNew');
         },
+        // ignore: sort_child_properties_last
         child: Icon(Icons.add),
         backgroundColor: Colors.green, //sets button color
       ),

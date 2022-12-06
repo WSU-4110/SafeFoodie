@@ -18,7 +18,7 @@ class _AddtoList extends State<AddtoList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(centerTitle: true, title: Text('test test firebase work!!')),
+          AppBar(centerTitle: true, title: const Text('test test firebase work!!')),
       body: _buildBody(context),
     );
   }
@@ -27,7 +27,7 @@ class _AddtoList extends State<AddtoList> {
     return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance.collection('list').snapshots(),
       builder: (context, snapshot) {
-        if (!snapshot.hasData) return LinearProgressIndicator();
+        if (!snapshot.hasData) return const LinearProgressIndicator();
 
         return _buildList(context, snapshot.data!.docs);
       },
