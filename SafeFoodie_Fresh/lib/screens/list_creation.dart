@@ -16,7 +16,7 @@ class ListItem extends StatelessWidget {
 
   final LList list;
   final onListChanged;
-
+//This is the line through checkbox style.
   TextStyle? _getTextStyle(bool checked) {
     if (!checked) return null;
 

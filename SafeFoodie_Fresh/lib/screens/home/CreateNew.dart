@@ -127,8 +127,8 @@ class _CreateNew extends State<CreateNew> {
           decoration: BoxDecoration(color: Colors.green),
           child: new InkWell(
             onTap: () {
-              Navigator.pushNamed(context, 'NewList');
-              //Navigator.pushNamed(context, 'GList');
+              //Navigator.pushNamed(context, 'NewList');
+              Navigator.pushNamed(context, 'ListApp');
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,

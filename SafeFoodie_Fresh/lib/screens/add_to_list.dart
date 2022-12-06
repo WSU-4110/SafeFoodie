@@ -54,12 +54,11 @@ class _AddtoList extends State<AddtoList> {
           borderRadius: BorderRadius.circular(5.0),
         ),
         child: ListTile(
-          title: Text(record.name),
-          trailing: Text(record.items.toString()),
-          //onTap: () => record.reference.updateData({'list': record.items+1})
-          //updateData is listed as deprecated in the firebase Flutter library
-          onTap: () => record.reference!.update({'list': record.items + 1}),
-        ),
+            title: Text(record.name),
+            trailing: Text(record.items.toString()),
+            //onTap: () => record.reference.updateData({'list': record.items+1})
+            //updateData is listed as deprecated in the firebase Flutter library
+            onTap: () => record.reference?.update({'list': record.items + 1})),
       ),
     );
   }

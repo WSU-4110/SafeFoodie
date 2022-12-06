@@ -61,7 +61,8 @@ class MyApp extends StatelessWidget {
             'MapSample': (context) => MapSample(),
             'PageList': (context) => PageList(),
             'CreateNew': (context) => CreateNew(),
-            'NewList': (context) => NewList(),
+            //'NewList': (context) => NewList(),
+            'ListApp': (context) => ListApp(),
             'AddtoList': (context) => AddtoList(),
           }),
     );
