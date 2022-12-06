@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
           routes: {
             'Account': (context) => const Account(),
             'Searchpage': (context) => GFG(),
-            'MapSample': (context) => MapSample(),
+            'MapSample': (context) => const MapSample(),
             'PageList': (context) => const PageList(),
             'CreateNew': (context) => const CreateNew(),
             'NewList': (context) => const NewList(),

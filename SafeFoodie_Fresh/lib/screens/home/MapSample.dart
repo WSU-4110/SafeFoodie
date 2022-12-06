@@ -1,8 +1,5 @@
 import 'dart:async';
 
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -10,6 +7,8 @@ import 'package:geolocator/geolocator.dart';
 
 // Map Test
 class MapSample extends StatefulWidget {
+  const MapSample({super.key});
+
   @override
   State<MapSample> createState() => MapSampleState();
 }

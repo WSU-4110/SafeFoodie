@@ -1,14 +1,11 @@
 import 'package:safefoodie_fresh/services/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:safefoodie_fresh/screens/account.dart';
-import 'package:safefoodie_fresh/screens/home/MapSample.dart';
-import 'package:safefoodie_fresh/screens/home/PageList.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 
 
 class Home extends StatefulWidget {
+  const Home({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _Home();
@@ -16,12 +13,13 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> {
-  final AuthService _auth = new AuthService();
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
 //=========================================
 //Sign out function
+    // ignore: non_constant_identifier_names
     final SignOut = Material(
       elevation: 5.0,
       borderRadius: BorderRadius.circular(30.0),
@@ -51,7 +49,8 @@ class _Home extends State<Home> {
         onPressed: () {
                     Navigator.pushNamed(context, 'CreateNew');
         },
-        child: Icon(Icons.add),
+        // ignore: sort_child_properties_last
+        child: const Icon(Icons.add),
         backgroundColor: Colors.green, //sets button color
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation
@@ -59,7 +58,7 @@ class _Home extends State<Home> {
       //Bottom Navbar
       bottomNavigationBar: BottomAppBar(
         shape:
-            CircularNotchedRectangle(), //navbar reactiveness to center button
+            const CircularNotchedRectangle(), //navbar reactiveness to center button
         notchMargin: 5, //number of elements on bar
         child: Row(
           //children inside bottom appbar
@@ -68,28 +67,28 @@ class _Home extends State<Home> {
           children: <Widget>[
             //View lists button
             IconButton(
-              icon: Icon(Icons.align_horizontal_left, color: Colors.green),
+              icon: const Icon(Icons.align_horizontal_left, color: Colors.green),
               onPressed: () {
                 Navigator.pushNamed(context, 'PageList');
               },
             ),
             //Search item button
             IconButton(
-              icon: Icon(Icons.search, color: Colors.green),
+              icon: const Icon(Icons.search, color: Colors.green),
               onPressed: () {
                 Navigator.pushNamed(context, 'Searchpage');
               },
             ),
             //Route back to home page
             IconButton(
-              icon: Icon(Icons.location_pin, color: Colors.green),
+              icon: const Icon(Icons.location_pin, color: Colors.green),
               onPressed: () {
                 Navigator.pushNamed(context, 'MapSample');
               },
             ),
             //Account page button
             IconButton(
-              icon: Icon(Icons.account_circle_outlined, color: Colors.green),
+              icon: const Icon(Icons.account_circle_outlined, color: Colors.green),
               onPressed: () {
                 //Settings navigator
                 Navigator.pushNamed(context, 'Account');
