@@ -18,8 +18,8 @@ class _Home extends State<Home> {
   @override
   Widget build(BuildContext context) {
 //=========================================
-//Sign out function
- Card logoutTile(String title, IconData icon) {
+//dashboard tiles 
+ Card tipsTile(String title, IconData icon) {
     return Card(
         elevation: 1.0,
         margin: const EdgeInsets.all(8.0),
@@ -171,7 +171,7 @@ Card historyTile(String title, IconData icon) {
           crossAxisCount: 2,
           padding: const EdgeInsets.all(3.0),
           children: <Widget>[
-            logoutTile("Logout", Icons.logout ),
+            tipsTile("Tips", Icons.lightbulb_outline ),
             settingsTile("Settings", Icons.settings_applications_outlined),
             searchTile("Search", Icons.search_outlined),
             historyTile("List history", Icons.my_library_books_rounded)
