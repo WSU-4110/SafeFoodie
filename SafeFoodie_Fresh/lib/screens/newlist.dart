@@ -1,26 +1,24 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const PageList());
+  runApp(const NewList());
 }
 
-class PageList extends StatefulWidget {
-  const PageList({Key? key}) : super(key: key);
+class NewList extends StatefulWidget {
+  const NewList({Key? key}) : super(key: key);
 
   @override
-  State<PageList> createState() => _PageList();
+  State<NewList> createState() => _NewList();
 }
 
-class _PageList extends State<PageList> {
+class _NewList extends State<NewList> {
   List<String> litems = [];
   final TextEditingController eCtrl = TextEditingController();
   @override
   Widget build(BuildContext ctxt) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Grocery List"),
+          title: const Text("Create new list"),
         ),
         body: Column(
           children: <Widget>[
@@ -35,7 +33,7 @@ class _PageList extends State<PageList> {
             ElevatedButton(
               child: const Text('Add'),
               onPressed: () {
-               // onSubmitted:
+                //onSubmitted:
                 (text) {
                   litems.add(text);
                   eCtrl.clear();

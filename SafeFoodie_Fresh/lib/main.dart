@@ -3,6 +3,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:safefoodie_fresh/screens/account.dart';
 import 'package:safefoodie_fresh/screens/home/PageList.dart';
+import 'package:safefoodie_fresh/screens/home/CreateNew.dart';
+import 'package:safefoodie_fresh/screens/newlist.dart';
+import 'package:safefoodie_fresh/screens/add_to_list.dart';
 
 import 'services/auth.dart';
 import 'models/FirebaseUser.dart';
@@ -11,15 +14,16 @@ import 'screens/wrapper.dart';
 // For Routing
 import 'package:safefoodie_fresh/screens/home/MapSample.dart';
 import 'package:safefoodie_fresh/screens/home/Searchpage.dart';
-import 'package:safefoodie_fresh/screens/home/PageList.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamProvider<FirebaseUser?>.value(
@@ -29,11 +33,11 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.green,
             scaffoldBackgroundColor:
-                Color.fromARGB(166, 72, 168, 75), //color of background
+                const Color.fromARGB(166, 72, 168, 75), //color of background
             brightness: Brightness.light,
-            primaryColor: Color.fromARGB(166, 72, 168, 75),
+            primaryColor: const Color.fromARGB(166, 72, 168, 75),
             buttonTheme: ButtonThemeData(
-              buttonColor: Color.fromARGB(166, 72, 168, 75),
+              buttonColor: const Color.fromARGB(166, 72, 168, 75),
               textTheme: ButtonTextTheme.primary,
               colorScheme: Theme.of(context)
                   .colorScheme
@@ -50,12 +54,15 @@ class MyApp extends StatelessWidget {
           ),
           //Initial route for Settings
           initialRoute: 'Login',
-          home: Wrapper(),
+          home: const Wrapper(),
           routes: {
-            'Account': (context) => Account(),
-            'Searchpage': (context) => GFG(),
-            'MapSample': (context) => MapSample(),
-            'PageList': (context) => PageList(),
+            'Account': (context) => const Account(),
+            'Searchpage': (context) => const GFG(),
+            'MapSample': (context) => const MapSample(),
+            'PageList': (context) => const PageList(),
+            'CreateNew': (context) => const CreateNew(),
+            'NewList': (context) => const NewList(),
+            'AddtoList': (context) => const AddtoList(),
           }),
     );
   }
