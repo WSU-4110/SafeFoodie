@@ -36,7 +36,7 @@ class _Tips extends State<Tips> {
                   Container(
                     // First tip
                     color: const Color.fromARGB(216, 230, 182, 53),
-                    height: 120.0,
+                    height: 170.0,
                     alignment: Alignment.center,
                    padding: const EdgeInsets.all(10),
                     child: RichText(
@@ -67,7 +67,7 @@ class _Tips extends State<Tips> {
                   Container(
                     // Second tip
                     color: const Color.fromARGB(255, 38, 90, 28),
-                    height: 120.0,
+                    height: 170.0,
                     alignment: Alignment.center,
                      padding: const EdgeInsets.all(10),
                     child: RichText(
@@ -99,7 +99,7 @@ class _Tips extends State<Tips> {
                   Container(
                     // First tip
                     color: const Color.fromARGB(216, 230, 182, 53),
-                    height: 120.0,
+                    height: 170.0,
                     alignment: Alignment.center,
                      padding: const EdgeInsets.all(10),
                     child: RichText(
