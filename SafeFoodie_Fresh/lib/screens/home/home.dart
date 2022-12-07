@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:safefoodie_fresh/services/auth.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,6 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> {
-  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
