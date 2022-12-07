@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+// ignore: unused_import
 import 'package:safefoodie_fresh/screens/home/home.dart';
 
 void main() {
