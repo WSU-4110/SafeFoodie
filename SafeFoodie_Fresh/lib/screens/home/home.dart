@@ -27,7 +27,8 @@ class _Home extends State<Home> {
           decoration: const BoxDecoration(color: Colors.green),
           child: InkWell(
             onTap: () async {
-              await _auth.signOut();
+              //await _auth.signOut();
+              Navigator.pushNamed(context, 'TipsPage');
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
