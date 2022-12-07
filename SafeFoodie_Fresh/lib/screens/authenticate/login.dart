@@ -1,11 +1,10 @@
 import 'package:safefoodie_fresh/models/loginuser.dart';
-import 'package:safefoodie_fresh/screens/home/home.dart';
 import 'package:safefoodie_fresh/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
   final Function? toggleView;
-  Login({this.toggleView});
+  const Login({super.key, this.toggleView});
 
   @override
   State<StatefulWidget> createState() {
@@ -21,7 +20,7 @@ class _Login extends State<Login> {
   final _email = TextEditingController();
   final _password = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final AuthService _auth = new AuthService();
+  final AuthService _auth = AuthService();
 //======================================
 //Start of page
   @override
@@ -38,16 +37,17 @@ class _Login extends State<Login> {
             }
             return 'Enter a Valid Email Address';
           }
+          return null;
         },
 //======================================
 //Email prompt area
-        decoration: InputDecoration(
-          contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          enabledBorder: const OutlineInputBorder(
-            borderSide: const BorderSide(
+        decoration: const InputDecoration(
+          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
                 color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
           ),
-          border: const OutlineInputBorder(),
+          border: OutlineInputBorder(),
           labelStyle: TextStyle(color: Colors.white),
           labelText: 'Email',
         ));
@@ -71,16 +71,16 @@ class _Login extends State<Login> {
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           enabledBorder: const OutlineInputBorder(
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
                 color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
           ),
           border: const OutlineInputBorder(),
-          labelStyle: TextStyle(color: Colors.white),
+          labelStyle: const TextStyle(color: Colors.white),
           labelText: 'Password',
           suffixIcon: IconButton(
             icon: Icon(
               _obscureText ? Icons.visibility : Icons.visibility_off,
-              color: Color.fromARGB(216, 230, 182, 53),
+              color: const Color.fromARGB(216, 230, 182, 53),
             ),
             onPressed: () {
               setState(() {
@@ -106,40 +106,10 @@ class _Login extends State<Login> {
     final forgotpw =
         TextButton(onPressed: () {}, child: const Text('Forgot Password?'));
 //======================================
-//Temp bypass button
-    final tempbypass = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Colors.green,
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () async {
-          dynamic result = await _auth.signInAnonymous();
-
-          if (result.uid == null) {
-            //null means unsuccessfull authentication
-            showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    content: Text('Wrong Password'),
-                  );
-                });
-          }
-        },
-        child: Text(
-          "Temp bypass button",
-          style: TextStyle(color: Theme.of(context).primaryColorLight),
-          textAlign: TextAlign.center,
-        ),
-      ),
-    );
-//======================================
 //Login button
     final loginEmailPasswordButon = Material(
       elevation: 5.0,
-      borderRadius: BorderRadius.all(Radius.circular(30)),
+      borderRadius: const BorderRadius.all(Radius.circular(30)),
       color: Theme.of(context).primaryColor,
       child: MaterialButton(
         minWidth: MediaQuery.of(context).size.width,
@@ -153,14 +123,14 @@ class _Login extends State<Login> {
               showDialog(
                   context: context,
                   builder: (context) {
-                    return AlertDialog(
+                    return const AlertDialog(
                       content: Text('Wrong email or password'),
                     );
                   });
             }
           }
         },
-        child: Text(
+        child: const Text(
           "Log in",
           style: TextStyle(color: Colors.white),
           textAlign: TextAlign.center,
@@ -197,7 +167,7 @@ class _Login extends State<Login> {
                             fontWeight: FontWeight.w500,
                             fontSize: 30),
                       )),
-                  Icon(
+                  const Icon(
                     Icons.bakery_dining_rounded,
                     color: Color.fromARGB(216, 230, 182, 53),
                   ),
@@ -225,8 +195,6 @@ class _Login extends State<Login> {
                   const SizedBox(height: 5.0),
                   signup,
                   const SizedBox(height: 15.0),
-                  tempbypass,
-                  const SizedBox(height: 45.0),
                 ],
               ),
             ),

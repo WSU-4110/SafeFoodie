@@ -18,7 +18,7 @@ class _AddtoList extends State<AddtoList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(centerTitle: true, title: Text('test test firebase work!!')),
+          AppBar(centerTitle: true, title: const Text('test test firebase work!!')),
       body: _buildBody(context),
     );
   }
@@ -27,7 +27,7 @@ class _AddtoList extends State<AddtoList> {
     return StreamBuilder<QuerySnapshot>(
       stream: FirebaseFirestore.instance.collection('list').snapshots(),
       builder: (context, snapshot) {
-        if (!snapshot.hasData) return LinearProgressIndicator();
+        if (!snapshot.hasData) return const LinearProgressIndicator();
 
         return _buildList(context, snapshot.data!.docs);
       },
@@ -56,10 +56,11 @@ class _AddtoList extends State<AddtoList> {
         child: ListTile(
           title: Text(record.name),
           trailing: Text(record.items.toString()),
-          //onTap: () => record.reference.updateData({'list': record.items+1})
+           //onTap: () => record.reference.updateData({'list': record.items+1})
+          //updateData is listed as deprecated in the firebase Flutter library
+            onTap: () => record.reference!.update({'list': record.items + 1})),
         ),
-      ),
-    );
+      );
   }
 }
 
