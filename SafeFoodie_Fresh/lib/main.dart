@@ -7,6 +7,7 @@ import 'package:safefoodie_fresh/screens/home/CreateNew.dart';
 import 'package:safefoodie_fresh/screens/newlist.dart';
 import 'package:safefoodie_fresh/screens/add_to_list.dart';
 
+import 'screens/authenticate/RestPassword.dart';
 import 'services/auth.dart';
 import 'models/FirebaseUser.dart';
 import 'screens/wrapper.dart';
@@ -63,6 +64,7 @@ class MyApp extends StatelessWidget {
             'CreateNew': (context) => const CreateNew(),
             'NewList': (context) => const NewList(),
             'AddtoList': (context) => const AddtoList(),
+            'RestPassword': (context) => const RestPassword(),
           }),
     );
   }

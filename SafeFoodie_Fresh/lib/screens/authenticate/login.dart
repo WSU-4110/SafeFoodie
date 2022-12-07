@@ -1,6 +1,7 @@
 import 'package:safefoodie_fresh/models/loginuser.dart';
 import 'package:safefoodie_fresh/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:safefoodie_fresh/screens/authenticate/RestPassword.dart';
 
 class Login extends StatefulWidget {
   final Function? toggleView;
@@ -105,7 +106,7 @@ class _Login extends State<Login> {
 //Forgot pw button
     final forgotpw = TextButton(
         onPressed: () {
-          Navigator.pushNamed(context, 'ForgotPassword');
+          Navigator.pushNamed(context, 'RestPassword');
         },
         child: const Text('Forgot Password?'));
 //======================================
