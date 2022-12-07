@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
  
 void main() {
@@ -16,7 +18,7 @@ class Search extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: GFG(),
+      home: const GFG(),
     );
   }
 }
@@ -24,6 +26,8 @@ class Search extends StatelessWidget {
 // This is the widget that will be shown
 // as the homepage of your application.
 class GFG extends StatefulWidget {
+  const GFG({super.key});
+
  // const GFG({Key? key}) : super(key: key);
  
   @override
@@ -58,13 +62,14 @@ class _GFGState extends State<GFG> {
     onPressed: () {
                 Navigator.pushNamed(context, 'CreateNew');
     },
-    child: Icon(Icons.add),
+    // ignore: sort_child_properties_last
+    child: const Icon(Icons.add),
     backgroundColor: Colors.green, //sets button color
   ),
   floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked, //inidcates pronounced button position
   //Bottom Navbar
   bottomNavigationBar: BottomAppBar(
-    shape: CircularNotchedRectangle(), //navbar reactiveness to center button
+    shape: const CircularNotchedRectangle(), //navbar reactiveness to center button
     notchMargin: 5, //number of elements on bar
     child: Row(
       //children inside bottom appbar
@@ -73,7 +78,7 @@ class _GFGState extends State<GFG> {
       children: <Widget>[
       //View lists button
         IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.align_horizontal_left, color: Colors.green
           ),
           onPressed: () {
@@ -82,7 +87,7 @@ class _GFGState extends State<GFG> {
         ),
        //Search item button 
         IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.search, color: Colors.green
           ),
           onPressed: () {
@@ -91,7 +96,7 @@ class _GFGState extends State<GFG> {
         ),
        //Route back to home page 
         IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.location_pin, color: Colors.green
           ),
           onPressed: () {
@@ -100,7 +105,7 @@ class _GFGState extends State<GFG> {
         ),
        //Account page button 
         IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.account_circle_outlined, color: Colors.green
           ),
           onPressed: () {
@@ -140,7 +145,7 @@ class CustomSearchDelegate extends SearchDelegate {
         onPressed: () {
           query = '';
         },
-        icon: Icon(Icons.clear),
+        icon: const Icon(Icons.clear),
       ),
     ];
   }
@@ -152,7 +157,7 @@ class CustomSearchDelegate extends SearchDelegate {
       onPressed: () {
         close(context, null);
       },
-      icon: Icon(Icons.arrow_back),
+      icon: const Icon(Icons.arrow_back),
     );
   }
  
