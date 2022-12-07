@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
+import 'package:safefoodie_fresh/services/auth.dart';
 
 void main() {
   runApp(
@@ -26,6 +27,7 @@ class Account extends StatefulWidget {
 }
 
 class _AccountState extends State<Account> {
+  final AuthService _auth = AuthService();
   bool setSwitch = false;
   bool fingerIsSwitched = false;
 
@@ -105,24 +107,6 @@ class _AccountState extends State<Account> {
                     decoration: TextDecoration.underline)),
             tiles: [
               SettingsTile(
-                title: Text('Security', style: TextStyle(color: Colors.green)),
-                value: Text('Fingerprint',
-                    style: TextStyle(color: Color.fromARGB(216, 230, 182, 53))),
-                leading: Icon(Icons.lock, color: Colors.green),
-                onPressed: (BuildContext context) {},
-              ),
-              SettingsTile.switchTile(
-                title: Text('Use fingerprint',
-                    style: TextStyle(color: Colors.green)),
-                leading: Icon(Icons.fingerprint, color: Colors.green),
-                initialValue: fingerIsSwitched,
-                onToggle: (value2) {
-                  setState(() {
-                    fingerIsSwitched = value2;
-                  });
-                },
-              ),
-              SettingsTile(
                 title: Text('Email', style: TextStyle(color: Colors.green)),
                 value: Text('User Email Placeholder',
                     style: TextStyle(color: Color.fromARGB(216, 230, 182, 53))),
@@ -137,6 +121,39 @@ class _AccountState extends State<Account> {
                 leading: Icon(Icons.phone, color: Colors.green),
                 onPressed: (BuildContext context) {},
               ),
+               SettingsTile(
+                title: const Text('Logout', style: TextStyle(color: Colors.green)),
+                value: const Text('Logout of account',
+                    style: TextStyle(color: Color.fromARGB(216, 230, 182, 53))),
+                leading: const Icon(Icons.waving_hand_outlined, color: Colors.green),
+                trailing: const Icon(Icons.logout_sharp ,
+                    color: Color.fromARGB(216, 230, 182, 53)),
+                onPressed: (BuildContext context) {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+        title: Text('Are you sure you want to logout?'),
+        actions: <Widget>[
+          TextButton(
+            child: Text('Cancel'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          TextButton(
+            child: Text('Confirm'),
+            onPressed: () async {
+              await _auth.signOut();
+            },
+          ),
+
+        ],
+      );
+                },
+              );
+                }
+               ),
             ],
           ),
         ],

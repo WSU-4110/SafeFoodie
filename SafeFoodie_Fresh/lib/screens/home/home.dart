@@ -165,7 +165,7 @@ Card historyTile(String title, IconData icon) {
         backgroundColor: Theme.of(context).primaryColor,
       ),
        body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 140.0, horizontal: 2.0),
+        padding: const EdgeInsets.symmetric(vertical: 136.0, horizontal: 2.0),
         //grid tiles
         child: GridView.count(
           crossAxisCount: 2,
