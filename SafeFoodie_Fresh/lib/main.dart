@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:safefoodie_fresh/screens/account.dart';
 import 'package:safefoodie_fresh/screens/home/PageList.dart';
 import 'package:safefoodie_fresh/screens/home/CreateNew.dart';
+import 'package:safefoodie_fresh/screens/home/tipsPage.dart';
 import 'package:safefoodie_fresh/screens/newlist.dart';
 import 'package:safefoodie_fresh/screens/add_to_list.dart';
 
@@ -65,6 +66,7 @@ class MyApp extends StatelessWidget {
             'CreateNew': (context) => const CreateNew(),
             'NewList': (context) => const NewList(),
             'AddtoList': (context) => const AddtoList(),
+            'TipsPage': (context) => const Tips(),
           }),
     );
   }
