@@ -21,7 +21,7 @@ class _CreateNew extends State<CreateNew> {
           title: const Text("Create Page"),
         ),
 body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 2.0),
+        padding: const EdgeInsets.symmetric(vertical: 247.0, horizontal: 2.0),
         child: GridView.count(
           crossAxisCount: 2,
           padding: const EdgeInsets.all(3.0),

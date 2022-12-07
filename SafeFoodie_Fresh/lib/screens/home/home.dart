@@ -19,31 +19,165 @@ class _Home extends State<Home> {
   Widget build(BuildContext context) {
 //=========================================
 //Sign out function
-    // ignore: non_constant_identifier_names
-    final SignOut = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Colors.green,
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () async {
-          await _auth.signOut();
-        },
-        child: Text(
-          "Log out",
-          style: TextStyle(color: Theme.of(context).primaryColorLight),
-          textAlign: TextAlign.center,
-        ),
-      ),
-    );
-//=========================================
+ Card logoutTile(String title, IconData icon) {
+    return Card(
+        elevation: 1.0,
+        margin: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: const BoxDecoration(color: Colors.green),
+          child: InkWell(
+            onTap: () async {
+              await _auth.signOut();
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              verticalDirection: VerticalDirection.down,
+              children: <Widget>[
+                const SizedBox(height: 50.0),
+                Center(
+                    child: Icon(
+                  icon,
+                  size: 40.0,
+                  color: const Color.fromARGB(216, 230, 182, 53),
+                )),
+                const SizedBox(height: 20.0),
+                Center(
+                  child: Text(title,
+                      style:
+                          const TextStyle(fontSize: 18.0, color: Colors.white)),
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+//========================================= 
+//settings tile
+   Card settingsTile(String title, IconData icon) {
+    return Card(
+        elevation: 1.0,
+        margin: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: const BoxDecoration(color: Colors.green),
+          child: InkWell(
+            onTap: () {
+                Navigator.pushNamed(context, 'Account');
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              verticalDirection: VerticalDirection.down,
+              children: <Widget>[
+                const SizedBox(height: 50.0),
+                Center(
+                    child: Icon(
+                  icon,
+                  size: 40.0,
+                  color: const Color.fromARGB(216, 230, 182, 53),
+                )),
+                const SizedBox(height: 20.0),
+                Center(
+                  child: Text(title,
+                      style:
+                          const TextStyle(fontSize: 18.0, color: Colors.white)),
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+//========================================= 
+//search tile
+Card searchTile(String title, IconData icon) {
+    return Card(
+        elevation: 1.0,
+        margin: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: const BoxDecoration(color: Colors.green),
+          child: InkWell(
+            onTap: () {
+                Navigator.pushNamed(context, 'Searchpage');
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              verticalDirection: VerticalDirection.down,
+              children: <Widget>[
+                const SizedBox(height: 50.0),
+                Center(
+                    child: Icon(
+                  icon,
+                  size: 40.0,
+                  color: const Color.fromARGB(216, 230, 182, 53),
+                )),
+                const SizedBox(height: 20.0),
+                Center(
+                  child: Text(title,
+                      style:
+                          const TextStyle(fontSize: 18.0, color: Colors.white)),
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+//========================================= 
+//List history
+Card historyTile(String title, IconData icon) {
+    return Card(
+        elevation: 1.0,
+        margin: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: const BoxDecoration(color: Colors.green),
+          child: InkWell(
+            onTap: () {
+                Navigator.pushNamed(context, 'Searchpage');
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              verticalDirection: VerticalDirection.down,
+              children: <Widget>[
+                const SizedBox(height: 50.0),
+                Center(
+                    child: Icon(
+                  icon,
+                  size: 40.0,
+                  color: const Color.fromARGB(216, 230, 182, 53),
+                )),
+                const SizedBox(height: 20.0),
+                Center(
+                  child: Text(title,
+                      style:
+                          const TextStyle(fontSize: 18.0, color: Colors.white)),
+                )
+              ],
+            ),
+          ),
+        ));
+  }
+//========================================= 
+//intializes main app 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Welcome to SafeFoodie'),
         backgroundColor: Theme.of(context).primaryColor,
       ),
-       body: Center(child: SignOut),
+       body: Container(
+        padding: const EdgeInsets.symmetric(vertical: 140.0, horizontal: 2.0),
+        //grid tiles
+        child: GridView.count(
+          crossAxisCount: 2,
+          padding: const EdgeInsets.all(3.0),
+          children: <Widget>[
+            logoutTile("Logout", Icons.logout ),
+            settingsTile("Settings", Icons.settings_applications_outlined),
+            searchTile("Search", Icons.search_outlined),
+            historyTile("List history", Icons.my_library_books_rounded)
+          ],
+        ),
+      ),
 //Center action button
       floatingActionButton: FloatingActionButton(
         onPressed: () {
