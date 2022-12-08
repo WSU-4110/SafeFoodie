@@ -8,9 +8,8 @@ import 'package:safefoodie_fresh/screens/home/tipsPage.dart';
 import 'package:safefoodie_fresh/screens/list_creation.dart';
 import 'package:safefoodie_fresh/screens/newlist.dart';
 import 'package:safefoodie_fresh/screens/add_to_list.dart';
+import 'package:safefoodie_fresh/screens/pushnotif.dart';
 import 'screens/authenticate/RestPassword.dart';
-
-
 
 import 'services/auth.dart';
 import 'models/FirebaseUser.dart';
@@ -18,7 +17,6 @@ import 'screens/wrapper.dart';
 // For Routing
 import 'package:safefoodie_fresh/screens/home/MapSample.dart';
 import 'package:safefoodie_fresh/screens/home/Searchpage.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -50,7 +48,7 @@ class MyApp extends StatelessWidget {
             ),
             fontFamily: 'Typography',
             textTheme: const TextTheme(
-              subtitle1: TextStyle(color: Colors.white),
+              subtitle1: TextStyle(color: Colors.black),
               headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
               headline6: TextStyle(fontSize: 20.0, fontStyle: FontStyle.italic),
               bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
@@ -69,6 +67,7 @@ class MyApp extends StatelessWidget {
             'NewList': (context) => const NewList(),
             'AddtoList': (context) => const GList(),
             'TipsPage': (context) => const Tips(),
+            'PushNotif': (context) => const PushNotif(),
             'RestPassword': (context) => const RestPassword(),
             'ViewList': (context) => const AddtoList(),
           }),

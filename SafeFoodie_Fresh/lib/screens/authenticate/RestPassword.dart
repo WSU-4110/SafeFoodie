@@ -64,8 +64,8 @@ class _RestPasswordState extends State<RestPassword> {
                     fillColor: Color.fromARGB(178, 54, 134, 17),
                     filled: true,
                     focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Color.fromARGB(216, 230, 182, 53), width: 2.0),
+                      borderSide: BorderSide(
+                          color: Color.fromARGB(216, 230, 182, 53), width: 2.0),
                       borderRadius: BorderRadius.all(Radius.circular(20.0)),
                     )),
                 onChanged: (value) {
