@@ -1,5 +1,5 @@
 //import 'dart:html';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 //import 'dart:async';
 
@@ -24,7 +24,7 @@ class ListItem extends StatelessWidget {
   TextStyle? _getTextStyle(bool checked) {
     if (!checked) return null;
 
-    return TextStyle(
+    return const TextStyle(
       color: Colors.red,
       decoration: TextDecoration.lineThrough,
     );
@@ -45,6 +45,7 @@ class ListItem extends StatelessWidget {
 }
 
 class GList extends StatefulWidget {
+  const GList({Key? key}) : super(key: key);
   @override
   _GListState createState() => new _GListState();
 }
@@ -52,8 +53,16 @@ class GList extends StatefulWidget {
 class _GListState extends State<GList> {
   final TextEditingController _textFieldController = TextEditingController();
   final List<LList> _lists = <LList>[];
+    final db = FirebaseFirestore.instance.collection('userInfo');
+
   //Initialize the current date
   DateTime currentDate = DateTime.now();
+  Future addItem (String item, String date) async {
+    await db.doc('F3qaDYAfGPKZPgbuj5nZ').collection('items').doc('d4oXEp2GEWokFemVhIXR').update({
+        'item': item,
+        'date': date,
+    }); 
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,6 +97,7 @@ class _GListState extends State<GList> {
   void _addListItem(String name, DateTime expired) {
     setState(() {
       _lists.add(LList(name: name, expired: expired, checked: false));
+      addItem(name, expired.toString());
     });
     _textFieldController.clear();
   }
@@ -145,4 +155,4 @@ class ListApp extends StatelessWidget {
   }
 }
 
-void main() => runApp(new ListApp());
+void main() => runApp(ListApp());

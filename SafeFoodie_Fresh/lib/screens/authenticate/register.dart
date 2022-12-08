@@ -1,5 +1,6 @@
 import 'package:safefoodie_fresh/models/loginuser.dart';
 import 'package:safefoodie_fresh/services/auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -20,6 +21,16 @@ class _Register extends State<Register> {
   final _email = TextEditingController();
   final _password = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  //Adding user to Firestore database
+  Future addUserInfo ( String email, String password) async {
+    await FirebaseFirestore.instance.collection('userInfo').add({
+        'email': email,
+        'password': password,
+    }); 
+  }
+    
+  
   //=========================================
   //Page begin
   @override
@@ -37,6 +48,7 @@ class _Register extends State<Register> {
             }
             return 'Enter a Valid Email Address';
           }
+          
           return null;
         },
 //email bubble
@@ -126,6 +138,10 @@ class _Register extends State<Register> {
                       content: Text(result.code),
                     );
                   });
+            }
+            else
+            {
+              addUserInfo(_email.text.trim(), _password.text.trim());
             }
           }
         },

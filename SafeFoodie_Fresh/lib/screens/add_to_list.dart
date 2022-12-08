@@ -18,14 +18,14 @@ class _AddtoList extends State<AddtoList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(centerTitle: true, title: const Text('test test firebase work!!')),
+          AppBar(centerTitle: true, title: const Text('Lists')),
       body: _buildBody(context),
     );
   }
 
   Widget _buildBody(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: FirebaseFirestore.instance.collection('list').snapshots(),
+      stream: FirebaseFirestore.instance.collection('userInfo').doc('F3qaDYAfGPKZPgbuj5nZ').collection('items').snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return const LinearProgressIndicator();
 
@@ -46,7 +46,7 @@ class _AddtoList extends State<AddtoList> {
     final record = Record.fromSnapshot(data);
 
     return Padding(
-      key: ValueKey(record.name),
+      key: ValueKey(record.listTitle),
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Container(
         decoration: BoxDecoration(
@@ -54,25 +54,21 @@ class _AddtoList extends State<AddtoList> {
           borderRadius: BorderRadius.circular(5.0),
         ),
         child: ListTile(
-          title: Text(record.name),
+          title: Text(record.listTitle),
           trailing: Text(record.items.toString()),
-           //onTap: () => record.reference.updateData({'list': record.items+1})
-          //updateData is listed as deprecated in the firebase Flutter library
-            onTap: () => record.reference!.update({'list': record.items + 1})),
+            onTap: () => record.reference!.update({'userInfo':  record.items + 1})),
         ),
       );
   }
 }
 
 class Record {
-  final String name;
+  final String listTitle;
   final int items;
   final DocumentReference? reference;
 
   Record.fromMap(Map<String, dynamic> map, {this.reference})
-      : assert(map['name'] != null),
-        assert(map['items'] != null),
-        name = map['name'],
+      : listTitle = map['listTitle'],
         items = map['items'];
 
   Record.fromSnapshot(DocumentSnapshot snapshot)
@@ -80,5 +76,5 @@ class Record {
             reference: snapshot.reference);
 
   @override
-  String toString() => "Record<$name:$items>";
+  String toString() => "Record<$listTitle:$items>";
 }
