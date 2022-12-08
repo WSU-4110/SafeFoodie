@@ -14,11 +14,9 @@ class _RestPasswordState extends State<RestPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff251f34),
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: const Color(0xff251f34),
       ),
       body: Container(
         child: Column(
@@ -62,11 +60,11 @@ class _RestPasswordState extends State<RestPassword> {
                   cursorColor: Colors.white,
                   decoration: InputDecoration(
                       border: InputBorder.none,
-                      fillColor: const Color(0xff3B324E),
+                      fillColor: Color.fromARGB(178, 54, 134, 17),
                       filled: true,
                       focusedBorder: const OutlineInputBorder(
                         borderSide:
-                            BorderSide(color: Color(0xff14dae2), width: 2.0),
+                            BorderSide(color: Color.fromARGB(216, 230, 182, 53), width: 2.0),
                         borderRadius: BorderRadius.all(Radius.circular(20.0)),
                       )),
                   onChanged: (value) {
