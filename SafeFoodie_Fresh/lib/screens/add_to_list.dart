@@ -18,7 +18,7 @@ class _AddtoList extends State<AddtoList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(centerTitle: true, title: const Text('Lists')),
+          AppBar(centerTitle: true, title: const Text('Grocery')),
       body: _buildBody(context),
     );
   }
@@ -46,7 +46,7 @@ class _AddtoList extends State<AddtoList> {
     final record = Record.fromSnapshot(data);
 
     return Padding(
-      key: ValueKey(record.listTitle),
+      key: ValueKey(record.item),
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Container(
         decoration: BoxDecoration(
@@ -54,27 +54,36 @@ class _AddtoList extends State<AddtoList> {
           borderRadius: BorderRadius.circular(5.0),
         ),
         child: ListTile(
-          title: Text(record.listTitle),
-          trailing: Text(record.items.toString()),
-            onTap: () => record.reference!.update({'userInfo':  record.items + 1})),
+          title: Text(record.item),
         ),
+      )
       );
   }
 }
+CollectionReference _collectionRef =
+    FirebaseFirestore.instance.collection('userInfo').doc('F3qaDYAfGPKZPgbuj5nZ').collection('items');
+
+Future<void> getData() async {
+    // Get docs from collection reference
+    QuerySnapshot querySnapshot = await _collectionRef.get();
+
+    // Get data from docs and convert map to List
+    final allData = querySnapshot.docs.map((doc) => doc.data()).toList();
+
+    print(allData);
+}
 
 class Record {
-  final String listTitle;
-  final int items;
+  final String item;
   final DocumentReference? reference;
 
   Record.fromMap(Map<String, dynamic> map, {this.reference})
-      : listTitle = map['listTitle'],
-        items = map['items'];
+      : item = map['items'];
 
   Record.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data() as Map<String, dynamic>,
             reference: snapshot.reference);
 
   @override
-  String toString() => "Record<$listTitle:$items>";
+  String toString() => "Record<$item>";
 }

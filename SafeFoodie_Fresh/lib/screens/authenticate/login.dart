@@ -109,36 +109,6 @@ class _Login extends State<Login> {
         },
         child: const Text('Forgot Password?'));
 //======================================
-//Temp bypass button
-    final tempbypass = Material(
-      elevation: 5.0,
-      borderRadius: BorderRadius.circular(30.0),
-      color: Colors.green,
-      child: MaterialButton(
-        minWidth: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-        onPressed: () async {
-          dynamic result = await _auth.signInAnonymous();
-
-          if (result.uid == null) {
-            //null means unsuccessfull authentication
-            showDialog(
-                context: context,
-                builder: (context) {
-                  return const AlertDialog(
-                    content: Text('Wrong Password'),
-                  );
-                });
-          }
-        },
-        child: Text(
-          "Temp bypass button",
-          style: TextStyle(color: Theme.of(context).primaryColorLight),
-          textAlign: TextAlign.center,
-        ),
-      ),
-    );
-//======================================
 //Login button
     final loginEmailPasswordButon = Material(
       elevation: 5.0,
@@ -228,8 +198,6 @@ class _Login extends State<Login> {
                   const SizedBox(height: 5.0),
                   signup,
                   const SizedBox(height: 15.0),
-                  tempbypass,
-                  const SizedBox(height: 45.0),
                 ],
               ),
             ),

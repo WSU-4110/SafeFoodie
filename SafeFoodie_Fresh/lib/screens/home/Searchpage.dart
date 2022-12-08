@@ -130,9 +130,6 @@ class CustomSearchDelegate extends SearchDelegate {
     "Banana",
     "Mango",
     "Pear",
-    "Watermelon",
-    "Blueberries",
-    "Pineapple",
     "Strawberries"
   ];
 

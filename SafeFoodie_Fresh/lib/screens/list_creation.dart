@@ -61,8 +61,7 @@ class _GListState extends State<GList> {
     await db
         .doc('F3qaDYAfGPKZPgbuj5nZ')
         .collection('items')
-        .doc('d4oXEp2GEWokFemVhIXR')
-        .update({
+        .add({
       'item': item,
       'date': date,
     });
