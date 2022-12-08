@@ -155,7 +155,7 @@ class NotificationController {
             id: -1, // -1 is replaced by a random number
             channelKey: 'alerts',
             title: 'Food Recall test!',
-            body: "This is a test for food recall notif!",
+            body: "No recalls found",
             bigPicture:
                 'https://storage.googleapis.com/cms-storage-bucket/d406c736e7c4c57f5f61.png',
             largeIcon: 'https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png',
