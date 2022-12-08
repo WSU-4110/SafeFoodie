@@ -1,3 +1,4 @@
+// ignore_for_file: file_names
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -20,8 +21,8 @@ class _RestPasswordState extends State<RestPassword> {
         elevation: 0,
         backgroundColor: const Color(0xff251f34),
       ),
-      body: Container(
-        child: Column(
+      // Removed Unnecessary Container
+     body: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,10 +36,12 @@ class _RestPasswordState extends State<RestPassword> {
                       fontSize: 25),
                 ),
               ),
-              SizedBox(
+              // added const
+             const SizedBox(
                 height: 30,
               ),
-              Padding(
+              // addedconst 
+             const Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
                   'Email',
@@ -48,7 +51,8 @@ class _RestPasswordState extends State<RestPassword> {
                       fontSize: 13),
                 ),
               ),
-              SizedBox(
+              // added const 
+             const SizedBox(
                 height: 10,
               ),
               Padding(
@@ -60,7 +64,8 @@ class _RestPasswordState extends State<RestPassword> {
                   ),
                   keyboardType: TextInputType.emailAddress,
                   cursorColor: Colors.white,
-                  decoration: InputDecoration(
+                  //added const 
+                  decoration: const InputDecoration(
                       border: InputBorder.none,
                       fillColor: const Color(0xff3B324E),
                       filled: true,
@@ -76,7 +81,8 @@ class _RestPasswordState extends State<RestPassword> {
                   },
                 ),
               ),
-              SizedBox(
+              // added const
+              const SizedBox(
                 height: 10,
               ),
               Center(
@@ -86,7 +92,8 @@ class _RestPasswordState extends State<RestPassword> {
                             .sendPasswordResetEmail(email: email)
                             .then((value) => Navigator.of(context).pop());
                       },
-                      child: Text('Send Request')))
+                      //added const 
+                      child: const Text('Send Request')))
             ]),
       ),
     );
