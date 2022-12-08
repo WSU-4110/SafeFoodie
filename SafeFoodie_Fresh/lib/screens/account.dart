@@ -144,6 +144,8 @@ class _AccountState extends State<Account> {
           TextButton(
             child: Text('Confirm'),
             onPressed: () async {
+               Navigator.popUntil(
+                                    context, ModalRoute.withName("/"));
               await _auth.signOut();
             },
           ),
