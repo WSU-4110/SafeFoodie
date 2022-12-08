@@ -7,16 +7,15 @@ import 'package:safefoodie_fresh/screens/home/CreateNew.dart';
 import 'package:safefoodie_fresh/screens/home/tipsPage.dart';
 import 'package:safefoodie_fresh/screens/newlist.dart';
 import 'package:safefoodie_fresh/screens/add_to_list.dart';
-
-
-
 import 'services/auth.dart';
 import 'models/FirebaseUser.dart';
 import 'screens/wrapper.dart';
-
 // For Routing
 import 'package:safefoodie_fresh/screens/home/MapSample.dart';
 import 'package:safefoodie_fresh/screens/home/Searchpage.dart';
+
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

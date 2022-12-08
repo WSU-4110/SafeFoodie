@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:safefoodie_fresh/models/cloud_storage.dart';
+import 'package:safefoodie_fresh/screens/add_to_list.dart';
 
 void main() {
   runApp(const NewList());
@@ -12,7 +15,15 @@ class NewList extends StatefulWidget {
 }
 
 class _NewList extends State<NewList> {
+  final db = FirebaseFirestore.instance.collection('userInfo');
+  //Adding list to Firestore database
+  Future addList (String listTitle) async {
+    await db.doc('F3qaDYAfGPKZPgbuj5nZ').update({
+        'listTitle': listTitle,
+    }); 
+  }
   List<String> litems = [];
+  String listName = "empty";
   final TextEditingController eCtrl = TextEditingController();
   @override
   Widget build(BuildContext ctxt) {
@@ -22,23 +33,23 @@ class _NewList extends State<NewList> {
         ),
         body: Column(
           children: <Widget>[
+            
             TextField(
               controller: eCtrl,
               onSubmitted: (text) {
                 litems.add(text);
+                listName = text;
                 eCtrl.clear();
-                setState(() {});
+                setState(() {
+                  addList(text);
+                });
               },
             ),
             ElevatedButton(
               child: const Text('Add'),
               onPressed: () {
-                //onSubmitted:
-                (text) {
-                  litems.add(text);
-                  eCtrl.clear();
+                  litems.add(listName);
                   setState(() {});
-                };
               },
             ),
             Expanded(

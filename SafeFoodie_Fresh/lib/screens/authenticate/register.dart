@@ -21,6 +21,16 @@ class _Register extends State<Register> {
   final _email = TextEditingController();
   final _password = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  //Adding user to Firestore database
+  Future addUserInfo ( String email, String password) async {
+    await FirebaseFirestore.instance.collection('userInfo').add({
+        'email': email,
+        'password': password,
+    }); 
+  }
+    
+  
   //=========================================
   //Page begin
   @override
@@ -128,6 +138,10 @@ class _Register extends State<Register> {
                       content: Text(result.code),
                     );
                   });
+            }
+            else
+            {
+              addUserInfo(_email.text.trim(), _password.text.trim());
             }
           }
         },
