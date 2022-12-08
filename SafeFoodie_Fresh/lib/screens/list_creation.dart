@@ -1,4 +1,6 @@
 //import 'dart:html';
+// ignore_for_file: prefer_typing_uninitialized_variables, library_private_types_in_public_api, unnecessary_new
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 //import 'dart:async';
@@ -47,32 +49,36 @@ class ListItem extends StatelessWidget {
 class GList extends StatefulWidget {
   const GList({Key? key}) : super(key: key);
   @override
-  _GListState createState() => new _GListState();
+  _GListState createState() => _GListState();
 }
 
 class _GListState extends State<GList> {
   final TextEditingController _textFieldController = TextEditingController();
   final List<LList> _lists = <LList>[];
-    final db = FirebaseFirestore.instance.collection('userInfo');
+  final db = FirebaseFirestore.instance.collection('userInfo');
 
   //Initialize the current date
   DateTime currentDate = DateTime.now();
-  Future addItem (String item, String date) async {
-    await db.doc('F3qaDYAfGPKZPgbuj5nZ').collection('items').doc('d4oXEp2GEWokFemVhIXR').update({
-        'item': item,
-        'date': date,
-    }); 
+  Future addItem(String item, String date) async {
+    await db
+        .doc('F3qaDYAfGPKZPgbuj5nZ')
+        .collection('items')
+        .doc('d4oXEp2GEWokFemVhIXR')
+        .update({
+      'item': item,
+      'date': date,
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Grocery list'),
+        title: const Text('Grocery list'),
         backgroundColor: Colors.green,
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
         children: _lists.map((LList list) {
           return ListItem(
             list: list,
@@ -83,7 +89,7 @@ class _GListState extends State<GList> {
       floatingActionButton: FloatingActionButton(
           onPressed: () => _displayDialog(),
           tooltip: 'Add Item',
-          child: Icon(Icons.add)),
+          child: const Icon(Icons.add)),
     );
   }
 
@@ -146,13 +152,15 @@ class _GListState extends State<GList> {
 }
 
 class ListApp extends StatelessWidget {
+  const ListApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return const MaterialApp(
       title: 'Grocery list',
-      home: new GList(),
+      home: GList(),
     );
   }
 }
 
-void main() => runApp(ListApp());
+void main() => runApp(const ListApp());
