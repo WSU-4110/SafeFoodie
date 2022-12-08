@@ -14,12 +14,6 @@
       "languageVersion": "2.14"
     },
     {
-      "name": "awesome_notifications",
-      "rootUri": "file:///C:/Users/spapp/flutter/.pub-cache/hosted/pub.dartlang.org/awesome_notifications-0.7.4+1",
-      "packageUri": "lib/",
-      "languageVersion": "2.17"
-    },
-    {
       "name": "boolean_selector",
       "rootUri": "file:///C:/Users/spapp/flutter/.pub-cache/hosted/pub.dartlang.org/boolean_selector-2.1.0",
       "packageUri": "lib/",
@@ -230,12 +224,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "http",
-      "rootUri": "file:///C:/Users/spapp/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.5",
-      "packageUri": "lib/",
-      "languageVersion": "2.14"
-    },
-    {
       "name": "http_parser",
       "rootUri": "file:///C:/Users/spapp/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.2",
       "packageUri": "lib/",
@@ -410,7 +398,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-12-08T21:15:16.530787Z",
+  "generated": "2022-12-08T21:33:04.975462Z",
   "generator": "pub",
   "generatorVersion": "2.18.5"
 }
