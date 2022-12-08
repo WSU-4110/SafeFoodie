@@ -2,12 +2,6 @@ import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-Future<void> main() async {
-  // Always initialize Awesome Notifications
-  await NotificationController.initializeLocalNotifications();
-  runApp(const MaterialApp(home: MyApp()));
-}
-
 ///  *********************************************
 ///     NOTIFICATION CONTROLLER
 ///  *********************************************
@@ -65,7 +59,7 @@ class NotificationController {
           'Message sent via notification input: "${receivedAction.buttonKeyInput}"');
       await executeLongTaskInBackground();
     } else {
-      MyApp.navigatorKey.currentState?.pushNamedAndRemoveUntil(
+      PushNotif.navigatorKey.currentState?.pushNamedAndRemoveUntil(
           '/notification-page',
           (route) =>
               (route.settings.name != '/notification-page') || route.isFirst,
@@ -79,7 +73,7 @@ class NotificationController {
   ///
   static Future<bool> displayNotificationRationale() async {
     bool userAuthorized = false;
-    BuildContext context = MyApp.navigatorKey.currentContext!;
+    BuildContext context = PushNotif.navigatorKey.currentContext!;
     await showDialog(
         context: context,
         builder: (BuildContext ctx) {
@@ -227,20 +221,20 @@ class NotificationController {
 ///     MAIN WIDGET
 ///  *********************************************
 ///
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class PushNotif extends StatefulWidget {
+  const PushNotif({super.key});
 
   // The navigator key is necessary to navigate using static methods
   static final GlobalKey<NavigatorState> navigatorKey =
       GlobalKey<NavigatorState>();
 
-  static Color mainColor = const Color.fromARGB(166, 72, 168, 75);
+  //static Color mainColor = const Color.fromARGB(166, 72, 168, 75);
 
   @override
-  State<MyApp> createState() => _AppState();
+  State<PushNotif> createState() => _AppState();
 }
 
-class _AppState extends State<MyApp> {
+class _AppState extends State<PushNotif> {
   // This widget is the root of your application.
 
   static const String routeHome = '/', routeNotification = '/notification-page';
@@ -255,7 +249,7 @@ class _AppState extends State<MyApp> {
     List<Route<dynamic>> pageStack = [];
     pageStack.add(MaterialPageRoute(
         builder: (_) =>
-            const MyHomePage(title: 'SafeFoodie Food Recall Example')));
+            const MyHomePage(title: 'Get SafeFoodie Push Notifications!')));
     if (initialRouteName == routeNotification &&
         NotificationController.initialAction != null) {
       pageStack.add(MaterialPageRoute(
@@ -270,7 +264,7 @@ class _AppState extends State<MyApp> {
       case routeHome:
         return MaterialPageRoute(
             builder: (_) =>
-                const MyHomePage(title: 'SafeFoodie Food Recall Example'));
+                const MyHomePage(title: 'Get SafeFoodie Push Notifications!'));
 
       case routeNotification:
         ReceivedAction receivedAction = settings.arguments as ReceivedAction;
@@ -283,14 +277,16 @@ class _AppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Awesome Notifications - Notif Example',
-      navigatorKey: MyApp.navigatorKey,
-      onGenerateInitialRoutes: onGenerateInitialRoutes,
-      onGenerateRoute: onGenerateRoute,
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
-    );
+        title: 'Awesome Notifications - Notif Example',
+        navigatorKey: PushNotif.navigatorKey,
+        onGenerateInitialRoutes: onGenerateInitialRoutes,
+        onGenerateRoute: onGenerateRoute,
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.greenAccent,
+          ),
+        ));
   }
 }
 
@@ -311,16 +307,17 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+      backgroundColor: Color.fromARGB(166, 72, 168, 75),
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 72, 168, 75),
         title: Text(widget.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[
-            Text(
-              'Push the buttons below to create new notifications',
-            ),
+            Text('Push the buttons below to create new/clear all notifications',
+                style: TextStyle(color: Colors.white)),
           ],
         ),
       ),
@@ -331,17 +328,23 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             const SizedBox(width: 20),
             FloatingActionButton(
+              backgroundColor: Color.fromARGB(255, 72, 168, 75),
               heroTag: '1',
               onPressed: () => NotificationController.createNewNotification(),
               tooltip: 'Create New notification',
-              child: const Icon(Icons.outgoing_mail),
+              child: const Icon(
+                  color: Color.fromARGB(216, 230, 182, 53),
+                  Icons.outgoing_mail),
             ),
             const SizedBox(width: 10),
             FloatingActionButton(
+              backgroundColor: Color.fromARGB(255, 72, 168, 75),
               heroTag: '4',
               onPressed: () => NotificationController.cancelNotifications(),
               tooltip: 'Cancel all notifications',
-              child: const Icon(Icons.delete_forever),
+              child: const Icon(
+                  color: Color.fromARGB(216, 230, 182, 53),
+                  Icons.delete_forever),
             ),
           ],
         ),
@@ -458,7 +461,7 @@ class NotificationPage extends StatelessWidget {
               ),
             ),
             Container(
-              color: Colors.black12,
+              color: Color.fromARGB(255, 6, 238, 83),
               padding: const EdgeInsets.all(20),
               width: MediaQuery.of(context).size.width,
               child: Text(receivedAction.toString()),
