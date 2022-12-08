@@ -8,6 +8,7 @@ import 'package:safefoodie_fresh/screens/home/tipsPage.dart';
 import 'package:safefoodie_fresh/screens/list_creation.dart';
 import 'package:safefoodie_fresh/screens/newlist.dart';
 import 'package:safefoodie_fresh/screens/add_to_list.dart';
+import 'package:safefoodie_fresh/screens/pushnotif.dart';
 import 'screens/authenticate/RestPassword.dart';
 
 import 'services/auth.dart';
@@ -66,6 +67,7 @@ class MyApp extends StatelessWidget {
             'NewList': (context) => const NewList(),
             'AddtoList': (context) => const GList(),
             'TipsPage': (context) => const Tips(),
+            'PushNotif': (context) => const PushNotif(),
             'RestPassword': (context) => const RestPassword(),
             'ViewList': (context) => const AddtoList(),
           }),
