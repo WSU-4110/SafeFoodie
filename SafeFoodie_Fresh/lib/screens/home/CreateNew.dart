@@ -129,7 +129,9 @@ body: Container(
           decoration: const BoxDecoration(color: Colors.green),
           child: InkWell(
             onTap: () {
-                Navigator.pushNamed(context, 'NewList');
+                //Navigator.pushNamed(context, 'NewList');
+                //Just changing the routing for the new create list function
+                Navigator.pushedNamed(context, 'ListApp');
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
