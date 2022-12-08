@@ -60,6 +60,7 @@ class _GListState extends State<GList> {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Grocery list'),
+        backgroundColor: Colors.green,
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(vertical: 8.0),
