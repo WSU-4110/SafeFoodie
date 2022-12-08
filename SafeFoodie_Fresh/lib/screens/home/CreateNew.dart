@@ -17,16 +17,17 @@ class _CreateNew extends State<CreateNew> {
   @override
   Widget build(BuildContext ctxt) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Create Page"),
-        ),
-body: Container(
+      appBar: AppBar(
+        title: const Text("Create Page"),
+      ),
+      body: Container(
         padding: const EdgeInsets.symmetric(vertical: 247.0, horizontal: 2.0),
         child: GridView.count(
           crossAxisCount: 2,
           padding: const EdgeInsets.all(3.0),
           children: <Widget>[
-            makeDashboardItem1("Add to existing list", Icons.low_priority_sharp),
+            makeDashboardItem1(
+                "Add to existing list", Icons.low_priority_sharp),
             makeDashboardItem2("Create new list", Icons.library_add_sharp),
           ],
         ),
@@ -54,7 +55,8 @@ body: Container(
           children: <Widget>[
             //View lists button
             IconButton(
-              icon: const Icon(Icons.align_horizontal_left, color: Colors.green),
+              icon:
+                  const Icon(Icons.align_horizontal_left, color: Colors.green),
               onPressed: () {
                 Navigator.pushNamed(context, 'PageList');
               },
@@ -75,7 +77,8 @@ body: Container(
             ),
             //Account page button
             IconButton(
-              icon: const Icon(Icons.account_circle_outlined, color: Colors.green),
+              icon: const Icon(Icons.account_circle_outlined,
+                  color: Colors.green),
               onPressed: () {
                 //Settings navigator
                 Navigator.pushNamed(context, 'Account');
@@ -83,11 +86,11 @@ body: Container(
             ),
           ],
         ),
-      ),        
-        );
+      ),
+    );
   }
 
-    Card makeDashboardItem1(String title, IconData icon) {
+  Card makeDashboardItem1(String title, IconData icon) {
     return Card(
         elevation: 1.0,
         margin: const EdgeInsets.all(8.0),
@@ -121,7 +124,7 @@ body: Container(
         ));
   }
 
-      Card makeDashboardItem2(String title, IconData icon) {
+  Card makeDashboardItem2(String title, IconData icon) {
     return Card(
         elevation: 1.0,
         margin: const EdgeInsets.all(8.0),
@@ -129,9 +132,9 @@ body: Container(
           decoration: const BoxDecoration(color: Colors.green),
           child: InkWell(
             onTap: () {
-                //Navigator.pushNamed(context, 'NewList');
-                //Just changing the routing for the new create list function
-                Navigator.pushedNamed(context, 'ListApp');
+              //Navigator.pushNamed(context, 'NewList');
+              //Just changing the routing for the new create list function
+              Navigator.pushNamed(context, 'ListApp');
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
