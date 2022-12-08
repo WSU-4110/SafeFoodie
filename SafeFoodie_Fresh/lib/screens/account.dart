@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:safefoodie_fresh/services/auth.dart';
@@ -9,8 +11,7 @@ void main() {
       theme: ThemeData(
         primarySwatch: Colors.green,
         scaffoldBackgroundColor: const Color.fromARGB(166, 72, 168, 75),
-        primaryColor:
-            const Color.fromARGB(166, 72, 168, 75), //color of background
+        primaryColor: const Color.fromARGB(166, 72, 168, 75), //color of background
         textTheme: Typography().black, //sets default text to black
       ),
       home: const Account(),
@@ -36,8 +37,7 @@ class _AccountState extends State<Account> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text('Account managment'),
-          backgroundColor: Colors.green),
+          title: const Text('Account managment'), backgroundColor: Colors.green),
 //Settings pads
       body: SettingsList(
         sections: [
@@ -52,8 +52,7 @@ class _AccountState extends State<Account> {
                     decoration: TextDecoration.underline)),
             tiles: [
               SettingsTile(
-                title: const Text('Language',
-                    style: TextStyle(color: Colors.green)),
+                title: const Text('Language', style: TextStyle(color: Colors.green)),
                 value: const Text('English',
                     style: TextStyle(color: Color.fromARGB(216, 230, 182, 53))),
                 leading: const Icon(Icons.language, color: Colors.green),
@@ -122,42 +121,41 @@ class _AccountState extends State<Account> {
                 leading: Icon(Icons.phone, color: Colors.green),
                 onPressed: (BuildContext context) {},
               ),
-              SettingsTile(
-                  title: const Text('Logout',
-                      style: TextStyle(color: Colors.green)),
-                  value: const Text('Logout of account',
-                      style:
-                          TextStyle(color: Color.fromARGB(216, 230, 182, 53))),
-                  leading: const Icon(Icons.waving_hand_outlined,
-                      color: Colors.green),
-                  trailing: const Icon(Icons.logout_sharp,
-                      color: Color.fromARGB(216, 230, 182, 53)),
-                  onPressed: (BuildContext context) {
-                    showDialog(
+               SettingsTile(
+                title: const Text('Logout', style: TextStyle(color: Colors.green)),
+                value: const Text('Logout of account',
+                    style: TextStyle(color: Color.fromARGB(216, 230, 182, 53))),
+                leading: const Icon(Icons.waving_hand_outlined, color: Colors.green),
+                trailing: const Icon(Icons.logout_sharp ,
+                    color: Color.fromARGB(216, 230, 182, 53)),
+                onPressed: (BuildContext context) {
+                  showDialog(
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(
-                          title: Text('Are you sure you want to logout?'),
-                          actions: <Widget>[
-                            TextButton(
-                              child: Text('Cancel'),
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                            ),
-                            TextButton(
-                              child: Text('Confirm'),
-                              onPressed: () async {
-                                Navigator.popUntil(
+        title: Text('Are you sure you want to logout?'),
+        actions: <Widget>[
+          TextButton(
+            child: Text('Cancel'),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          TextButton(
+            child: Text('Confirm'),
+            onPressed: () async {
+               Navigator.popUntil(
                                     context, ModalRoute.withName("/"));
-                                await _auth.signOut();
-                              },
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  }),
+              await _auth.signOut();
+            },
+          ),
+
+        ],
+      );
+                },
+              );
+                }
+               ),
             ],
           ),
         ],
@@ -166,7 +164,7 @@ class _AccountState extends State<Account> {
       //Bottom navbar
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, 'CreateNew');
+                    Navigator.pushNamed(context, 'CreateNew');
         },
         // ignore: sort_child_properties_last
         child: Icon(Icons.add),
@@ -188,7 +186,7 @@ class _AccountState extends State<Account> {
             IconButton(
               icon: Icon(Icons.align_horizontal_left, color: Colors.green),
               onPressed: () {
-                Navigator.pushNamed(context, 'PageList');
+                 Navigator.pushNamed(context, 'PageList');
               },
             ),
             //Search item button

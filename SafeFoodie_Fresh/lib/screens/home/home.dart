@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:safefoodie_fresh/services/auth.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +15,6 @@ class Home extends StatefulWidget {
 }
 
 class _Home extends State<Home> {
-  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,8 @@ class _Home extends State<Home> {
           decoration: const BoxDecoration(color: Colors.green),
           child: InkWell(
             onTap: () async {
-              await _auth.signOut();
+              //await _auth.signOut();
+              Navigator.pushNamed(context, 'TipsPage');
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,

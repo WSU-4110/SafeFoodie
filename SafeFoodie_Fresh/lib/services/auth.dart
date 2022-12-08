@@ -27,11 +27,6 @@ class AuthService {
     }
   }
 
-  // Reset Password
-  Future sendPasswordResetEmail(String email) async {
-    return _auth.sendPasswordResetEmail(email: email);
-  }
-
 //sign in email and address
   // ignore: no_leading_underscores_for_local_identifiers
   Future signInEmailPassword(LoginUser _login) async {
