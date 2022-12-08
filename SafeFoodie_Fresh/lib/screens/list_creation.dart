@@ -100,6 +100,7 @@ class _GListState extends State<GList> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Add a new grocery item'),
+          //backgroundColor: Colors.green,
           content: TextField(
             controller: _textFieldController,
             decoration: const InputDecoration(hintText: 'Type your new item'),
