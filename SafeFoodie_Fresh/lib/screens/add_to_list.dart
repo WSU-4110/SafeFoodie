@@ -18,14 +18,14 @@ class _AddtoList extends State<AddtoList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:
-          AppBar(centerTitle: true, title: const Text('test test firebase work!!')),
+          AppBar(centerTitle: true, title: const Text('Lists')),
       body: _buildBody(context),
     );
   }
 
   Widget _buildBody(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: FirebaseFirestore.instance.collection('list').snapshots(),
+      stream: FirebaseFirestore.instance.collection('userInfo').snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return const LinearProgressIndicator();
 

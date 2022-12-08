@@ -38,6 +38,7 @@ class _Register extends State<Register> {
             }
             return 'Enter a Valid Email Address';
           }
+          
           return null;
         },
 //email bubble
