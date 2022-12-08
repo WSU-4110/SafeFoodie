@@ -25,7 +25,7 @@ class ListItem extends StatelessWidget {
     if (!checked) return null;
 
     return const TextStyle(
-      color: Colors.red,
+      color: Color.fromARGB(216, 230, 182, 53),
       decoration: TextDecoration.lineThrough,
     );
   }
@@ -53,15 +53,19 @@ class GList extends StatefulWidget {
 class _GListState extends State<GList> {
   final TextEditingController _textFieldController = TextEditingController();
   final List<LList> _lists = <LList>[];
-    final db = FirebaseFirestore.instance.collection('userInfo');
+  final db = FirebaseFirestore.instance.collection('userInfo');
 
   //Initialize the current date
   DateTime currentDate = DateTime.now();
-  Future addItem (String item, String date) async {
-    await db.doc('F3qaDYAfGPKZPgbuj5nZ').collection('items').doc('d4oXEp2GEWokFemVhIXR').update({
-        'item': item,
-        'date': date,
-    }); 
+  Future addItem(String item, String date) async {
+    await db
+        .doc('F3qaDYAfGPKZPgbuj5nZ')
+        .collection('items')
+        .doc('d4oXEp2GEWokFemVhIXR')
+        .update({
+      'item': item,
+      'date': date,
+    });
   }
 
   @override
