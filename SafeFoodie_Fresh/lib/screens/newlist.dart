@@ -14,6 +14,8 @@ class NewList extends StatefulWidget {
   State<NewList> createState() => _NewList();
 }
 
+//String docID = Record.fromSnapshot(snapshot).reference.toString();
+
 class _NewList extends State<NewList> {
   final db = FirebaseFirestore.instance.collection('userInfo');
   //Adding list to Firestore database
@@ -72,6 +74,7 @@ class _NewList extends State<NewList> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation
           .centerDocked, //inidcates pronounced button position
+
       //Bottom Navbar
       bottomNavigationBar: BottomAppBar(
         shape:

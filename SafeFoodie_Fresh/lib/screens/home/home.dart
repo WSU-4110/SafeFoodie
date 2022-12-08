@@ -134,7 +134,7 @@ Card historyTile(String title, IconData icon) {
           decoration: const BoxDecoration(color: Colors.green),
           child: InkWell(
             onTap: () {
-                Navigator.pushNamed(context, 'Searchpage');
+                Navigator.pushNamed(context, 'AddtoList');
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,

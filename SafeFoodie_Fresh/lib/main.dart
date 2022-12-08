@@ -5,6 +5,7 @@ import 'package:safefoodie_fresh/screens/account.dart';
 import 'package:safefoodie_fresh/screens/home/PageList.dart';
 import 'package:safefoodie_fresh/screens/home/CreateNew.dart';
 import 'package:safefoodie_fresh/screens/home/tipsPage.dart';
+import 'package:safefoodie_fresh/screens/list_creation.dart';
 import 'package:safefoodie_fresh/screens/newlist.dart';
 import 'package:safefoodie_fresh/screens/add_to_list.dart';
 import 'screens/authenticate/RestPassword.dart';
@@ -18,8 +19,6 @@ import 'screens/wrapper.dart';
 import 'package:safefoodie_fresh/screens/home/MapSample.dart';
 import 'package:safefoodie_fresh/screens/home/Searchpage.dart';
 
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -68,9 +67,10 @@ class MyApp extends StatelessWidget {
             'PageList': (context) => const PageList(),
             'CreateNew': (context) => const CreateNew(),
             'NewList': (context) => const NewList(),
-            'AddtoList': (context) => const AddtoList(),
+            'AddtoList': (context) => const GList(),
             'TipsPage': (context) => const Tips(),
             'RestPassword': (context) => const RestPassword(),
+            'ViewList': (context) => const AddtoList(),
           }),
     );
   }

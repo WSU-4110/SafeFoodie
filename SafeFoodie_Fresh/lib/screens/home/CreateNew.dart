@@ -130,7 +130,7 @@ body: Container(
             onTap: () {
                 //Navigator.pushNamed(context, 'NewList');
                 //Just changing the routing for the new create list function
-                Navigator.pushNamed(context, 'ListAdd');
+                Navigator.pushNamed(context, 'NewList');
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,

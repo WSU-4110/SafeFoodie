@@ -25,7 +25,7 @@ class _AddtoList extends State<AddtoList> {
 
   Widget _buildBody(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-      stream: FirebaseFirestore.instance.collection('userInfo').snapshots(),
+      stream: FirebaseFirestore.instance.collection('userInfo').doc('F3qaDYAfGPKZPgbuj5nZ').collection('items').snapshots(),
       builder: (context, snapshot) {
         if (!snapshot.hasData) return const LinearProgressIndicator();
 
@@ -68,9 +68,7 @@ class Record {
   final DocumentReference? reference;
 
   Record.fromMap(Map<String, dynamic> map, {this.reference})
-      : assert(map['listTitle'] != null),
-        assert(map['items'] != null),
-        listTitle = map['listTitle'],
+      : listTitle = map['listTitle'],
         items = map['items'];
 
   Record.fromSnapshot(DocumentSnapshot snapshot)

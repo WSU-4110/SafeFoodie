@@ -77,7 +77,7 @@ class _PageList extends State<PageList> {
             IconButton(
               icon: const Icon(Icons.align_horizontal_left, color: Colors.green),
               onPressed: () {
-                Navigator.pushNamed(context, 'PageList');
+                Navigator.pushNamed(context, 'ViewList');
               },
             ),
             //Search item button
