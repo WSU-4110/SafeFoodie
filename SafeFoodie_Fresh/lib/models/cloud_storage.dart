@@ -1,5 +1,3 @@
-// ignore_for_file: unused_import
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:safefoodie_fresh/services/auth.dart';
 import 'package:flutter/foundation.dart';

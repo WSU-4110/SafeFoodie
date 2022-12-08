@@ -26,8 +26,8 @@ class NotificationController {
               groupAlertBehavior: GroupAlertBehavior.Children,
               importance: NotificationImportance.High,
               defaultPrivacy: NotificationPrivacy.Private,
-              defaultColor: const Color.fromARGB(166, 72, 168, 75),
-              ledColor: const Color.fromARGB(166, 72, 168, 75))
+              defaultColor: Color.fromARGB(166, 72, 168, 75),
+              ledColor: Color.fromARGB(166, 72, 168, 75))
         ],
         debug: true);
 
@@ -55,7 +55,6 @@ class NotificationController {
     if (receivedAction.actionType == ActionType.SilentAction ||
         receivedAction.actionType == ActionType.SilentBackgroundAction) {
       // For background actions, you must hold the execution until the end
-      // ignore: avoid_print
       print(
           'Message sent via notification input: "${receivedAction.buttonKeyInput}"');
       await executeLongTaskInBackground();
@@ -120,7 +119,7 @@ class NotificationController {
                   child: Text(
                     'Allow',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: const Color.fromARGB(166, 72, 168, 75),
+                          color: Color.fromARGB(166, 72, 168, 75),
                         ),
                   )),
             ],
@@ -134,12 +133,12 @@ class NotificationController {
   ///     BACKGROUND TASKS TEST
   ///  *********************************************
   static Future<void> executeLongTaskInBackground() async {
-    // ignore: avoid_print
     print("starting long task");
     await Future.delayed(const Duration(seconds: 4));
     final url = Uri.parse("http://google.com");
-    // ignore: unused_local_variable
     final re = await http.get(url);
+    print(re.body);
+    print("long task done");
   }
 
   ///  *********************************************
@@ -308,9 +307,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      backgroundColor: const Color.fromARGB(166, 72, 168, 75),
+      backgroundColor: Color.fromARGB(166, 72, 168, 75),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 72, 168, 75),
+        backgroundColor: Color.fromARGB(255, 72, 168, 75),
         title: Text(widget.title),
       ),
       body: Center(
@@ -329,7 +328,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             const SizedBox(width: 20),
             FloatingActionButton(
-              backgroundColor: const Color.fromARGB(255, 72, 168, 75),
+              backgroundColor: Color.fromARGB(255, 72, 168, 75),
               heroTag: '1',
               onPressed: () => NotificationController.createNewNotification(),
               tooltip: 'Create New notification',
@@ -339,7 +338,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(width: 10),
             FloatingActionButton(
-              backgroundColor: const Color.fromARGB(255, 72, 168, 75),
+              backgroundColor: Color.fromARGB(255, 72, 168, 75),
               heroTag: '4',
               onPressed: () => NotificationController.cancelNotifications(),
               tooltip: 'Cancel all notifications',
@@ -462,7 +461,7 @@ class NotificationPage extends StatelessWidget {
               ),
             ),
             Container(
-              color: const Color.fromARGB(255, 6, 238, 83),
+              color: Color.fromARGB(255, 6, 238, 83),
               padding: const EdgeInsets.all(20),
               width: MediaQuery.of(context).size.width,
               child: Text(receivedAction.toString()),
