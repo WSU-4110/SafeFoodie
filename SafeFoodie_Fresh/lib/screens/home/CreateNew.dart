@@ -1,5 +1,4 @@
 // ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -131,7 +130,7 @@ body: Container(
             onTap: () {
                 //Navigator.pushNamed(context, 'NewList');
                 //Just changing the routing for the new create list function
-                Navigator.pushedNamed(context, 'ListApp');
+                Navigator.pushNamed(context, 'ListAdd');
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
