@@ -17,8 +17,8 @@ class _AddtoList extends State<AddtoList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:
-          AppBar(centerTitle: true, title: const Text('test test firebase work!!')),
+      appBar: AppBar(
+          centerTitle: true, title: const Text('test test firebase work!!')),
       body: _buildBody(context),
     );
   }
@@ -54,13 +54,13 @@ class _AddtoList extends State<AddtoList> {
           borderRadius: BorderRadius.circular(5.0),
         ),
         child: ListTile(
-          title: Text(record.name),
-          trailing: Text(record.items.toString()),
-           //onTap: () => record.reference.updateData({'list': record.items+1})
-          //updateData is listed as deprecated in the firebase Flutter library
+            title: Text(record.name),
+            trailing: Text(record.items.toString()),
+            //onTap: () => record.reference.updateData({'list': record.items+1})
+            //updateData is listed as deprecated in the firebase Flutter library
             onTap: () => record.reference!.update({'list': record.items + 1})),
-        ),
-      );
+      ),
+    );
   }
 }
 
