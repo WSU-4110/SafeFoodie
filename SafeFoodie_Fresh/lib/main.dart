@@ -7,6 +7,7 @@ import 'package:safefoodie_fresh/screens/home/CreateNew.dart';
 import 'package:safefoodie_fresh/screens/home/tipsPage.dart';
 import 'package:safefoodie_fresh/screens/newlist.dart';
 import 'package:safefoodie_fresh/screens/add_to_list.dart';
+import 'screens/authenticate/RestPassword.dart';
 
 
 
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
             'NewList': (context) => const NewList(),
             'AddtoList': (context) => const AddtoList(),
             'TipsPage': (context) => const Tips(),
+            'RestPassword': (context) => const RestPassword(),
           }),
     );
   }
