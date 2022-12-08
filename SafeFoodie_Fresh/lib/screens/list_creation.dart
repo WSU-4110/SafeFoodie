@@ -25,7 +25,7 @@ class ListItem extends StatelessWidget {
     if (!checked) return null;
 
     return const TextStyle(
-      color: Color.fromARGB(216, 230, 182, 53),
+      color: Colors.red,
       decoration: TextDecoration.lineThrough,
     );
   }
