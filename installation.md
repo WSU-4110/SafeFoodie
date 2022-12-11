@@ -11,6 +11,8 @@ Then, clone the repository and execute the following command in your terminal:
 
 flutter clean
 
+dart pub get
+
 flutter pub get
 
 flutter run

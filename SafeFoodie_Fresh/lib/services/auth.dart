@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import '../models/loginuser.dart';
+import 'loginuser.dart';
 
-import '../models/FirebaseUser.dart';
+import '../services/firebaseuser.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -28,6 +28,7 @@ class AuthService {
   }
 
 //sign in email and address
+  // ignore: no_leading_underscores_for_local_identifiers
   Future signInEmailPassword(LoginUser _login) async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
@@ -42,6 +43,7 @@ class AuthService {
   }
 
 //register with email and password
+  // ignore: no_leading_underscores_for_local_identifiers
   Future registerEmailPassword(LoginUser _login) async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
@@ -65,4 +67,5 @@ class AuthService {
       return null;
     }
   }
+
 }

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "804090316597",
+    "firebase_url": "https://safefoodie-fresh-default-rtdb.firebaseio.com",
     "project_id": "safefoodie-fresh",
     "storage_bucket": "safefoodie-fresh.appspot.com"
   },

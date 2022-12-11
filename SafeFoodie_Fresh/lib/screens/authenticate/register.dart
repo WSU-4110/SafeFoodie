@@ -1,10 +1,11 @@
-import 'package:safefoodie_fresh/models/loginuser.dart';
+import 'package:safefoodie_fresh/services/loginuser.dart';
 import 'package:safefoodie_fresh/services/auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
   final Function? toggleView;
-  Register({this.toggleView});
+  const Register({super.key, this.toggleView});
 
   @override
   State<StatefulWidget> createState() {
@@ -13,13 +14,23 @@ class Register extends StatefulWidget {
 }
 
 class _Register extends State<Register> {
-  final AuthService _auth = new AuthService();
+  final AuthService _auth = AuthService();
 //=========================================
 //Auth parameters
   bool _obscureText = true;
   final _email = TextEditingController();
   final _password = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  //Adding user to Firestore database
+  Future addUserInfo ( String email, String password) async {
+    await FirebaseFirestore.instance.collection('userInfo').add({
+        'email': email,
+        'password': password,
+    }); 
+  }
+    
+  
   //=========================================
   //Page begin
   @override
@@ -37,15 +48,17 @@ class _Register extends State<Register> {
             }
             return 'Enter a Valid Email Address';
           }
+          
+          return null;
         },
 //email bubble
-        decoration: InputDecoration(
-          contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          enabledBorder: const OutlineInputBorder(
-            borderSide: const BorderSide(
+        decoration: const InputDecoration(
+          contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
                 color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
           ),
-          border: const OutlineInputBorder(),
+          border: OutlineInputBorder(),
           labelStyle: TextStyle(color: Colors.white),
           labelText: 'Email',
         ));
@@ -70,16 +83,16 @@ class _Register extends State<Register> {
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
           enabledBorder: const OutlineInputBorder(
-            borderSide: const BorderSide(
+            borderSide: BorderSide(
                 color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
           ),
           border: const OutlineInputBorder(),
-          labelStyle: TextStyle(color: Colors.white),
+          labelStyle: const TextStyle(color: Colors.white),
           labelText: 'Password',
           suffixIcon: IconButton(
             icon: Icon(
               _obscureText ? Icons.visibility : Icons.visibility_off,
-              color: Color.fromARGB(216, 230, 182, 53),
+              color: const Color.fromARGB(216, 230, 182, 53),
             ),
             onPressed: () {
               setState(() {
@@ -91,6 +104,7 @@ class _Register extends State<Register> {
         ));
 //=========================================
 // Back button
+    // ignore: non_constant_identifier_names
     final Goback = TextButton(
         onPressed: () {
           widget.toggleView!();
@@ -125,6 +139,10 @@ class _Register extends State<Register> {
                     );
                   });
             }
+            else
+            {
+              addUserInfo(_email.text.trim(), _password.text.trim());
+            }
           }
         },
         child: Text(
@@ -157,8 +175,8 @@ class _Register extends State<Register> {
 // Page header
                   Container(
                     alignment: Alignment.center,
-                    padding: EdgeInsets.fromLTRB(15, 110, 0, 0),
-                    child: Text("Sign up now!",
+                    padding: const EdgeInsets.fromLTRB(15, 110, 0, 0),
+                    child: const Text("Sign up now!",
                         style: TextStyle(fontSize: 40, color: Colors.white)),
                   ),
 //Call all classes
