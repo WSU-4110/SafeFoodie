@@ -28,7 +28,7 @@ jobs:
     
     # Get flutter dependencies.
     - run: flutter pub get
-      working-directory: ./SafeFoodie/SafeFoodie_Fresh
+      working-directory: SafeFoodie_Fresh
     
     # Check for any formatting issues in the code.
     - run: flutter format --set-exit-if-changed .
