@@ -17,6 +17,8 @@ class NewList extends StatefulWidget {
 class _NewList extends State<NewList> {
   final db = FirebaseFirestore.instance.collection('userInfo');
   final listdb = FirebaseFirestore.instance.collection('lists');
+  final TextEditingController _textFieldController = TextEditingController();
+
   //Adding list to Firestore database
   Future addList (String listTitle) async {
     await listdb.add({
@@ -37,7 +39,7 @@ class _NewList extends State<NewList> {
         body: Column(
           children: <Widget>[
             TextField(
-              controller: eCtrl,
+              controller: _textFieldController,
               onSubmitted: (text) {
                 listName = text;
                 eCtrl.clear();
@@ -50,8 +52,7 @@ class _NewList extends State<NewList> {
               child: const Text('Add'),
               onPressed: () {
                 setState(() {
-
-                  addList(listName);
+                  addList(_textFieldController.text);
                 });
               },
             ),

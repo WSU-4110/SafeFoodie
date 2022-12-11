@@ -32,7 +32,7 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      final formattedDate = DateFormat('EEEE, MMM d, yyyy').format(list.expired);
+        final formattedDate = DateFormat('EEEE, MMM d, yyyy').format(list.expired);
     return ListTile(
       onTap: () {
         onListChanged(list);
@@ -55,12 +55,19 @@ class GList extends StatefulWidget {
 class _GListState extends State<GList> {
   final TextEditingController _textFieldController = TextEditingController();
   final List<LList> _lists = <LList>[];
-  final db = FirebaseFirestore.instance.collection('userInfo').doc('F3qaDYAfGPKZPgbuj5nZ');
+  final db = FirebaseFirestore.instance.collection('userInfo').doc('F3qaDYAfGPKZPgbuj5nZ').collection('items');
+  final Stream<QuerySnapshot> itemStream = FirebaseFirestore.instance.collection('userInfo').doc('F3qaDYAfGPKZPgbuj5nZ').collection('items').snapshots();
 
-  //Initialize the current date
+   /*AsyncSnapshot<QuerySnapshot> snapshot {
+               return
+                  _addListItem(snap[index]['item'], snap[index]['item'])
+                }
+              }*/
+  
+  //add items to list
   DateTime currentDate = DateTime.now();
   Future addItem(String item, String date) async {
-    await db.collection('items').add({
+    await db.add({
       'item': item,
       'date': date,
     });
@@ -151,9 +158,9 @@ class _GListState extends State<GList> {
 class ListApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       title: 'Grocery list',
-      home: new GList(),
+      home:  GList(),
     );
   }
 }
