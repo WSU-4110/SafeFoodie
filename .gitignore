@@ -1,1 +1,5 @@
 
+*.cc
+*.cmake
+*.swift
+*.swift
