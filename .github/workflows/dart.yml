@@ -30,9 +30,6 @@ jobs:
     - run: flutter pub get
       working-directory: SafeFoodie_Fresh
     
-    # Check for any formatting issues in the code.
-    - run: dart format --set-exit-if-changed .
-    
     # Statically analyze the Dart code for any errors.
     - run: flutter analyze .
     
