@@ -7,16 +7,16 @@ import 'services/firebaseuser.dart';
 import 'screens/authenticate/wrapper.dart';
 
 //All page routes
-import 'package:safefoodie_fresh/screens/home/account.dart';
-import 'package:safefoodie_fresh/screens/home/create_new.dart';
-import 'package:safefoodie_fresh/screens/home/tipsPage.dart';
-import 'package:safefoodie_fresh/screens/add_items.dart';
-import 'package:safefoodie_fresh/screens/newlist.dart';
-import 'package:safefoodie_fresh/screens/viewItems.dart';
-import 'package:safefoodie_fresh/screens/pushnotif.dart';
-import 'package:safefoodie_fresh/screens/ListHistory.dart';
-import 'package:safefoodie_fresh/screens/home/map.dart';
-import 'package:safefoodie_fresh/screens/home/search_page.dart';
+import 'package:safefoodie_fresh/screens/homepage/account.dart';
+import 'package:safefoodie_fresh/screens/navbar/create_new.dart';
+import 'package:safefoodie_fresh/screens/homepage/tipsPage.dart';
+import 'package:safefoodie_fresh/screens/navbar/add_items.dart';
+import 'package:safefoodie_fresh/screens/navbar/newlist.dart';
+import 'package:safefoodie_fresh/screens/navbar/viewItems.dart';
+import 'package:safefoodie_fresh/screens/navbar/pushnotif.dart';
+import 'package:safefoodie_fresh/screens/homepage/list_history.dart';
+import 'package:safefoodie_fresh/screens/navbar/map.dart';
+import 'package:safefoodie_fresh/screens/navbar/search_page.dart';
 import 'screens/authenticate/reset_password.dart';
 
 
