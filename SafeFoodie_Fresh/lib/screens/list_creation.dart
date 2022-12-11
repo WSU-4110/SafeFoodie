@@ -1,6 +1,7 @@
 //import 'dart:html';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 //import 'dart:async';
 
 //New List Creation function with the check mark class to remove each
@@ -32,6 +33,7 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formattedDate = DateFormat('EEEE, MMM d, yyyy').format(list.expired);
     return ListTile(
       onTap: () {
         onListChanged(list);
@@ -40,6 +42,7 @@ class ListItem extends StatelessWidget {
         child: Text(list.name[0]),
       ),
       title: Text(list.name, style: _getTextStyle(list.checked)),
+      trailing: Text(formattedDate.toString()),
     );
   }
 }
