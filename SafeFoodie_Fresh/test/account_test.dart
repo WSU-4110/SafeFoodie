@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:safefoodie_fresh/screens/account.dart';
+import 'package:safefoodie_fresh/screens/homepage/account.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'alfredcarra_account_unit_test.dart';
+import 'account_test.dart';
 
 void main() {
   // user toggle test
