@@ -30,8 +30,6 @@ jobs:
     - run: flutter pub get
       working-directory: SafeFoodie_Fresh
     
-    # Statically analyze the Dart code for any errors.
-    - run: flutter analyze .
     
     # Run widget tests for our flutter project.
     - run: flutter test
