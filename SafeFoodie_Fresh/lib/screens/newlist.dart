@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:safefoodie_fresh/models/cloud_storage.dart';
-import 'package:safefoodie_fresh/screens/add_to_list.dart';
 
 void main() {
   runApp(const NewList());
@@ -18,13 +16,16 @@ class NewList extends StatefulWidget {
 
 class _NewList extends State<NewList> {
   final db = FirebaseFirestore.instance.collection('userInfo');
+  final listdb = FirebaseFirestore.instance.collection('lists');
   //Adding list to Firestore database
   Future addList (String listTitle) async {
+    await listdb.add({
+      'listTitle': listTitle,
+  });
     await db.doc('F3qaDYAfGPKZPgbuj5nZ').update({
         'listTitle': listTitle,
     }); 
   }
-  List<String> litems = [];
   String listName = "empty";
   final TextEditingController eCtrl = TextEditingController();
   @override
@@ -35,11 +36,9 @@ class _NewList extends State<NewList> {
         ),
         body: Column(
           children: <Widget>[
-            
             TextField(
               controller: eCtrl,
               onSubmitted: (text) {
-                litems.add(text);
                 listName = text;
                 eCtrl.clear();
                 setState(() {
@@ -50,17 +49,60 @@ class _NewList extends State<NewList> {
             ElevatedButton(
               child: const Text('Add'),
               onPressed: () {
-                  litems.add(listName);
-                  setState(() {});
+                setState(() {
+
+                  addList(listName);
+                });
               },
             ),
-            Expanded(
-                child: ListView.builder(
-                    itemCount: litems.length,
-                    // ignore: non_constant_identifier_names
-                    itemBuilder: (BuildContext ctxt, int Index) {
-                      return Text(litems[Index]);
-                    }))
+            StreamBuilder<QuerySnapshot>(
+              stream: FirebaseFirestore.instance.collection('lists').snapshots(),
+              builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+                if(snapshot.hasData) {
+                  final snap = snapshot.data!.docs;
+                  return ListView.builder(
+                    shrinkWrap: true,
+                    primary: false,
+                    itemCount: snap.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        height: 70,
+                        width: double.infinity,
+                        margin: const EdgeInsets.only(bottom: 12),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black26,
+                              offset: Offset(2, 2),
+                              blurRadius: 10,
+                            ),
+                          ],
+                        ),
+                        child: Stack(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(left: 20),
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                snap[index]['listTitle'],
+                                style: const TextStyle(
+                                  color: Color.fromARGB(136, 0, 0, 0),
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                } else {
+                  return const SizedBox();
+                }
+              },
+            )
           ],
         ),
 //Center action button

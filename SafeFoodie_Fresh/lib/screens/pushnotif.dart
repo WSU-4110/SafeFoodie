@@ -26,8 +26,8 @@ class NotificationController {
               groupAlertBehavior: GroupAlertBehavior.Children,
               importance: NotificationImportance.High,
               defaultPrivacy: NotificationPrivacy.Private,
-              defaultColor: Color.fromARGB(166, 72, 168, 75),
-              ledColor: Color.fromARGB(166, 72, 168, 75))
+              defaultColor: const Color.fromARGB(166, 72, 168, 75),
+              ledColor:  const Color.fromARGB(166, 72, 168, 75))
         ],
         debug: true);
 
@@ -119,7 +119,7 @@ class NotificationController {
                   child: Text(
                     'Allow',
                     style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          color: Color.fromARGB(166, 72, 168, 75),
+                          color: const Color.fromARGB(166, 72, 168, 75),
                         ),
                   )),
             ],

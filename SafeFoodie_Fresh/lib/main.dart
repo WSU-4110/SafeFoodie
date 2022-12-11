@@ -3,19 +3,19 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 import 'package:safefoodie_fresh/screens/account.dart';
 import 'package:safefoodie_fresh/screens/home/PageList.dart';
-import 'package:safefoodie_fresh/screens/home/CreateNew.dart';
+import 'package:safefoodie_fresh/screens/home/createNew.dart';
 import 'package:safefoodie_fresh/screens/home/tipsPage.dart';
-import 'package:safefoodie_fresh/screens/list_creation.dart';
+import 'package:safefoodie_fresh/screens/addItems.dart';
 import 'package:safefoodie_fresh/screens/newlist.dart';
-import 'package:safefoodie_fresh/screens/add_to_list.dart';
+import 'package:safefoodie_fresh/screens/viewItems.dart';
 import 'package:safefoodie_fresh/screens/pushnotif.dart';
-import 'screens/authenticate/RestPassword.dart';
+import 'screens/authenticate/resetPassword.dart';
 
 import 'services/auth.dart';
-import 'models/FirebaseUser.dart';
+import 'services/firebaseuser.dart';
 import 'screens/wrapper.dart';
 // For Routing
-import 'package:safefoodie_fresh/screens/home/MapSample.dart';
+import 'package:safefoodie_fresh/screens/home/map.dart';
 import 'package:safefoodie_fresh/screens/home/Searchpage.dart';
 
 void main() async {

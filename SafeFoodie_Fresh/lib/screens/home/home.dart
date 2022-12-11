@@ -205,7 +205,7 @@ Card historyTile(String title, IconData icon) {
             IconButton(
               icon: const Icon(Icons.align_horizontal_left, color: Colors.green),
               onPressed: () {
-                Navigator.pushNamed(context, 'PageList');
+                Navigator.pushNamed(context, 'ViewList');
               },
             ),
             //Search item button
