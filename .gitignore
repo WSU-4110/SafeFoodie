@@ -6,3 +6,7 @@
 *.sha1
 *.d
 *.sha1
+*.cc
+*.cmake
+*.swift
+*.swift
