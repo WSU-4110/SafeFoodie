@@ -8,7 +8,7 @@ import 'screens/authenticate/wrapper.dart';
 
 //All page routes
 import 'package:safefoodie_fresh/screens/home/account.dart';
-import 'package:safefoodie_fresh/screens/home/createNew.dart';
+import 'package:safefoodie_fresh/screens/home/create_new.dart';
 import 'package:safefoodie_fresh/screens/home/tipsPage.dart';
 import 'package:safefoodie_fresh/screens/add_items.dart';
 import 'package:safefoodie_fresh/screens/newlist.dart';
