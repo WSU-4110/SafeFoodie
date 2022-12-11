@@ -7,7 +7,7 @@ import 'services/firebaseuser.dart';
 import 'screens/authenticate/wrapper.dart';
 
 //All page routes
-import 'package:safefoodie_fresh/screens/account.dart';
+import 'package:safefoodie_fresh/screens/home/account.dart';
 import 'package:safefoodie_fresh/screens/home/createNew.dart';
 import 'package:safefoodie_fresh/screens/home/tipsPage.dart';
 import 'package:safefoodie_fresh/screens/add_items.dart';
