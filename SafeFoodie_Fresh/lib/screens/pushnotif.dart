@@ -307,9 +307,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      backgroundColor: Color.fromARGB(166, 72, 168, 75),
+      backgroundColor: const Color.fromARGB(166, 72, 168, 75),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 72, 168, 75),
+        backgroundColor:const Color.fromARGB(255, 72, 168, 75),
         title: Text(widget.title),
       ),
       body: Center(
@@ -328,7 +328,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             const SizedBox(width: 20),
             FloatingActionButton(
-              backgroundColor: Color.fromARGB(255, 72, 168, 75),
+              backgroundColor: const Color.fromARGB(255, 72, 168, 75),
               heroTag: '1',
               onPressed: () => NotificationController.createNewNotification(),
               tooltip: 'Create New notification',
@@ -338,7 +338,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const SizedBox(width: 10),
             FloatingActionButton(
-              backgroundColor: Color.fromARGB(255, 72, 168, 75),
+              backgroundColor: const Color.fromARGB(255, 72, 168, 75),
               heroTag: '4',
               onPressed: () => NotificationController.cancelNotifications(),
               tooltip: 'Cancel all notifications',
@@ -461,7 +461,7 @@ class NotificationPage extends StatelessWidget {
               ),
             ),
             Container(
-              color: Color.fromARGB(255, 6, 238, 83),
+              color: const Color.fromARGB(255, 6, 238, 83),
               padding: const EdgeInsets.all(20),
               width: MediaQuery.of(context).size.width,
               child: Text(receivedAction.toString()),

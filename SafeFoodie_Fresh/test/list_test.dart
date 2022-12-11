@@ -77,11 +77,11 @@ void main() {
 
   //View List Test
   testWidgets('Testing List View', (WidgetTester tester) async {
-    const ListView = Padding(padding: EdgeInsets.zero);
+    const listView = Padding(padding: EdgeInsets.zero);
     await tester.pumpWidget(Container(
-      child: ListView,
+      child: listView,
     ));
-    expect(find.byWidget(ListView), findsOneWidget);
+    expect(find.byWidget(listView), findsOneWidget);
   });
 }
 
@@ -130,6 +130,8 @@ class ListPageWidget extends StatelessWidget {
 }
 
 class CheckBoxWidget extends StatefulWidget {
+  const CheckBoxWidget({Key? key}) : super(key: key);
+
   @override
   _CheckBoxWidgetState createState() => _CheckBoxWidgetState();
 }
@@ -142,10 +144,10 @@ class _CheckBoxWidgetState extends State<CheckBoxWidget> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('List Test'),
+          title: const Text('List Test'),
           backgroundColor: Colors.green,
           leading: IconButton(
-            icon: Icon(Icons.menu),
+            icon: const Icon(Icons.menu),
             tooltip: 'List',
             onPressed: () {},
           ),
@@ -159,21 +161,21 @@ class _CheckBoxWidgetState extends State<CheckBoxWidget> {
                 height: 700,
                 child: Column(
                   children: [
-                    Text(
+                    const Text(
                       'List CheckBox Checker',
                       style: TextStyle(color: Colors.green, fontSize: 30),
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Row(
                       children: <Widget>[
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
-                        Text(
+                        const Text(
                           'This is a test',
                           style: TextStyle(fontSize: 17),
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Checkbox(
                           value: this.value,
                           onChanged: (bool? value) {

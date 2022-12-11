@@ -2,8 +2,8 @@ import 'package:provider/provider.dart';
 import 'package:safefoodie_fresh/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
-import '../services/firebaseuser.dart';
-import 'authenticate/handler.dart';
+import '../../services/firebaseuser.dart';
+import 'handler.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({super.key});

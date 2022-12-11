@@ -40,6 +40,16 @@ class _NewList extends State<NewList> {
           children: <Widget>[
             TextField(
               controller: _textFieldController,
+              decoration: const InputDecoration(
+              contentPadding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                    color: Color.fromARGB(134, 218, 216, 216), width: 2.5),
+              ),
+              border: OutlineInputBorder(),
+              labelStyle: TextStyle(color: Colors.white),
+              labelText: 'Enter list name here',
+              ),
               onSubmitted: (text) {
                 listName = text;
                 eCtrl.clear();

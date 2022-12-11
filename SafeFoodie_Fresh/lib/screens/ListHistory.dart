@@ -9,10 +9,10 @@ class ListHistory extends StatefulWidget {
   const ListHistory({Key? key}) : super(key: key);
 
   @override
-  State<ListHistory> createState() => _listHistory();
+  State<ListHistory> createState() => _ListHistory();
 }
 
-class _listHistory extends State<ListHistory> {
+class _ListHistory extends State<ListHistory> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

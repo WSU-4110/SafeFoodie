@@ -14,12 +14,12 @@ class _RestPasswordState extends State<RestPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(166, 72, 168, 75),
+      backgroundColor: const Color.fromARGB(166, 72, 168, 75),
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
         elevation: 0,
         title: const Text('Reset Password'),
-        backgroundColor: Color.fromARGB(166, 72, 168, 75),
+        backgroundColor: const Color.fromARGB(166, 72, 168, 75),
       ),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.start,

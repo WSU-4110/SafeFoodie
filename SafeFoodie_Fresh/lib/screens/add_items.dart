@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:safefoodie_fresh/screens/viewItems.dart';
 
 //New List Creation function with the check mark class to remove each
 //Item from the list when the user is done with the item.
@@ -49,7 +48,7 @@ class ListItem extends StatelessWidget {
 class GList extends StatefulWidget {
   const GList({Key? key}) : super(key: key);
   @override
-  _GListState createState() => new _GListState();
+  _GListState createState() =>  _GListState();
 }
 
 class _GListState extends State<GList> {
@@ -76,13 +75,13 @@ class _GListState extends State<GList> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Grocery list'),
+    return  Scaffold(
+      appBar:  AppBar(
+        title:  const Text('Grocery list'),
         backgroundColor: Colors.green,
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
         children: _lists.map((LList list) {
           return ListItem(
             list: list,
@@ -93,7 +92,7 @@ class _GListState extends State<GList> {
       floatingActionButton: FloatingActionButton(
           onPressed: () => _displayDialog(),
           tooltip: 'Add Item',
-          child: Icon(Icons.add)),
+          child: const Icon(Icons.add)),
     );
   }
 
@@ -156,13 +155,15 @@ class _GListState extends State<GList> {
 }
 
 class ListApp extends StatelessWidget {
+  const ListApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Grocery list',
       home:  GList(),
     );
   }
 }
 
-void main() => runApp(ListApp());
+void main() => runApp(const ListApp());
