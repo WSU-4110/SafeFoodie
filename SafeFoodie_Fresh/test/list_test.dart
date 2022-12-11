@@ -5,14 +5,9 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'dart:html';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:safefoodie_fresh/screens/list.dart';
-import 'package:safefoodie_fresh/main.dart';
 
 void main() {
   /*testWidgets('Counter increments smoke test', (WidgetTester tester) async {
@@ -63,9 +58,6 @@ void main() {
   //Testing Colors
   testWidgets('Testing Colors', (WidgetTester tester) async {
     const Color primaryColor = Color.fromARGB(166, 72, 168, 75);
-    const Color primarySwatch = Colors.green;
-    const Color checkColor = Colors.white;
-    const Color fillColor = Colors.red;
     const Color scaffoldBackgroundColor = Color.fromARGB(166, 72, 168, 75);
     await tester.pumpWidget(MaterialApp(
       theme: ThemeData(
