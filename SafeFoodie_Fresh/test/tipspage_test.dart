@@ -86,235 +86,78 @@ testWidgets('test tip1', (WidgetTester tester) async {
       alignment: Alignment.topLeft,
       child: tip2
     ));
-    
+
     final RenderBox tip = tester.renderObject(find.byType(Container));
     expect(tip, isNotNull);
     expect(tip, hasOneLineDescription);
     expect(tip.size.height, equals(170.0));
   });
-  testWidgets(
-      'iconTheme color should override itemColor for BottomNavigationBarType.fixed',
-      (WidgetTester tester) async {
-    const Color primaryColor = Color(0xFF000000);
-    const Color unselectedWidgetColor = Color(0xFFD501FF);
-    const Color selectedColor = Color(0xFF0004FF);
-    const Color unselectedColor = Color(0xFFE5FF00);
-    const Color selectedLabelColor = Color(0xFFFF9900);
-    const Color unselectedLabelColor = Color(0xFF92F74E);
-    const Color selectedIconThemeColor = Color(0xFF1E7723);
-    const Color unselectedIconThemeColor = Color(0xFF009688);
-    const IconThemeData selectedIconTheme =
-        IconThemeData(size: 20, color: selectedIconThemeColor);
-    const IconThemeData unselectedIconTheme =
-        IconThemeData(size: 18, color: unselectedIconThemeColor);
-    const TextStyle selectedTextStyle =
-        TextStyle(fontSize: 18.0, color: selectedLabelColor);
-    const TextStyle unselectedTextStyle =
-        TextStyle(fontSize: 18.0, color: unselectedLabelColor);
 
-    await tester.pumpWidget(
-      MaterialApp(
-        theme: ThemeData(
-          primaryColor: primaryColor,
-          unselectedWidgetColor: unselectedWidgetColor,
-        ),
-        home: Scaffold(
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            selectedLabelStyle: selectedTextStyle,
-            unselectedLabelStyle: unselectedTextStyle,
-            selectedIconTheme: selectedIconTheme,
-            unselectedIconTheme: unselectedIconTheme,
-            selectedItemColor: selectedColor,
-            unselectedItemColor: unselectedColor,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: 'AC',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.location_pin),
-                label: 'Alarm',
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
+  testWidgets('test third tip box', (WidgetTester tester) async {
+    final Container tip3 = Container(
+                  // First tip
+                  color: const Color.fromARGB(216, 230, 182, 53),
+                  height: 170.0,
+                  alignment: Alignment.center,
+                  padding: const EdgeInsets.all(10),
+                  child: RichText(
+                      overflow: TextOverflow.clip, // Controls visual overflow
+                      textDirection:
+                          TextDirection.ltr, // Control the text direction
+                      softWrap:
+                          true, // Whether the text should break at soft line breaks
+                      maxLines:
+                          8, // Maximum number of lines for the text to span
+                      textScaleFactor:
+                          .7, // The number of font pixels for each logical pixel
+                      text: const TextSpan(
+                        text: 'Truth About Expiry \n ',
+                        style: TextStyle(fontSize: 20),
+                        children: <TextSpan>[
+                          //bullet points
+                          TextSpan(
+                            text:
+                                '\u2022   Sugar never expires if stored properly in a dry, cool place.\n'
+                                '\u2022   Dried pasta can last close to a year after the expiration date.\n'
+                                '\u2022   Low-acid canned foods (veggies, soups, tuna) can be stored up to 5 years from purchase date.\n'
+                                '\u2022   High-acid canned foods (tomatos, pickles, brines) can be stored up to 1.5 years.\n',
+                            style: TextStyle(fontSize: 18.5), //bullet text
+                          ),
+                        ],
+                      )),
+                );
+    expect(tip3, hasOneLineDescription);
+    await tester.pumpWidget(Align(
+      alignment: Alignment.topLeft,
+      child: tip3
+    ));
+
+    final RenderBox tip = tester.renderObject(find.byType(Container));
+    expect(tip, isNotNull);
+    expect(tip, hasOneLineDescription);
+    expect(tip.size.height, equals(170.0));
   });
-  testWidgets('BottomNavigationBar multiple taps test',
-      (WidgetTester tester) async {
-    await tester.pumpWidget(
-      MaterialApp(
-        home: Scaffold(
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.shifting,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
-                label: 'AC',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.location_pin),
-                label: 'Alarm',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_outlined),
-                label: 'Time',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.add),
-                label: 'Add',
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
 
-    // We want to make sure that the last label does not get displaced,
-    // irrespective of how many taps happen on the first N - 1 labels and how
-    // they grow.
-
-    Iterable<RenderBox> actions =
-        tester.renderObjectList(find.byType(InkResponse));
-    final Offset originalOrigin =
-        actions.elementAt(3).localToGlobal(Offset.zero);
-
-    await tester.tap(find.text('AC'));
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 100));
-
-    actions = tester.renderObjectList(find.byType(InkResponse));
-    expect(actions.elementAt(3).localToGlobal(Offset.zero),
-        equals(originalOrigin));
-
-    await tester.tap(find.text('Alarm'));
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 100));
-
-    actions = tester.renderObjectList(find.byType(InkResponse));
-    expect(actions.elementAt(3).localToGlobal(Offset.zero),
-        equals(originalOrigin));
-
-    await tester.tap(find.text('Time'));
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 100));
-
-    actions = tester.renderObjectList(find.byType(InkResponse));
-    expect(actions.elementAt(3).localToGlobal(Offset.zero),
-        equals(originalOrigin));
-  });
-  testWidgets('BottomNavigationBar iconSize test', (WidgetTester tester) async {
-    late double builderIconSize;
-    await tester.pumpWidget(
-      MaterialApp(
-        home: Scaffold(
-          bottomNavigationBar: BottomNavigationBar(
-            iconSize: 12.0,
-            items: <BottomNavigationBarItem>[
-              const BottomNavigationBarItem(
-                label: 'A',
-                icon: Icon(Icons.settings),
-              ),
-              BottomNavigationBarItem(
-                label: 'B',
-                icon: Builder(
-                  builder: (BuildContext context) {
-                    builderIconSize = IconTheme.of(context).size!;
-                    return SizedBox(
-                      width: builderIconSize,
-                      height: builderIconSize,
-                    );
-                  },
+  testWidgets('test tip generation', (WidgetTester tester) async {
+    final Widget tester = Material( 
+        elevation: 5.0,
+        borderRadius: BorderRadius.circular(30.0),
+        color: Colors.green,
+        child: Center(
+          child: LayoutBuilder(builder:
+              (BuildContext context, BoxConstraints viewportConstraints) {
+            return SingleChildScrollView(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                    minHeight: viewportConstraints.maxHeight,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  ),
                 ),
-              ),
-            ],
+              );
+             }),
           ),
-        ),
-      ),
-    );
-
-    final RenderBox box = tester.renderObject(find.byType(Icon));
-    expect(box.size.width, equals(12.0));
-    expect(box.size.height, equals(12.0));
-    expect(builderIconSize, 12.0);
-  });
-  testWidgets(
-      'BottomNavigationBar does not grow with textScaleFactor when labels are provided',
-      (WidgetTester tester) async {
-    await tester.pumpWidget(
-      MaterialApp(
-        home: Scaffold(
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                label: 'A',
-                icon: Icon(Icons.settings),
-              ),
-              BottomNavigationBarItem(
-                label: 'B',
-                icon: Icon(Icons.location_pin),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-
-    final RenderBox defaultBox =
-        tester.renderObject(find.byType(BottomNavigationBar));
-    expect(defaultBox.size.height, equals(kBottomNavigationBarHeight));
-
-    await tester.pumpWidget(
-      MaterialApp(
-        home: Scaffold(
-          bottomNavigationBar: BottomNavigationBar(
-            type: BottomNavigationBarType.shifting,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                label: 'A',
-                icon: Icon(Icons.settings),
-              ),
-              BottomNavigationBarItem(
-                label: 'B',
-                icon: Icon(Icons.location_pin),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-
-    final RenderBox shiftingBox =
-        tester.renderObject(find.byType(BottomNavigationBar));
-    expect(shiftingBox.size.height, equals(kBottomNavigationBarHeight));
-
-    await tester.pumpWidget(
-      MaterialApp(
-        home: MediaQuery(
-          data: const MediaQueryData(textScaleFactor: 2.0),
-          child: Scaffold(
-            bottomNavigationBar: BottomNavigationBar(
-              items: const <BottomNavigationBarItem>[
-                BottomNavigationBarItem(
-                  label: 'A',
-                  icon: Icon(Icons.settings),
-                ),
-                BottomNavigationBarItem(
-                  label: 'B',
-                  icon: Icon(Icons.location_pin),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-
-    final RenderBox box = tester.renderObject(find.byType(BottomNavigationBar));
-    expect(box.size.height, equals(kBottomNavigationBarHeight));
-  });
-
+        ); 
+    });    
 }
