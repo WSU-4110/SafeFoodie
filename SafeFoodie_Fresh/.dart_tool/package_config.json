@@ -80,6 +80,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "fake_cloud_firestore",
+      "rootUri": "file:///C:/Users/spapp/flutter/.pub-cache/hosted/pub.dartlang.org/fake_cloud_firestore-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "firebase_auth",
       "rootUri": "file:///C:/Users/spapp/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-4.2.0",
       "packageUri": "lib/",
@@ -326,6 +332,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "quiver",
+      "rootUri": "file:///C:/Users/spapp/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "rxdart",
+      "rootUri": "file:///C:/Users/spapp/flutter/.pub-cache/hosted/pub.dartlang.org/rxdart-0.27.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "sanitize_html",
       "rootUri": "file:///C:/Users/spapp/flutter/.pub-cache/hosted/pub.dartlang.org/sanitize_html-2.0.0",
       "packageUri": "lib/",
@@ -410,7 +428,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-12-11T21:08:14.408424Z",
+  "generated": "2022-12-12T04:24:16.392789Z",
   "generator": "pub",
   "generatorVersion": "2.18.5"
 }
