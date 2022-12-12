@@ -6,15 +6,15 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 
+// ignore_for_file: unused_import
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 //import 'package:safefoodie_fresh/screens/list.dart';
 import 'package:safefoodie_fresh/main.dart';
 import 'package:safefoodie_fresh/screens/homepage/list_history.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -22,20 +22,20 @@ void main() {
 
   //Testing Colors
   testWidgets('Testing Colors', (WidgetTester tester) async {
-    const Color BoxShadowColor = Colors.white;
-    const Color BoxDecorationColor = Color.fromARGB(136, 0, 0, 0);
+    const Color boxShadowColor = Colors.white;
+    const Color boxDecorationColor = Color.fromARGB(136, 0, 0, 0);
     await tester.pumpWidget(MaterialApp(
       theme: ThemeData(
-        primaryColor: BoxDecorationColor,
+        primaryColor: boxDecorationColor,
         //primarySwatch: primarySwatch,
-        scaffoldBackgroundColor: BoxShadowColor,
+        scaffoldBackgroundColor: boxShadowColor,
       ),
     ));
   });
 
 //Testing history
   testWidgets('Testing history', (tester) async {
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Scaffold(
         body: Text('test'),
       ),
