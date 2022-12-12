@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
-import 'package:safefoodie_fresh/pushnotif.dart';
+import 'package:safefoodie_fresh/screens/navbar/pushnotif.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
