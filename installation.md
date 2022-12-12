@@ -1,6 +1,6 @@
 # Installation Instructions
 
-For downloading and testing this software, you will need Android Studio with an Emulator with API 33. Android Studio can be downloaded at https://developer.android.com/studio 
+For downloading and testing this software, you will need Android Studio with an Emulator with API 29. Android Studio can be downloaded at https://developer.android.com/studio 
 
 Then, download flutter and update a path to your flutter SDK in your system environment. This can be downloaded at: https://docs.flutter.dev/get-started/install 
 1. search your computer for "env" and click on edit the system environment variables
